@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "NewYork";
+  src: url(../fonts/NewYork-PERSONAL-USE.woff) format("woff");
+}
+
+span {
+  font-family: "NewYork";
+  font-style: italic;
+}
