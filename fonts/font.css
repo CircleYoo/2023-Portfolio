@@ -57,13 +57,13 @@
   src: url(../fonts/NewYork-PERSONAL-USE.woff) format("woff");
 }
 
-/* fabulous (only eng) */
+/* fabulous (body-1 / only eng) */
 @font-face {
   font-family: "Fabulous";
   src: url(../fonts/NT-FABULOUS.woff) format("woff");
 }
 
-/* hatton (only eng) */
+/* hatton (body-2 /only eng) */
 @font-face {
   font-family: "Hatton";
   src: url(../fonts/PP-Hatton-Medium-500.woff) format("woff");
