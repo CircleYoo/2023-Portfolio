@@ -45,8 +45,26 @@
   src: url("./SUIT-Heavy.woff2") format("woff2");
 }
 
-/* new york (only eng) */
+/* seawave (logo / only eng) */
+@font-face {
+  font-family: "Seawave";
+  src: url(../fonts/NT-SEAWAVE-_alternative_.woff) format("woff");
+}
+
+/* new york (title / only eng) */
 @font-face {
   font-family: "NewYork";
   src: url(../fonts/NewYork-PERSONAL-USE.woff) format("woff");
+}
+
+/* fabulous (only eng) */
+@font-face {
+  font-family: "Fabulous";
+  src: url(../fonts/NT-FABULOUS.woff) format("woff");
+}
+
+/* hatton (only eng) */
+@font-face {
+  font-family: "Hatton";
+  src: url(../fonts/PP-Hatton-Medium-500.woff) format("woff");
 }
