@@ -4,44 +4,292 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JW YOO</title>
-    <meta name="Description" content="웹퍼블리셔 포트폴리오">
-    <meta name="Author" content="유정원">
+    <meta name="Description" content="웹퍼블리셔 포트폴리오" />
+    <meta name="Author" content="유정원" />
 
     <!-- icon, favicon -->
-    <link rel="apple-touch-icon" sizes="60x60" href="img/icon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/icon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/icon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/icon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/icon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/icon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/icon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
-    
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="img/icon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="img/icon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="img/icon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="img/icon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="img/icon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="img/icon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/icon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/icon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="img/icon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="img/icon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/icon/favicon-16x16.png"
+    />
+
     <!-- seo 넣기 -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- 전체 레이아웃 -->
+    <!-- 헤더 -->
     <header>
       <div class="inner">
         <h1 class="logo">jw yoo</h1>
-        <nav class="menu"></nav>
+        <nav class="menu_btn"></nav>
         <div class="darkmode_btn"></div>
       </div>
+      <div class="fullscreen_menu">
+        <section class="link_area">
+          <a href="#"><span>home</span></a>
+          <a href="#"><span>about</span></a>
+          <a href="#"><span>works</span></a>
+          <a href="#"><span>contact</span></a>
+        </section>
+        <span>where do you wanna go?</span>
+      </div>
     </header>
+    <!-- // 헤더 -->
     <main>
+      <!-- 메인 비주얼 -->
       <section class="visual">
-        <div class="title">
+        <div class="visual_title">
           <span>welcome to the</span>
-          <span>garden</span>
-          <span>of</span>
+          <div class="garden_wrap">
+            <span class="text_accent">gar</span>
+            <img src="img/small_flower.svg" alt="" />
+            <span class="text_accent">den</span>
+          </div>
+          <div class="desc_wrap">
+            <span>of</span>
+            <article class="desc">
+              <span class="desc_bracket">(</span>
+              <span class="desc_text">
+                “화려한 꽃보다 튼튼한 줄기가 되자” <br />
+                빠르게 변화하는 디지털 시대에 대응하는 즐거운 가능성으로 함께
+                하겠습니다. <br />
+                저의 정원에 오신 것을 환영합니다.
+              </span>
+              <span class="desc_bracket">)</span>
+            </article>
+          </div>
           <span>jw yoo</span>
         </div>
+        <div class="tag">
+          <span>publisher</span>
+          <span>front-end</span>
+        </div>
+        <div class="scroll">
+          <div class="rounded_text">
+            <img src="img/scroll_flower.png" alt="" />
+          </div>
+          <img src="img/arrow_long.png" alt="" />
+        </div>
+        <div class="deco deco1">
+          <img src="img/bird.svg" alt="새" />
+        </div>
+        <div class="deco deco2">
+          <img src="img/flower.svg" alt="꽃" />
+        </div>
       </section>
+      <!-- // 메인 비주얼 -->
+      <!-- 소개 -->
+      <section class="intro">
+        <div class="inner">
+          <div class="cation_wrapper">
+            <div class="caption_inner">
+              <p>Let's make our own story!</p>
+            </div>
+          </div>
+          <div class="intro_area">
+            <h1 class="text_accent">there's more than meets the eye.</h1>
+            <div class="img_area">
+              <!-- svg, 안경 배경 -->
+            </div>
+            <article class="desc_area">
+              <span>
+                볼 수 있는 것만이 아닌, 경험할 수 있는 것을 만들고 싶었습니다.
+              </span>
+              <span>
+                시각적으로 아름다운 디자인을 추구하는 것뿐만 아니라, <br />
+                사용자에게 최적의 경험을 제공하는 웹 퍼블리셔가 되겠습니다.
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- // 소개  -->
+      <!-- 프로젝트 -->
+      <section class="projects">
+        <div class="inner">
+          <h1 class="title">projects</h1>
+          <div class="project_nav">
+            <form action="#" class="mb_filter">
+              <label for="filter">filter</label>
+              <select name="filters" id="filter_content">
+                <option class="active" data-filter="all">All</option>
+                <option data-filter="responsive">Responsive</option>
+                <option data-filter="team">Team</option>
+                <option data-filter="single">Single</option>
+                <option data-filter="api">API</option>
+                <option data-filter="scss">SCSS</option>
+              </select>
+            </form>
+            <nav class="filter">
+              <button class="active" data-filter="all">All</button>
+              <button data-filter="responsive">Responsive</button>
+              <button data-filter="team">Team</button>
+              <button data-filter="single">Single</button>
+              <button data-filter="api">API</button>
+              <button data-filter="scss">SCSS</button>
+            </nav>
+            <nav class="view">
+              <button class="active" data-view="album">album</button>
+              <button data-view="list">list</button>
+            </nav>
+          </div>
+        </div>
+      </section>
+      <!-- // 프로젝트 -->
+      <!-- 기타 디자인 -->
+      <section class="graphics">
+        <div class="inner">
+          <h1 class="title">
+            graphic <br />
+            design
+          </h1>
+        </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- 슬라이드 -->
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <!-- // 슬라이드 -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+      <!-- // 기타 디자인 -->
+      <!-- 목표 -->
+      <div class="goal">
+        <div class="cation_wrapper">
+          <div class="caption_inner">
+            <p>Let's make our own story!</p>
+          </div>
+        </div>
+        <div class="img_area">
+          <!-- 배경, svg -->
+        </div>
+        <div class="text_area">
+          <div class="goal_title">
+            <span>what</span>
+            <span>can i</span>
+            <div class="bloom_wrap">
+              <span>blo<img src="img/small_flower.svg" alt="작은 꽃" />om</span>
+            </div>
+            <div class="next_wrap">
+              <img src="img/arrow_color.svg" alt="화살표" />
+              <span>next ?</span>
+            </div>
+          </div>
+          <article class="desc_area">
+            <span>
+              프론트엔드 기술에 대한 프로그래밍 능력을 키워가며, 더 나아가
+              프론트엔드 전문가로 성장하기 위해 지속적인 노력을 기울이겠습니다.
+              현재에 충실하며 항상 미래를 꽃피우는 사람이 되겠습니다.
+            </span>
+          </article>
+        </div>
+      </div>
+      <!-- // 목표 -->
     </main>
-    <footer></footer>
+    <!-- 푸터 -->
+    <footer>
+      <p>jw <span class="text_accent">& you</span></p>
+      <section class="footer_link">
+        <div class="text_box">
+          <h3 class="title">
+            <a href="mailto:galleon32122@naver.com" class="link_mail">
+              Let's create something together!
+            </a>
+          </h3>
+        </div>
+        <div class="link_area">
+          <div class="mail box">
+            <a href="mailto:galleon32122@naver.com" class="link_mail">
+              <img src="img/footer_email.svg" alt="메일 아이콘" />
+            </a>
+          </div>
+          <div class="tistory box">
+            <a target="_blank" href="https://y-circle.tistory.com/">
+              <img src="img/footer_tistory.svg" alt="티스토리 아이콘" />
+            </a>
+          </div>
+          <div class="github box">
+            <a target="_blank" href="https://github.com/CircleYoo">
+              <img src="img/footer_github.svg" alt="깃허브 아이콘" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="bottom_area">
+        <span>
+          본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.
+        </span>
+        <span>©Copyright 2023 jeongwon yoo</span>
+      </div>
+    </footer>
+    <!-- // 푸터 -->
+    <!-- // 전체 레이아웃 -->
   </body>
 </html>
