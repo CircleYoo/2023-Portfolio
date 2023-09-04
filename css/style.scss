@@ -56,15 +56,20 @@ body {
 }
 
 header {
-  // position: fixed;
-  width: 100%;
   
   .inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 3rem $marin-width-large;
+    margin: 0 $marin-width-large;
+
+    z-index: 2;
 
     .logo {
       flex: 1 1 0;
@@ -89,6 +94,7 @@ header {
         position: relative;
         width: 4rem;
         height: 0.5rem;
+        cursor: pointer;
 
         .line {
           display: block;
@@ -97,7 +103,7 @@ header {
           height: 0.125rem;
           position: absolute;
           left: 0;
-          transition: all 0.4s;
+          transition: transform .5s ease-in-out;
 
           &-1 { top: 0;}
           &-2 { top: 100%;}
@@ -109,6 +115,14 @@ header {
           }
           .line-2 {
             transform: translateY(-0.25rem) translateX(0) rotate(-45deg);
+          }
+        }
+        &.active:hover {
+          .line-1 {
+              transform: translateZ(0) translateY(0.25rem) rotate(-135deg);
+            }
+          .line-2 {
+            transform: translateZ(0) translateY(-0.25rem) rotate(-225deg);
           }
         }
       }
@@ -160,7 +174,53 @@ header {
     }
   }
   .fullscreen_menu {
-    display: none;
+    // display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: $beige-200-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .link_area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      a {
+        display: block;
+        height: $title-font-size;
+        span {
+          font-size: $title-font-size;
+          font-family: $body-font;
+          color: $black-color;
+          letter-spacing: -0.1rem;
+          font-weight: 200;
+          text-transform: uppercase;
+
+          &:hover {
+            font-family: $title-font;
+          }
+        }
+      }
+    }
+
+    .desc {
+      font-family: $body-font;
+      font-size: $body-font-size;
+      font-weight: 400;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 3rem;
+    }
   }
 }
 
