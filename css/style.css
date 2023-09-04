@@ -387,8 +387,10 @@ header .fullscreen_menu.on .desc {
 footer {
   width: 100%;
   height: 100vh;
-  background-color: #797774;
   position: relative;
+  display: grid;
+  grid-template-rows: auto 18.75rem 5rem;
+  background-color: #5186EE;
 }
 footer::after {
   content: "";
@@ -399,13 +401,37 @@ footer::after {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: -1;
+}
+footer p {
+  font-family: "Seawave", serif;
+  color: #FAF7F0;
+  font-size: 14vw;
+}
+footer p .text_accent {
+  color: #E0F3CD;
 }
 footer .footer_link {
-  display: flex;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  align-items: center;
   margin: 0 1rem;
+  border-top: 1px solid #FAF7F0;
 }
-footer .footer_link .link_area {
+footer .footer_link div {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+footer .footer_link div:not(:last-child) {
+  border-right: 1px solid #FAF7F0;
+}
+footer .footer_link .text_box h3 a {
+  font-family: "Hatton";
+  color: #FAF7F0;
+  font-size: 3vw;
 }
 footer .bottom_area {
   display: flex;
