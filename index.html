@@ -101,10 +101,22 @@
       </div>
       <div class="fullscreen_menu">
         <section class="link_area">
-          <a href="#"><span>home</span></a>
-          <a href="#"><span>about</span></a>
-          <a href="#"><span>works</span></a>
-          <a href="#"><span>contact</span></a>
+          <a href="#visual">
+            <span class="link_text">home</span>
+            <span class="arc">home</span>
+          </a>
+          <a href="#intro">
+            <span class="link_text">about</span>
+            <span class="arc">about</span>
+          </a>
+          <a href="#works">
+            <span class="link_text">works</span>
+            <span class="arc">works</span>
+          </a>
+          <a href="#footer">
+            <span class="link_text">contact</span>
+            <span class="arc">contact</span>
+          </a>
         </section>
         <span class="desc">where do you wanna go?</span>
       </div>
@@ -112,12 +124,12 @@
     <!-- // 헤더 -->
     <main>
       <!-- 메인 비주얼 -->
-      <section class="visual">
+      <section class="visual" id="visual">
         <div class="visual_title">
           <span>welcome to the</span>
           <div class="garden_wrap">
             <span class="text_accent">gar</span>
-            <img src="img/small_flower.svg" alt="" />
+            <img src="img/small_flower.svg" alt="꽃" />
             <span class="text_accent">den</span>
           </div>
           <div class="desc_wrap">
@@ -133,28 +145,34 @@
               <span class="desc_bracket">)</span>
             </article>
           </div>
-          <span>jw yoo</span>
+          <span class="name">jw yoo</span>
         </div>
         <div class="tag">
           <span>publisher</span>
           <span>front-end</span>
         </div>
         <div class="scroll">
-          <div class="rounded_text">
-            <img src="img/scroll_flower.png" alt="" />
+          <div class="rounded_shape">
+            <img src="img/scroll_rounded_text.svg" alt="스크롤 텍스트" class="rounded_text">
+            <div class="scroll_flower">
+              <img src="img/scroll_flower.svg" alt="스크롤 아이콘" />
+            </div>
           </div>
-          <img src="img/arrow_long.png" alt="" />
+          <a href="#intro">
+            <img src="img/arrow_long.svg" alt="스크롤 화살표" />
+          </a>
         </div>
-        <div class="deco deco1">
-          <img src="img/bird.svg" alt="새" />
+        <div class="para_wrap">
+          <div class="para_group">
+            <img src="img/bird.svg" alt="새" class="deco deco-1"/>
+            <img src="img/flower.svg" alt="꽃" class="deco deco-2"/>
+          </div>
         </div>
-        <div class="deco deco2">
-          <img src="img/flower.svg" alt="꽃" />
-        </div>
+        <div class="frame"></div>
       </section>
       <!-- // 메인 비주얼 -->
       <!-- 소개 -->
-      <section class="intro">
+      <section class="intro" id="intro">
         <div class="inner">
           <div class="cation_wrapper">
             <div class="caption_inner">
@@ -180,7 +198,7 @@
       </section>
       <!-- // 소개  -->
       <!-- 프로젝트 -->
-      <section class="projects">
+      <section class="projects" id="works">
         <div class="inner">
           <h3 class="title">projects</h3>
           <div class="project_nav">
@@ -268,7 +286,7 @@
       <!-- // 목표 -->
     </main>
     <!-- 푸터 -->
-    <footer>
+    <footer id="footer">
       <p>jw <span class="text_accent">& you</span></p>
       <section class="footer_link">
         <div class="text_box">
