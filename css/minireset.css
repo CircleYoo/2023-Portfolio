@@ -40,10 +40,18 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 button,
 input,
 select {
   margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  background-color: transparent;
 }
 
 html {

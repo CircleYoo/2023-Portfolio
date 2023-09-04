@@ -4,8 +4,167 @@
 /*반응형, 브라우저 크기가 767px 이하일때*/
 /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 /*반응형, 브라우저 크기가 1024px 이상일때*/
+$breakpoint-small : 767px;
+$breakpoint-medium : 1023px;
+$breakpoint-large : 1024px;
 
-span {
-  font-family: "NewYork";
-  // font-style: italic;
+// margin
+$marin-width-large: 70px;
+$marin-width-medium: 50px;
+$marin-width-small: 30px;
+
+$margin-height-large: 160px;
+$margin-height-small: 144px;
+
+// color
+$black-color : #111111;
+$background-color : #FAF7F0;
+$beige-200-color : #E3DACD;
+$beige-500-color : #B5AEA4;
+$beige-700-color : #797774;
+$primary-color : #5186EE;
+$secondary-color : #E0F3CD;
+$sub-color: #D0DCFF; 
+
+// font
+$title-font: "Seawave", serif;
+$title-accent-font: "NewYork", serif;
+$body-font: "SUIT", sans-serif;
+
+$title-font-size: 8rem;
+$small-title-font-size: 5rem;
+$body-font-size: 1.125rem;
+$small-body-font-size: 1rem;
+
+$line-height: 1.5;
+
+// button
+@mixin button-design {
+  border: 1px solid $black-color;
+  border-radius: 50%;
+  font-size: $small-body-font-size;
+  color: $background-color;
 }
+
+.text_accent {
+  font-family: $title-accent-font;
+}
+
+
+body {
+  background-color: $background-color;
+}
+
+header {
+  // position: fixed;
+  width: 100%;
+  
+  .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem $marin-width-large;
+
+    .logo {
+      flex: 1 1 0;
+      min-width: 8rem;
+      height: 2rem;
+      background: url(../img/logo.svg) no-repeat left;
+      background-size: contain;
+    }
+
+    .hamburger {
+      flex: 1 2 0;
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      
+      .hamburger_box {
+        margin: 1.75rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        width: 4rem;
+        height: 0.5rem;
+
+        .line {
+          display: block;
+          background-color: $black-color;
+          width: 100%;
+          height: 0.125rem;
+          position: absolute;
+          left: 0;
+          transition: all 0.4s;
+
+          &-1 { top: 0;}
+          &-2 { top: 100%;}
+        }
+
+        &.active {
+          .line-1 {
+            transform: translateY(0.25rem) translateX(0) rotate(45deg);
+          }
+          .line-2 {
+            transform: translateY(-0.25rem) translateX(0) rotate(-45deg);
+          }
+        }
+      }
+    }
+
+
+    .darkmode {
+      flex: 1 1 0;
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .checkbox {
+        opacity: 0;
+        position: absolute;
+      }
+
+      .checkbox_label {
+        background-color: $background-color;
+        border: 1px solid $black-color;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 3rem;
+        height: 1.5rem;
+
+        .ball {
+          position: absolute;
+          background-color: $black-color;
+          width: 1rem;
+          height: 1rem;
+          left: 0.2rem;
+          top: 0.2rem;
+          border-radius: 50%;
+          transition: transform 0.2s cubic-bezier(0, 1, 0.5, 1);
+        }
+      }
+
+      .checkbox:checked+.checkbox_label{
+        .ball{
+          transform: translateX(1.5rem);
+        }
+      }
+    }
+  }
+  .fullscreen_menu {
+    display: none;
+  }
+}
+
+
+
+
+

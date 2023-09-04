@@ -74,7 +74,10 @@
     />
 
     <!-- seo 넣기 -->
-    <link rel="stylesheet" href="css/minireset.css">
+
+    <!-- font -->
+    <link rel="stylesheet" href="css/minireset.css" />
+    <link rel="stylesheet" href="fonts/font.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -82,13 +85,19 @@
     <!-- 헤더 -->
     <header>
       <div class="inner">
-        <h3 class="logo">jw yoo</h3>
-        <nav class="menu_btn">
-          <span class="menu_line">
-            
+        <a href="index.html" class="logo"></a>
+        <button type="button" class="hamburger">
+          <span class="hamburger_box">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
           </span>
-        </nav>
-        <div class="darkmode_btn"></div>
+        </button>
+        <div class="darkmode">
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="checkbox_label">
+            <span class="ball"></span>
+          </label>
+        </div>
       </div>
       <div class="fullscreen_menu">
         <section class="link_area">
@@ -297,4 +306,5 @@
     <!-- // 푸터 -->
     <!-- // 전체 레이아웃 -->
   </body>
+  <script src="js/index.js"></script>
 </html>
