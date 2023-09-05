@@ -384,6 +384,11 @@ header .fullscreen_menu.on .desc {
   margin-bottom: 1rem;
 }
 
+.projects .inner .title {
+  font-size: 4.1667vw;
+  font-family: "NewYork", serif;
+}
+
 footer {
   width: 100%;
   height: 100vh;

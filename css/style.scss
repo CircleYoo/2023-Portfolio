@@ -507,7 +507,14 @@ header {
 }
 // intro 끝
 // projects 시작
-
+.projects {
+  .inner {
+    .title {
+      font-size: $small-title-font-size;
+      font-family: $title-accent-font;
+    }
+  }
+}
 // projects 끝
 // main 끝
 

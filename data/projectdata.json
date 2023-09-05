@@ -1,0 +1,70 @@
+{
+  "projects": [
+    {
+      "img" : "../img/project_louis_poulsen.jpg",
+      "title" : "louis poulsen",
+      "text" : "루이스폴센 리디자인 및 반응형 코딩을 통한 코딩 적응, 효율적인 작업과 편리한 CSS 코드, 시맨틱 마크업을 중점으로 진행한 사이트 개선 프로젝트",
+      "contribution" : 33,
+      "keyword" : ["리뉴얼", "시맨틱 마크업", "JSON", "WayPoint", "Responsive"],
+      "review" : "https://www.notion.so/1d5613cba1784af2bfc868f91d7ed005",
+      "github" : "https://github.com/CircleYoo/Louis-Poulsen",
+      "original" : "",
+      "create" : "https://circleyoo.github.io/Louis-Poulsen/"
+    },
+    {
+      "img" : "../img/project_hogwarts.jpg",
+      "title" : "Hogwarts school",
+      "text" : "해리포터 시리즈 세계관 속 호그와트 마법학교 웹사이트 기획 및 제작 | JSON 데이터 형식과 Fetch 문법으로 데이터 연동, 카운팅 모션 등 다양한 스크립트 구현을 중점으로 진행한 프로젝트 ",
+      "contribution" : 25,
+      "keyword" : ["JavaScript", "JSON", "illustration", "Responsive"],
+      "review" : "https://www.notion.so/084bbc661ad0408ebce33be43c25b196",
+      "github" : "https://github.com/CircleYoo/Hogwarts-School",
+      "original" : "",
+      "create" : "https://bucolic-squirrel-37fca3.netlify.app/"
+    },
+    {
+      "img" : "../img/project_dosiraktong.jpg",
+      "title" : "dosiraktong",
+      "text" : "도시락통 클론 코딩을 통한 AOS animation 효과, 코드의 재활용성과 가독성을 높인 전처리기 SCSS, 미디어쿼리를 활용한 디바이스 분기별 반응형 작업(PC + Tablet + Mobile)과 사이트 개선 작업",
+      "contribution" : 100,
+      "keyword" : ["SCSS", "swiper", "AOS", "Responsive"],
+      "review" : "",
+      "github" : "https://github.com/CircleYoo/DosirakTong",
+      "original" : "https://dosiraktong.com/Main/Index",
+      "create" : "https://circleyoo.github.io/DosirakTong/"
+    },
+    {
+      "img" : "../img/project_weather_now.jpg",
+      "title" : "weather now",
+      "text" : "사용자의 위치 정보를 기반으로 한 날씨 정보 및 옷차림 추천 사이트 | API 연동 및 Axios를 사용한 JSON 데이터 호출, 컴포넌트별 관리가 편리한 SCSS Module 사용을 중점으로 작업",
+      "contribution" : 100,
+      "keyword" : ["React", "API", "SCSS module", "Axios"],
+      "review" : "",
+      "github" : "https://github.com/CircleYoo/Weather-Now",
+      "original" : "",
+      "create" : "https://weather-now-mu.vercel.app/"
+    },
+    {
+      "img" : "../img/project_interpark.jpg",
+      "title" : "interpark",
+      "text" : "인터파크 클론 코딩을 통한 JSON 데이터 형식과 Fetch 문법으로 데이터 연동, 디바이스 분기별 반응형 작업(PC + Tablet + Mobile)과 사이트 개선 작업",
+      "contribution" : 100,
+      "keyword" : ["시맨틱 마크업", "swiper", "JSON", "Responsive"],
+      "review" : "",
+      "github" : "https://github.com/CircleYoo/Interpark",
+      "original" : "",
+      "create" : "https://beautiful-selkie-0c37f8.netlify.app/"
+    },
+    {
+      "img" : "../img/project_todo_list.jpg",
+      "title" : "todo list",
+      "text" : "React를 활용하여 Todo List를 제작하고, 다크/라이트 모드를 구현하며 로컬 스토리지에 데이터를 저장 및 각 컴포넌트를 효율적으로 관리하기 위한 CSS Module 사용을 중점으로 작업",
+      "contribution" : 100,
+      "keyword" : ["React", "CSS Module", "Dark mode", "local Storage"],
+      "review" : "https://y-circle.tistory.com/9",
+      "github" : "https://github.com/CircleYoo/Todo-List",
+      "original" : "",
+      "create" : "https://strong-douhua-85a247.netlify.app/"
+    }
+  ]
+}
