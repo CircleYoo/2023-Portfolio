@@ -57,37 +57,38 @@ $label.addEventListener("click", toggleOptions);
 // (시작) 프로젝트 리스트 가져오기
 const $projectWrapper = document.querySelector(".project_area");
 
-
 let projectList = null;
-function getData() {
-  fetch("data/projectdata.json")
+function getProjectData() {
+  fetch("data/data.json")
     .then((res) => res.json())
     .then((result) => {
       projectList = result;
-      makeList(result.projects);
+      makeProjectList(result.projects);
     })
     .catch((err) => console.log("project 가져오기 실패", err));
 }
 
-function makeList(items) {
+function makeProjectList(items) {
   $projectWrapper.innerHTML = null;
   items.forEach((item) => {
-    const result = makeItem(item);
+    const result = makeProjectsItem(item);
     $projectWrapper.appendChild(result);
   });
 }
 
-function makeItem(item) {
+function makeProjectsItem(item) {
   const div = document.createElement("div");
   div.classList.add("project_item");
 
   // 키워드 각각 <span> 태그로 가져오기
   const keyword = item.keyword
-  .map((keyword) => `<span class="keyword">${keyword}</span>`)
-  .join("");
-  
+    .map((keyword) => `<span class="keyword">${keyword}</span>`)
+    .join("");
+
   // review, github, origin 링크 조건부 출력
-  let review = item.review ? `<a href="${item.review}" target="_blank">Review</a>` : '';
+  let review = item.review
+    ? `<a href="${item.review}" target="_blank">Review</a>`
+    : "";
   let github = item.github
     ? `<a href="${item.github}" target="_blank">Gihub</a>`
     : "";
@@ -118,11 +119,62 @@ function makeItem(item) {
     </div>
   `;
   //
-
-
   return div;
 }
 
-
-getData();
+getProjectData();
 // (끝) 프로젝트 리스트 가져오기
+
+// (시작) 그래픽 swiper
+let graphicList = null;
+function getGraphicData() {
+  fetch("data/data.json")
+    .then((res) => res.json())
+    .then((result) => {
+      projectList = result;
+      makeGraphicList(result.graphics);
+    })
+    .catch((err) => console.log("graphic 가져오기 실패", err));
+}
+function makeGraphicList(data) {
+  let html = ``;
+  data.forEach(item => {
+    let temp = `
+      <div class="swiper-slide">
+        <img src="${item.img}" alt="${item.alt}">
+        <span>${item.desc}</span>
+      </div>
+    `;
+    html += temp;
+  })
+  const swGraphicWrapper = document.querySelector(".sw_graphic .swiper-wrapper");
+  swGraphicWrapper.innerHTML = html;
+}
+
+
+const swiper = new Swiper(".swiper", {
+  loop: true,
+  // autoplay: {
+  //   delay: 3000,
+  // },
+  slidesPerView: 3,
+  // freeMode: true
+  spaceBetween: 20,
+  // centeredSlides: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    type: "fraction",
+  },
+  breakpoints: {
+    480: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+    1200: { slidesPerView: 4 },
+  },
+});
+// (끝) 그래픽 swiper

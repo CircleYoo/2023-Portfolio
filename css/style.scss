@@ -59,6 +59,31 @@ $line-height: 1.5;
   @content;
 }
 
+// caption
+@mixin caption-design {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+
+  .caption_inner {
+    background-color: $primary-color;
+    width: 50%;
+    border-radius: 80px;
+    transform: translateY(-35%);
+    padding: 2rem 0;
+
+    p {
+      text-align: center;
+      transform: translateY(-50%);
+      color: $background-color;
+      line-height: 0;
+    }
+  }
+}
+
 body {
   background-color: $background-color;
 }
@@ -459,30 +484,9 @@ header {
   justify-content: center;
 
   .cation_wrapper {
-    position: absolute;
-    top: 0;
-    // left: 0;
-    // right: 0;
-    width: 100%;
-    background-color: $primary-color;
-    display: flex;
-    justify-content: center;
-    
-    .caption_inner {
-      background-color: $primary-color;;
-      width: 50%;
-      border-radius: 80px;
-      transform: translateY(-35%);
-      padding: 2rem 0;
-      
-      p {
-        text-align: center;
-        transform: translateY(-50%);
-        color: $background-color;
-        line-height: 0;        
-      }
-    }
+    @include caption-design;
   }
+
   .intro_area {
     display: flex;
     flex-direction: column;
@@ -799,6 +803,22 @@ header {
   }
 }
 // projects 끝
+// graphics 시작
+.graphics {
+  .inner {
+    .title {
+      font-size: $small-title-font-size;
+      font-family: $title-accent-font;
+      margin-bottom: 6rem;
+    }
+  }
+}
+// graphics 끝
+// goal 시작
+.goal {
+  
+}
+// goal 끝
 // main 끝
 
 // footer 시작

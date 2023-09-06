@@ -72,5 +72,62 @@
       "original" : "",
       "create" : "https://strong-douhua-85a247.netlify.app/"
     }
+  ],
+  "graphics" :[
+    {
+      "img": "../img/graphic_ing.jpg",
+      "alt": "모바일 초대장",
+      "desc": "[comming soon] 모바일 초대장"
+    },
+    {
+      "img": "../img/graphic_dip.jpg",
+      "alt": "포스터",
+      "desc": "dip | 포스터"
+    },
+    {
+      "img": "../img/graphic_zero.jpg",
+      "alt": "PPT",
+      "desc": "제로키친 | PPT"
+    },
+    {
+      "img": "../img/graphic_st_icon.jpg",
+      "alt": "아이콘",
+      "desc": "생각의탄생 | 아이콘"
+    },
+    {
+      "img": "../img/graphic_todayload.jpg",
+      "alt": "로고",
+      "desc": "오늘로 | 로고"
+    },
+    {
+      "img": "../img/graphic_airport.jpg",
+      "alt": "포스터",
+      "desc": "대구시청 | 통합신공항 "
+    },
+    {
+      "img": "../img/graphic_kim_logo.jpg",
+      "alt": "로고",
+      "desc": "김사부도시락 | 로고"
+    },
+    {
+      "img": "../img/graphic_st_logo.jpg",
+      "alt": "로고",
+      "desc": "생각의탄생 | 로고"
+    },
+    {
+      "img": "../img/graphic_bs_ppt.jpg",
+      "alt": "PPT",
+      "desc": "비섬 | PPT"
+    },
+    {
+      "img": "../img/graphic_cy_page.jpg",
+      "alt": "상세페이지",
+      "desc": "취연 | 상세페이지"
+    },
+    {
+      "img": "../img/graphic_brochure.jpg",
+      "alt": "브로슈어",
+      "desc": "정신건강복지센터 | 브로슈어"
+    }
   ]
 }
