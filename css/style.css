@@ -372,7 +372,7 @@ header .fullscreen_menu.on .desc {
 }
 .intro .intro_area .img_area {
   width: 60vw;
-  height: 22rem;
+  padding-bottom: 30%;
   background-color: #fff;
 }
 .intro .intro_area .desc_area {
@@ -562,7 +562,6 @@ header .fullscreen_menu.on .desc {
   grid-column-gap: 1.25rem;
   grid-row-gap: 3rem;
   margin-top: 2rem;
-  background-color: #fff;
 }
 .projects .inner .project_area .project_item .img_wrap {
   display: block;
@@ -579,7 +578,7 @@ header .fullscreen_menu.on .desc {
   -o-object-fit: cover;
      object-fit: cover;
   vertical-align: top;
-  transition: 0.6s;
+  transition: transform 0.6s ease-in-out;
 }
 .projects .inner .project_area .project_item .img_wrap .item_img.on {
   filter: blur(0.125rem);
@@ -594,6 +593,8 @@ header .fullscreen_menu.on .desc {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
 }
 .projects .inner .project_area .project_item .img_wrap .img_hover .more_link {
   position: absolute;
@@ -637,10 +638,17 @@ header .fullscreen_menu.on .desc {
   font-family: "SUIT", sans-serif;
   text-transform: uppercase;
 }
+.projects .inner .project_area .project_item .img_wrap:hover .item_img {
+  transform: scale(1.05);
+}
+.projects .inner .project_area .project_item .img_wrap:hover .img_hover {
+  opacity: 1;
+}
 .projects .inner .project_area .project_item .projects_title {
   font-family: "Hatton";
   font-size: 2rem;
   margin: 1.5rem 0 1rem 0;
+  text-transform: capitalize;
 }
 .projects .inner .project_area .project_item span {
   font-family: "SUIT", sans-serif;

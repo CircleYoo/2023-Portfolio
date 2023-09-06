@@ -497,7 +497,8 @@ header {
 
     .img_area {
       width: 60vw;
-      height: 22rem;
+      // height: 22rem;
+      padding-bottom: 30%;
       background-color: #fff;
     }
 
@@ -685,8 +686,6 @@ header {
       grid-column-gap: 1.25rem;
       grid-row-gap: 3rem;
       margin-top: 2rem;
-      
-      background-color: #fff;
 
       .project_item {
         .img_wrap {
@@ -703,7 +702,7 @@ header {
               left: 0;
               object-fit: cover;
               vertical-align: top;
-              transition: 0.6s;
+              transition: transform 0.6s ease-in-out;
           
               &.on {
                 filter: blur(0.125rem);
@@ -720,7 +719,9 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
-
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            
             .more_link {
               position: absolute;
               display: flex;
@@ -756,12 +757,20 @@ header {
             }
           }
 
-
+          &:hover {
+            .item_img {
+              transform: scale(1.05);
+            }
+            .img_hover {
+              opacity: 1;
+            }
+          }
         }
         .projects_title {
           font-family: "Hatton";
           font-size: 2rem;
           margin: 1.5rem 0 1rem 0;
+          text-transform: capitalize;
         }
         span {
           font-family: $body-font;
