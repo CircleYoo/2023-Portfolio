@@ -24,3 +24,14 @@ window.addEventListener("scroll", function () {
   scrollRotate();
 })
 
+// 모바일 필터 버튼 보이기
+const $optionBtn = document.querySelector('.label');
+const $optionBtnSpan = document.querySelector(".more_btn span");
+const $option = document.querySelector('.option_list');
+
+$optionBtn.addEventListener('click', function () {
+  console.log('ddd');
+  $option.classList.toggle('on');
+  $optionBtnSpan.classList.toggle("on");
+})
+

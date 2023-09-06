@@ -367,7 +367,7 @@ header .fullscreen_menu.on .desc {
   gap: 6vh;
 }
 .intro .intro_area h3 {
-  font-size: 4.1667vw;
+  font-size: 5rem;
   color: #FAF7F0;
 }
 .intro .intro_area .img_area {
@@ -384,9 +384,282 @@ header .fullscreen_menu.on .desc {
   margin-bottom: 1rem;
 }
 
+.projects {
+  position: relative;
+  margin-top: 4rem;
+  border-top: 1px solid #5186EE;
+}
+.projects::before {
+  content: "";
+  position: absolute;
+  border-top: 1px solid #5186EE;
+  top: -1rem;
+  left: 0;
+  right: 0;
+}
+.projects .inner {
+  padding: 10rem 0;
+}
 .projects .inner .title {
-  font-size: 4.1667vw;
+  font-size: 5rem;
   font-family: "NewYork", serif;
+  margin-bottom: 6rem;
+}
+.projects .inner .project_nav {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.projects .inner .project_nav .mb_filter {
+  display: none;
+  width: 60%;
+  height: 100%;
+}
+.projects .inner .project_nav .mb_filter .label {
+  border: 1px solid #111111;
+  border-radius: 0.25rem;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: "SUIT", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: capitalize;
+  width: 100%;
+  justify-content: space-between;
+}
+.projects .inner .project_nav .mb_filter .label h3 {
+  font-size: 1.125rem;
+  font-family: "SUIT", sans-serif;
+}
+.projects .inner .project_nav .mb_filter .label .more_btn {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.projects .inner .project_nav .mb_filter .label .more_btn span {
+  display: block;
+  background-color: #111111;
+  width: 100%;
+  height: 0.125rem;
+  position: relative;
+}
+.projects .inner .project_nav .mb_filter .label .more_btn span:first-child {
+  position: absolute;
+  transform: rotate(90deg);
+  transition: all 0.4s ease-in-out;
+}
+.projects .inner .project_nav .mb_filter .label .more_btn span.on:first-child {
+  transform: rotate(0);
+  opacity: 0;
+}
+.projects .inner .project_nav .mb_filter .option_list {
+  display: none;
+  background-color: #FAF7F0;
+  border: 1px solid #111111;
+  border-radius: 0.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.projects .inner .project_nav .mb_filter .option_list .option_item {
+  padding: 0.5rem 1.5rem;
+}
+.projects .inner .project_nav .mb_filter .option_list .option_item:hover {
+  background-color: #E3DACD;
+}
+.projects .inner .project_nav .mb_filter .option_list.on {
+  display: block;
+}
+.projects .inner .project_nav .filter {
+  display: flex;
+  gap: 0.625rem;
+}
+.projects .inner .project_nav .filter button {
+  border: 1px solid #111111;
+  border-radius: 0.25rem;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: "SUIT", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: capitalize;
+}
+.projects .inner .project_nav .filter button.active {
+  color: #FAF7F0;
+  background-color: #111111;
+}
+.projects .inner .project_nav .view {
+  display: flex;
+  gap: 0.625rem;
+}
+.projects .inner .project_nav .view button {
+  border: 1px solid #111111;
+  border-radius: 0.25rem;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: "SUIT", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: capitalize;
+  padding: 0.625rem 1.5rem;
+}
+.projects .inner .project_nav .view button.active {
+  color: #FAF7F0;
+  background-color: #111111;
+}
+.projects .inner .project_nav .view .album .circle_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+}
+.projects .inner .project_nav .view .album .circle_wrap .circle {
+  background-color: #FAF7F0;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+}
+.projects .inner .project_nav .view .list .line_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1rem;
+  height: 1rem;
+}
+.projects .inner .project_nav .view .list .line_wrap .line {
+  background-color: #111111;
+  width: 100%;
+  height: 0.188rem;
+}
+.projects .inner .project_area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 3rem;
+  margin-top: 2rem;
+  background-color: #fff;
+}
+.projects .inner .project_area .project_item .img_wrap {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 70%;
+}
+.projects .inner .project_area .project_item .img_wrap .item_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: top;
+  transition: 0.6s;
+}
+.projects .inner .project_area .project_item .img_wrap .item_img.on {
+  filter: blur(0.125rem);
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(17, 17, 17, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .more_link {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  top: 1.25rem;
+  left: 1.25rem;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .more_link a {
+  border: 1px solid #111111;
+  border-radius: 0.25rem;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: "SUIT", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: capitalize;
+  border: none;
+  background-color: #FAF7F0;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .link img {
+  transform: rotate(90deg);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .link span {
+  color: #FAF7F0;
+  font-size: 1.5rem;
+  font-family: "SUIT", sans-serif;
+  text-transform: uppercase;
+}
+.projects .inner .project_area .project_item .projects_title {
+  font-family: "Hatton";
+  font-size: 2rem;
+  margin: 1.5rem 0 1rem 0;
+}
+.projects .inner .project_area .project_item span {
+  font-family: "SUIT", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.projects .inner .project_area .project_item .projects_desc {
+  color: #B5AEA4;
+  display: flex;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.projects .inner .project_area .project_item .projects_desc .contribution {
+  border-right: 1px solid #B5AEA4;
+  margin-right: 1rem;
+  padding-right: 1rem;
+}
+.projects .inner .project_area .project_item .projects_desc .keyword:not(:last-child) {
+  margin-right: 1rem;
 }
 
 footer {

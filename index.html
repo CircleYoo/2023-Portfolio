@@ -200,17 +200,23 @@
         <div class="inner">
           <h3 class="title">projects</h3>
           <div class="project_nav">
-            <form action="#" class="mb_filter">
-              <label for="filter">filter</label>
-              <select name="filters" id="filter_content">
-                <option class="active" data-filter="all">All</option>
-                <option data-filter="responsive">Responsive</option>
-                <option data-filter="team">Team</option>
-                <option data-filter="single">Single</option>
-                <option data-filter="api">API</option>
-                <option data-filter="scss">SCSS</option>
-              </select>
-            </form>
+            <div class="mb_filter">
+              <button class="label">
+                <h3>filter</h3>
+                <div class="more_btn">
+                  <span></span>
+                  <span></span>
+                </div>
+              </button>
+              <ul class="option_list">
+                <li class="active option_item" data-filter="all">All</li>
+                <li class="option_item" data-filter="responsive">Responsive</li>
+                <li class="option_item" data-filter="team">Team</li>
+                <li class="option_item" data-filter="single">Single</li>
+                <li class="option_item" data-filter="api">API</li>
+                <li class="option_item" data-filter="scss">SCSS</li>
+              </ul>
+            </div>
             <nav class="filter">
               <button class="active" data-filter="all">All</button>
               <button data-filter="responsive">Responsive</button>
@@ -220,11 +226,51 @@
               <button data-filter="scss">SCSS</button>
             </nav>
             <nav class="view">
-              <button class="active" data-view="album">album</button>
-              <button data-view="list">list</button>
+              <button class="active album" data-view="album">
+                <div class="circle_wrap">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+              </button>
+              <button class="list" data-view="list">
+                <div class="line_wrap">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+              </button>
             </nav>
           </div>
-          <div class="project_item">
+          <div class="project_area">
+            <div class="project_item">
+              <div class="img_wrap">
+                <img class="item_img" src="./img/project_hogwarts.jpg" alt="호그와트">
+                <div class="img_hover">
+                  <div class="more_link">
+                    <a href="">Github</a>
+                    <a href="">Github</a>
+                    <a href="">Github</a>
+                  </div>
+                  <a href="" class="link">
+                    <img src="./img/arrow_small.svg" alt="바로가기">
+                    <span>view</span>
+                  </a>
+                </div>
+              </div>
+              <h3 class="projects_title">Hogwarts School</h3>
+              <span>해리포터 시리즈 세계관 속 호그와트 마법학교 웹사이트 기획 및 제작 | JSON 데이터 형식과 Fetch 문법으로 데이터 연동, 카운팅 모션 등 다양한 스크립트 구현을 중점으로 진행한 프로젝트</span>
+              <div class="projects_desc">
+                <span class="contribution">기여도 25%</span>
+                <span class="keyword_area">
+                  <span class="keyword">keyword</span>
+                  <span class="keyword">keyword</span>
+                  <span class="keyword">keyword</span>
+                  <span class="keyword">keyword</span>
+                </span>
+              </div>
+            </div>
             <!-- projectsdata.json -->
           </div>
         </div>
