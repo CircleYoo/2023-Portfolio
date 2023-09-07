@@ -126,62 +126,84 @@ getProjectData();
 // (끝) 프로젝트 리스트 가져오기
 
 // (시작) 그래픽 swiper
-const swGraphicWrapper = document.querySelector(".sw_graphic .swiper-wrapper");
+// (시작) 그래픽 swiper
+const swGraphicWrapper = document.querySelector(".swiper-wrapper");
 
 let graphicList = null;
 function getGraphicData() {
   fetch("data/data.json")
     .then((res) => res.json())
     .then((result) => {
-      projectList = result;
+      graphicList = result;
       makeGraphicList(result.graphics);
     })
     .catch((err) => console.log("graphic 가져오기 실패", err));
 }
 function makeGraphicList(items) {
-  swGraphicWrapper.innerHTML = null;
+  swGraphicWrapper.innerHTML = "";
   items.forEach((item) => {
     const result = makeGraphicItem(item);
     swGraphicWrapper.appendChild(result);
-
   });
 }
 function makeGraphicItem(item) {
-  const div = document.createElement('div')
+  const div = document.createElement("div");
   div.classList.add("swiper-slide");
 
   div.innerHTML = `
-    <img src="${item.img}" alt="${item.alt}">
+  <img src="${item.img}" alt="${item.alt}">
+  <div class="desc_area">
     <span>${item.desc}</span>
+  </div>
   `;
   return div;
 }
-getGraphicData();
-
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  // autoplay: {
-  //   delay: 3000,
-  // },
+const mySwiper = new Swiper(".swiper", {
+  // direction: "horizontal",
   slidesPerView: 3,
-  // freeMode: true
+  slideWidth: 200,
   spaceBetween: 20,
   // centeredSlides: true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".sw-next",
+    prevEl: ".sw-prev",
   },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    type: "fraction",
-  },
-  breakpoints: {
-    480: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-    1200: { slidesPerView: 4 },
-  },
-});
-// (끝) 그래픽 swiper
 
+  // grid: {
+  //   rows: 2,
+  //   column: 2,
+  //   fill: "row",
+  // },
+  // breakpoints: {
+  //   768: {
+  //     spaceBetween: 10,
+  //     slidesPerView: 5,
+  //     slidesPerGroup: 5,
+  //     grid: {
+  //       rows: 2,
+  //     },
+  //   },
+  //   1024: {
+  //     spaceBetween: 32,
+  //     slidesPerView: 3,
+  //     // 화면당 3개씩 슬라이드 이동
+  //     slidesPerGroup: 3,
+  //     grid: {
+  //       rows: 1,
+  //     },
+  //   },
+  //   1280: {
+  //     spaceBetween: 26,
+  //     slidesPerView: 4,
+  //     // 화면당 4개씩 슬라이드 이동
+  //     slidesPerGroup: 4,
+  //     grid: {
+  //       rows: 1,
+  //     },
+  //   },
+  // },
+});
+
+getGraphicData();
+
+// (끝) 그래픽 swiper

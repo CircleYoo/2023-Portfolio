@@ -675,6 +675,45 @@ header .fullscreen_menu.on .desc {
   font-family: "NewYork", serif;
   margin-bottom: 6rem;
 }
+.graphics .sw_graphic {
+  height: 100%;
+  margin-left: 70px;
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide {
+  position: relative;
+  height: auto;
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="1 / 11"] {
+  width: 280px !important;
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="2 / 11"] {
+  width: 430px !important;
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide img {
+  height: 100%;
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide .desc_area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(17, 17, 17, 0.7);
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide .desc_area:hover {
+  opacity: 1;
+}
+.graphics .sw_graphic .swiper-wrapper .swiper-slide .desc_area span {
+  font-size: 1.125rem;
+  font-family: "SUIT", sans-serif;
+  color: #FAF7F0;
+}
 
 footer {
   width: 100%;

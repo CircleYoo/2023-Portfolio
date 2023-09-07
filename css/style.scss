@@ -812,11 +812,56 @@ header {
       margin-bottom: 6rem;
     }
   }
+  .sw_graphic {
+    height: 100%;
+    margin-left: $marin-width-large;;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        position: relative;
+        height: auto;
+        // width: 80%;
+
+        &[aria-label="1 / 11"] { width: 280px !important; }
+        &[aria-label="2 / 11"] { width: 430px !important; }
+
+        img {
+          // width: 100%;
+          height: 100%;
+        }
+        .desc_area {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+          background-color: rgba($color: $black-color, $alpha: 0.7);
+          
+          &:hover {
+            opacity: 1;
+          }
+
+          span {
+            font-size: $body-font-size;
+            font-family: $body-font;
+            color: $background-color;
+          }
+        }
+      }
+    }
+  }
 }
+
 // graphics 끝
 // goal 시작
 .goal {
-  
+
 }
 // goal 끝
 // main 끝
