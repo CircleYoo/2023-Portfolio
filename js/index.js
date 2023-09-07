@@ -150,25 +150,53 @@ function makeGraphicItem(item) {
   const div = document.createElement("div");
   div.classList.add("swiper-slide");
 
-  div.innerHTML = `
-  <img src="${item.img}" alt="${item.alt}">
-  <div class="desc_area">
-    <span>${item.desc}</span>
-  </div>
-  `;
+  // img-group 출력하기
+  if (item["img-group"]) {
+    const imgGroup = item["img-group"];
+    const groupWrapper = document.createElement("div");
+    groupWrapper.classList.add("img_group")
+
+    imgGroup.forEach((img) => {
+      const imgElement = document.createElement("div");
+      imgElement.classList.add("graphic");
+
+      imgElement.innerHTML = `
+        <img src="${img.img}" alt="${img.alt}">
+        <picture class="desc_area">
+          <span>${img.desc}</span>
+        </picture>
+      `;
+
+      groupWrapper.appendChild(imgElement);
+    });
+
+    div.appendChild(groupWrapper);
+
+  } else {
+    // 일반 출력
+    div.innerHTML = `
+    <div class="graphic">
+      <img src="${item.img}" alt="${item.alt}">
+      <picture class="desc_area">
+        <span>${item.desc}</span>
+      </picture>
+    </div>
+    `;
+  }
   return div;
 }
 const mySwiper = new Swiper(".swiper", {
-  // direction: "horizontal",
-  slidesPerView: 3,
-  slideWidth: 200,
+  slidesPerView: "auto",
   spaceBetween: 20,
-  // centeredSlides: true,
+  height: 430,
   navigation: {
-    nextEl: ".sw-next",
-    prevEl: ".sw-prev",
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    clickable: true,
   },
-
+  slidesOffsetBefore: 70,
+  slidesOffsetAfter: 70,
+  
   // grid: {
   //   rows: 2,
   //   column: 2,
@@ -205,5 +233,8 @@ const mySwiper = new Swiper(".swiper", {
 });
 
 getGraphicData();
-
 // (끝) 그래픽 swiper
+
+// test
+const svgElement = document.querySelector("swiper_buttons > svg");
+console.log(svgElement)
