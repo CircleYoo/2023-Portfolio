@@ -55,7 +55,7 @@ $label.addEventListener("click", toggleOptions);
 // (끝) 모바일 필터 버튼 보이기
 
 // (시작) 프로젝트 리스트 가져오기
-const $projectWrapper = document.querySelector(".project_area");
+const swProjectWrapper = document.querySelector(".project_area");
 
 let projectList = null;
 function getProjectData() {
@@ -69,10 +69,10 @@ function getProjectData() {
 }
 
 function makeProjectList(items) {
-  $projectWrapper.innerHTML = null;
+  swProjectWrapper.innerHTML = null;
   items.forEach((item) => {
     const result = makeProjectsItem(item);
-    $projectWrapper.appendChild(result);
+    swProjectWrapper.appendChild(result);
   });
 }
 
@@ -126,6 +126,8 @@ getProjectData();
 // (끝) 프로젝트 리스트 가져오기
 
 // (시작) 그래픽 swiper
+const swGraphicWrapper = document.querySelector(".sw_graphic .swiper-wrapper");
+
 let graphicList = null;
 function getGraphicData() {
   fetch("data/data.json")
@@ -136,21 +138,25 @@ function getGraphicData() {
     })
     .catch((err) => console.log("graphic 가져오기 실패", err));
 }
-function makeGraphicList(data) {
-  let html = ``;
-  data.forEach(item => {
-    let temp = `
-      <div class="swiper-slide">
-        <img src="${item.img}" alt="${item.alt}">
-        <span>${item.desc}</span>
-      </div>
-    `;
-    html += temp;
-  })
-  const swGraphicWrapper = document.querySelector(".sw_graphic .swiper-wrapper");
-  swGraphicWrapper.innerHTML = html;
-}
+function makeGraphicList(items) {
+  swGraphicWrapper.innerHTML = null;
+  items.forEach((item) => {
+    const result = makeGraphicItem(item);
+    swGraphicWrapper.appendChild(result);
 
+  });
+}
+function makeGraphicItem(item) {
+  const div = document.createElement('div')
+  div.classList.add("swiper-slide");
+
+  div.innerHTML = `
+    <img src="${item.img}" alt="${item.alt}">
+    <span>${item.desc}</span>
+  `;
+  return div;
+}
+getGraphicData();
 
 const swiper = new Swiper(".swiper", {
   loop: true,
@@ -178,3 +184,4 @@ const swiper = new Swiper(".swiper", {
   },
 });
 // (끝) 그래픽 swiper
+
