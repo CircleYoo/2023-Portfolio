@@ -196,7 +196,6 @@ const mySwiper = new Swiper(".swiper", {
   },
   slidesOffsetBefore: 70,
   slidesOffsetAfter: 70,
-  
   // grid: {
   //   rows: 2,
   //   column: 2,
