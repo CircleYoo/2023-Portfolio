@@ -3,6 +3,15 @@
 /*반응형, 브라우저 크기가 767px 이하일때*/
 /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 /*반응형, 브라우저 크기가 1024px 이상일때*/
+::-moz-selection {
+  background-color: #faf7f0;
+  color: #5186ee;
+}
+::selection {
+  background-color: #faf7f0;
+  color: #5186ee;
+}
+
 body {
   background-color: #faf7f0;
 }
@@ -206,7 +215,7 @@ header .fullscreen_menu.on .desc {
   align-items: center;
 }
 .visual .visual_title > * {
-  margin-top: -0.3em;
+  margin-top: -1em;
 }
 .visual .visual_title span {
   font-family: "Seawave", serif;
@@ -221,6 +230,19 @@ header .fullscreen_menu.on .desc {
 .visual .visual_title .desc_wrap {
   display: flex;
   flex-direction: row;
+}
+.visual .visual_title .desc_wrap .of {
+  position: relative;
+}
+.visual .visual_title .desc_wrap .of::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #111111;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -1.5rem;
+  right: -1.5rem;
 }
 .visual .visual_title .desc_wrap .desc {
   display: flex;
@@ -241,6 +263,7 @@ header .fullscreen_menu.on .desc {
 }
 .visual .visual_title .name {
   color: #5186ee;
+  margin-top: -0.5em;
 }
 .visual .tag {
   position: absolute;
@@ -373,7 +396,8 @@ header .fullscreen_menu.on .desc {
 .intro .intro_area .img_area {
   width: 60vw;
   padding-bottom: 30%;
-  background-color: #fff;
+  background: url(../img/intro_glasses.jpg) no-repeat bottom;
+  background-size: cover;
 }
 .intro .intro_area .desc_area {
   color: #faf7f0;
@@ -786,6 +810,17 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   padding: 14rem 10rem 10rem 0;
 }
+.goal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  background: url(../img/tree.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .goal .cation_wrapper {
   position: absolute;
   top: 0;
@@ -905,13 +940,28 @@ footer::after {
   bottom: 0;
   z-index: -1;
 }
-footer p {
+footer .footer_top {
+  margin: auto 70px 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .footer_top p {
   font-family: "Seawave", serif;
   color: #faf7f0;
   font-size: 14vw;
 }
-footer p .text_accent {
+footer .footer_top p .text_accent {
   color: #e0f3cd;
+}
+footer .footer_top .go_top {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid #faf7f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer .footer_link {
   display: grid;

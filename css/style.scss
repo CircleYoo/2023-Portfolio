@@ -85,6 +85,12 @@ $line-height: 1.5;
   }
 }
 
+
+::selection {
+  background-color: $background-color;
+  color: $primary-color;
+}
+
 body {
   background-color: $background-color;
 }
@@ -337,7 +343,7 @@ header {
     align-items: center;
 
     & > * {
-      margin-top: -0.3em;
+      margin-top: -1em;
     }
     span {
       font-family: $title-font;
@@ -353,6 +359,22 @@ header {
     .desc_wrap {
       display: flex;
       flex-direction: row;
+
+      .of {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid $black-color;
+          top: -0.5rem;
+          bottom: -0.5rem;
+          left: -1.5rem;
+          right: -1.5rem;
+        }
+      }
+
       .desc {
         display: flex;
         flex-direction: row;
@@ -374,6 +396,7 @@ header {
     }
     .name {
       color: $primary-color;
+      margin-top: -0.5em;
     }
   }
   .tag {
@@ -504,7 +527,8 @@ header {
       width: 60vw;
       // height: 22rem;
       padding-bottom: 30%;
-      background-color: #fff;
+      background: url(../img/intro_glasses.jpg) no-repeat bottom;
+      background-size: cover;
     }
 
     .desc_area {
@@ -949,6 +973,18 @@ header {
   align-items: center;
   padding: ($margin-height-large + 4rem) $margin-height-large $margin-height-large 0;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    background: url(../img/tree.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
   .cation_wrapper {
     @include caption-design;
     background-color: $beige-200-color;
@@ -1071,13 +1107,30 @@ footer {
     z-index: -1;
   }
 
-  p {
-    font-family: $title-font;
-    color: $background-color;
-    font-size: 14vw;
+  .footer_top {
+    margin: auto $marin-width-large $margin-height-large;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    .text_accent {
-      color: $secondary-color;
+    p {
+      font-family: $title-font;
+      color: $background-color;
+      font-size: 14vw;
+  
+      .text_accent {
+        color: $secondary-color;
+      }
+    }
+
+    .go_top {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      border: 1px solid $background-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   .footer_link {
@@ -1097,6 +1150,8 @@ footer {
       &:not(:last-child) {
         border-right: 1px solid $background-color;
       }
+
+      
     }
 
     .text_box {
