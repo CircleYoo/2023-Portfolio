@@ -21,7 +21,7 @@ body {
 }
 
 .inner {
-  margin: 0 70px;
+  margin: 0 4.375rem;
 }
 
 header .inner {
@@ -267,8 +267,8 @@ header .fullscreen_menu.on .desc {
 }
 .visual .tag {
   position: absolute;
-  bottom: 70px;
-  left: 70px;
+  bottom: 4.375rem;
+  left: 4.375rem;
   color: #5186ee;
   display: inline-flex;
   align-items: flex-start;
@@ -281,8 +281,8 @@ header .fullscreen_menu.on .desc {
 }
 .visual .scroll {
   position: absolute;
-  bottom: 70px;
-  right: 70px;
+  bottom: 4.375rem;
+  right: 4.375rem;
   width: 4rem;
   display: flex;
   flex-direction: column;
@@ -581,8 +581,8 @@ header .fullscreen_menu.on .desc {
 }
 .projects .inner .project_area {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 1.25rem;
   grid-row-gap: 3rem;
   margin-top: 2rem;
@@ -701,7 +701,7 @@ header .fullscreen_menu.on .desc {
   height: 100%;
 }
 .graphics .sw_graphic .graphic_top {
-  margin: 0 70px;
+  margin: 0 4.375rem;
   display: flex;
   flex-direction: row;
   align-items: end;
@@ -816,10 +816,11 @@ header .fullscreen_menu.on .desc {
   top: 0;
   bottom: 0;
   right: 0;
-  left: 50%;
-  background: url(../img/tree.svg) no-repeat;
-  background-position: center;
-  background-size: cover;
+  left: 0;
+  background: url(../img/tree.svg) no-repeat right center;
+}
+.goal > * {
+  z-index: 1;
 }
 .goal .cation_wrapper {
   position: absolute;
@@ -900,6 +901,9 @@ header .fullscreen_menu.on .desc {
 .goal .text_area .goal_title .next_wrap img {
   margin-top: 1.75rem;
 }
+.goal .text_area .goal_title .next_wrap p {
+  white-space: nowrap;
+}
 .goal .text_area .desc_area {
   position: relative;
   margin-top: 2rem;
@@ -926,8 +930,9 @@ footer {
   height: 100vh;
   position: relative;
   display: grid;
-  grid-template-rows: auto 18.75rem 5rem;
+  grid-template-rows: 6fr 3fr 1fr;
   background-color: #5186ee;
+  padding: 1rem;
 }
 footer::after {
   content: "";
@@ -938,10 +943,9 @@ footer::after {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
 }
 footer .footer_top {
-  margin: auto 70px 10rem;
+  margin: auto 3.75rem 15vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -962,12 +966,15 @@ footer .footer_top .go_top {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+footer div {
+  z-index: 1;
 }
 footer .footer_link {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr 1fr;
   align-items: center;
-  margin: 0 1rem;
   border-top: 1px solid #faf7f0;
 }
 footer .footer_link div {
@@ -976,11 +983,39 @@ footer .footer_link div {
   justify-content: center;
   height: 100%;
   width: 100%;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+footer .footer_link div a,
+footer .footer_link div path {
+  z-index: 2;
+  transition: all 0.4s;
+}
+footer .footer_link div::after {
+  content: "";
+  position: absolute;
+  transition: all 0.4s;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #e0f3cd;
+}
+footer .footer_link div:hover::after, footer .footer_link div:active::after {
+  height: 100%;
+}
+footer .footer_link div:hover .link_item, footer .footer_link div:active .link_item {
+  color: #5186ee;
+}
+footer .footer_link div:hover .link_item path, footer .footer_link div:active .link_item path {
+  fill: #5186ee;
 }
 footer .footer_link div:not(:last-child) {
   border-right: 1px solid #faf7f0;
 }
-footer .footer_link .text_box h3 a {
+footer .footer_link .text_box a {
   font-family: "Hatton";
   color: #faf7f0;
   font-size: 3vw;
@@ -990,8 +1025,7 @@ footer .bottom_area {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 60px;
-  margin: 0 1rem;
+  padding: 30px 3.75rem;
   border-top: 1px solid #faf7f0;
 }
 footer .bottom_area span {

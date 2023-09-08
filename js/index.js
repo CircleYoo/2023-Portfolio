@@ -234,6 +234,11 @@ const mySwiper = new Swiper(".swiper", {
 getGraphicData();
 // (끝) 그래픽 swiper
 
-// test
-const svgElement = document.querySelector("swiper_buttons > svg");
-console.log(svgElement)
+// (시작) goTop 버튼 클릭 시, 최상단 이동
+const $goTop = document.querySelector(".go_top");
+$goTop.addEventListener('click', function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+})
