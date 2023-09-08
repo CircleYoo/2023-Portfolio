@@ -706,8 +706,8 @@ header {
 
     .project_area {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      // grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 1.25rem;
       grid-row-gap: 3rem;
       margin-top: 2rem;
@@ -812,6 +812,7 @@ header {
             border-right: 1px solid $beige-500-color;
             margin-right: 1rem;
             padding-right: 1rem;
+            white-space: nowrap;
           }
 
           .keyword:not(:last-child) {
