@@ -1,5 +1,7 @@
 AOS.init();
 
+
+
 // (시작) 햄버거 버튼 열림/닫힘
 const $hamBtn = document.querySelector(".hamburger");
 const $hamSpan = document.querySelector(".hamburger_box");
@@ -55,6 +57,21 @@ $options.forEach((option) => {
 // 라벨 클릭시, 옵션 몰록이 열림/닫힘
 $label.addEventListener("click", toggleOptions);
 // (끝) 모바일 필터 버튼 보이기
+
+// (시작) 배경 원근감 효과
+const paraGroup = document.querySelector(".para_group");
+const deco1 = document.querySelector(".deco-1");
+const deco2 = document.querySelector(".deco-2");
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const speedFactor = 0.1; // 천천히 올라가는 이미지의 속도 조절
+
+  // 이미지가 천천히 올라가도록 설정
+  deco1.style.transform = `translateY(-${scrollPosition}px)`;
+  deco2.style.transform = `translateY-(${scrollPosition * speedFactor}px)`;
+});
+// (끝) 배경 원근감 효과
 
 // (시작) 프로젝트 리스트 가져오기
 const swProjectWrapper = document.querySelector(".project_area");

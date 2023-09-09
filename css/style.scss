@@ -477,27 +477,30 @@ header {
   }
   .para_wrap {
     position: absolute;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 3000px;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
     z-index: -1;
 
     .para_group {
-      transform-style: preserve-3d;
-      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100%;
 
       .deco {
-        transform: translate3d(0, 0, -300px);
         position: absolute;
+        transition: transform 0.3s ease-out;
 
         &-1 {
+          // transform: scale(2);
           top: 0;
           left: 15%;
         }
         &-2 {
+          transform: scale(0.8); /* 원근감을 주기 위해 작게 표현 */
           bottom: 0;
           right: 15%;
         }
