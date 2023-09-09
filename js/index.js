@@ -1,3 +1,5 @@
+AOS.init();
+
 // (시작) 햄버거 버튼 열림/닫힘
 const $hamBtn = document.querySelector(".hamburger");
 const $hamSpan = document.querySelector(".hamburger_box");
@@ -154,7 +156,7 @@ function makeGraphicItem(item) {
   if (item["img-group"]) {
     const imgGroup = item["img-group"];
     const groupWrapper = document.createElement("div");
-    groupWrapper.classList.add("img_group")
+    groupWrapper.classList.add("img_group");
 
     imgGroup.forEach((img) => {
       const imgElement = document.createElement("div");
@@ -171,7 +173,6 @@ function makeGraphicItem(item) {
     });
 
     div.appendChild(groupWrapper);
-
   } else {
     // 일반 출력
     div.innerHTML = `
@@ -236,9 +237,11 @@ getGraphicData();
 
 // (시작) goTop 버튼 클릭 시, 최상단 이동
 const $goTop = document.querySelector(".go_top");
-$goTop.addEventListener('click', function () {
+$goTop.addEventListener("click", function () {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
-  })
-})
+    behavior: "smooth",
+  });
+});
+
+// (끝) goTop 버튼 클릭 시, 최상단 이동
