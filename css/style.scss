@@ -335,42 +335,49 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   .visual_title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
-    & > * {
-      margin-top: -1em;
-    }
     span {
       font-family: $title-font;
-      font-size: $title-font-size;
+      font-size: clamp(7rem, $title-font-size, 11rem);
     }
     .garden_wrap {
       display: flex;
+      margin-top: -4%;
+      position: relative;
 
-      img {
-        width: 8vw;
+      .flower {
+        width: clamp(4rem, 8vw, 5.5rem);
+        margin-top: 5%;
+      }
+
+      .rounded_arrow {
+        position: absolute;
+        bottom: 4%;
+        right: 35%;
+        width: 4rem;
       }
     }
     .desc_wrap {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      margin-top: -3%;
 
       .of {
         position: relative;
 
-        &::after {
-          content: "";
+        img {
           position: absolute;
-          border-radius: 50%;
-          border: 1px solid $black-color;
-          top: -0.5rem;
-          bottom: -0.5rem;
-          left: -1.5rem;
-          right: -1.5rem;
+          top: 10%;
+          left: 5%;
+          transform: scale(1.5);
         }
       }
 
@@ -379,9 +386,11 @@ header {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        margin-left: 3rem;
 
         .desc_bracket {
           font-family: $body-font;
+          font-size: clamp(5rem, 5vw, 6rem);
           color: $beige-700-color;
           font-weight: 200;
         }
@@ -390,12 +399,23 @@ header {
           font-size: $small-body-font-size;
           line-height: $line-height;
           text-align: center;
+          margin: 0 1rem;
         }
       }
     }
-    .name {
-      color: $primary-color;
-      margin-top: -0.5em;
+    .name_wrap {
+      margin-top: -5%;
+      position: relative;
+      .name {
+        color: $primary-color;
+      }
+      img {
+        position: absolute;
+        transform: scaleY(-1);
+        right: 10%;
+        top: 18%;
+        width: 4rem;
+      }
     }
   }
   .tag {
@@ -429,6 +449,16 @@ header {
       width: 4rem;
       height: 4rem;
 
+      .rounded_text {
+        animation: infinite_rotate 10s linear infinite;
+        transform-origin: 50% 50%;
+
+        @keyframes infinite_rotate {
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
       .scroll_flower {
         position: absolute;
         width: 100%;
@@ -523,11 +553,25 @@ header {
     }
 
     .img_area {
-      width: 60vw;
-      // height: 22rem;
-      padding-bottom: 30%;
-      background: url(../img/intro_glasses.jpg) no-repeat bottom;
-      background-size: cover;
+      position: relative;
+      width: -webkit-fill-available;
+      height: 22rem;
+      // padding-bottom: 30%;
+      background: url(../img/intro_glasses.jpg) no-repeat center center;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        transition: opacity 0.3s ease-in-out;
+      }
     }
 
     .desc_area {
@@ -1002,12 +1046,29 @@ header {
   .img_area {
     width: 100%;
     height: -webkit-fill-available;
-    background: url(../img/goal_mine.jpg) no-repeat center;
+    background: url(../img/goal_mine.jpg) no-repeat center center;
     background-size: cover;
+    position: relative;
 
     img {
-      // max-width: fit-content;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       width: 100%;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -webkit-transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

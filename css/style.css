@@ -208,50 +208,58 @@ header .fullscreen_menu.on .desc {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .visual .visual_title {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.visual .visual_title > * {
-  margin-top: -1em;
+  justify-content: center;
 }
 .visual .visual_title span {
   font-family: "Seawave", serif;
-  font-size: 9vw;
+  font-size: clamp(7rem, 9vw, 11rem);
 }
 .visual .visual_title .garden_wrap {
   display: flex;
+  margin-top: -4%;
+  position: relative;
 }
-.visual .visual_title .garden_wrap img {
-  width: 8vw;
+.visual .visual_title .garden_wrap .flower {
+  width: clamp(4rem, 8vw, 5.5rem);
+  margin-top: 5%;
+}
+.visual .visual_title .garden_wrap .rounded_arrow {
+  position: absolute;
+  bottom: 4%;
+  right: 35%;
+  width: 4rem;
 }
 .visual .visual_title .desc_wrap {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-top: -3%;
 }
 .visual .visual_title .desc_wrap .of {
   position: relative;
 }
-.visual .visual_title .desc_wrap .of::after {
-  content: "";
+.visual .visual_title .desc_wrap .of img {
   position: absolute;
-  border-radius: 50%;
-  border: 1px solid #111111;
-  top: -0.5rem;
-  bottom: -0.5rem;
-  left: -1.5rem;
-  right: -1.5rem;
+  top: 10%;
+  left: 5%;
+  transform: scale(1.5);
 }
 .visual .visual_title .desc_wrap .desc {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-left: 3rem;
 }
 .visual .visual_title .desc_wrap .desc .desc_bracket {
   font-family: "SUIT", sans-serif;
+  font-size: clamp(5rem, 5vw, 6rem);
   color: #797774;
   font-weight: 200;
 }
@@ -260,10 +268,21 @@ header .fullscreen_menu.on .desc {
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
+  margin: 0 1rem;
 }
-.visual .visual_title .name {
+.visual .visual_title .name_wrap {
+  margin-top: -5%;
+  position: relative;
+}
+.visual .visual_title .name_wrap .name {
   color: #5186ee;
-  margin-top: -0.5em;
+}
+.visual .visual_title .name_wrap img {
+  position: absolute;
+  transform: scaleY(-1);
+  right: 10%;
+  top: 18%;
+  width: 4rem;
 }
 .visual .tag {
   position: absolute;
@@ -293,6 +312,15 @@ header .fullscreen_menu.on .desc {
   position: relative;
   width: 4rem;
   height: 4rem;
+}
+.visual .scroll .rounded_shape .rounded_text {
+  animation: infinite_rotate 10s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes infinite_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .visual .scroll .rounded_shape .scroll_flower {
   position: absolute;
@@ -394,10 +422,23 @@ header .fullscreen_menu.on .desc {
   color: #faf7f0;
 }
 .intro .intro_area .img_area {
-  width: 60vw;
-  padding-bottom: 30%;
-  background: url(../img/intro_glasses.jpg) no-repeat bottom;
-  background-size: cover;
+  position: relative;
+  width: -webkit-fill-available;
+  height: 22rem;
+  background: url(../img/intro_glasses.jpg) no-repeat center center;
+}
+.intro .intro_area .img_area img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
 }
 .intro .intro_area .desc_area {
   color: #faf7f0;
@@ -853,11 +894,26 @@ header .fullscreen_menu.on .desc {
 .goal .img_area {
   width: 100%;
   height: -webkit-fill-available;
-  background: url(../img/goal_mine.jpg) no-repeat center;
+  background: url(../img/goal_mine.jpg) no-repeat center center;
   background-size: cover;
+  position: relative;
 }
 .goal .img_area img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.goal .img_area img:hover {
+  opacity: 1;
 }
 .goal .text_area {
   width: 38rem;
