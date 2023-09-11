@@ -1,7 +1,5 @@
 AOS.init();
 
-
-
 // (시작) 햄버거 버튼 열림/닫힘
 const $hamBtn = document.querySelector(".hamburger");
 const $hamSpan = document.querySelector(".hamburger_box");
@@ -60,7 +58,6 @@ $options.forEach((option) => {
 $label.addEventListener("click", toggleOptions);
 // (끝) 모바일 필터 버튼 보이기
 
-
 // (시작) 배경 원근감 효과
 const paraGroup = document.querySelector(".deco_wrap");
 const deco1 = document.querySelector(".deco-1");
@@ -76,7 +73,6 @@ window.addEventListener("scroll", () => {
   deco2.style.transform = `translateY(-${pos * speedFactor}px)`;
 });
 // (끝) 배경 원근감 효과
-
 
 // (시작) 프로젝트 리스트 가져오기
 const swProjectWrapper = document.querySelector(".project_area");
@@ -126,9 +122,7 @@ function makeProjectsItem(item) {
       <img class="item_img" src="${item.img}" alt="${item.alt}">
       <div class="img_hover">
         <div class="more_link">
-          ${review}
-          ${github}
-          ${origin}
+          ${review} ${github} ${origin}
         </div>
         <a href="${item.create}" class="link" target="_blank">
           <img src="./img/arrow_small.svg" alt="바로가기">
@@ -142,7 +136,10 @@ function makeProjectsItem(item) {
       <span class="contribution">기여도 ${item.contribution}%</span>
       <span class="keyword_area">${keyword}</span>
     </div>
-    <div class="mb_link">
+    <div class="list_more_link">
+      ${review} ${github} ${origin}
+    </div>
+    <div class="list_link">
       <img src="./img/link_arrow.svg" alt="바로가기">
     </div>
   `;
@@ -153,17 +150,17 @@ function makeProjectsItem(item) {
 getProjectData();
 // (끝) 프로젝트 리스트 가져오기
 
-// (시작) 프로젝트 리스트 필터 
+// (시작) 프로젝트 리스트 필터
 const $filterBtn = document.querySelectorAll(".option_item");
 $filterBtn.forEach((button) => {
   button.addEventListener("click", function () {
     const filter = button.getAttribute("data-filter");
 
     $filterBtn.forEach((item, idx) => {
-      $filterBtn[idx].classList.remove('active')
-    })
+      $filterBtn[idx].classList.remove("active");
+    });
 
-    button.classList.add('active');
+    button.classList.add("active");
     filterProjects(filter);
   });
 });
@@ -179,13 +176,15 @@ function filterProjects(filter) {
   // 필터링된 프로젝트를 저장할 배열
   const filteredProjects = [];
 
-  if (filter === 'all') {
+  if (filter === "all") {
     filteredProjects.push(...projects);
   } else {
-    filteredProjects.push(...projects.filter((project) => {
-      // project.type 배열에 filter가 포함되어 있는지 확인
-      return project.type.includes(filter);
-    }));
+    filteredProjects.push(
+      ...projects.filter((project) => {
+        // project.type 배열에 filter가 포함되어 있는지 확인
+        return project.type.includes(filter);
+      })
+    );
   }
 
   // 필터링된 프로젝트를 화면에 출력
@@ -193,9 +192,29 @@ function filterProjects(filter) {
 }
 
 // 초기 필터링
-filterProjects('all');
-// (끝) 프로젝트 리스트 필터 
+filterProjects("all");
+// (끝) 프로젝트 리스트 필터
 
+// (시작) 프로젝트 보기 형식
+const $viewBtn = document.querySelectorAll('.view button');
+console.log($viewBtn);
+$viewBtn.forEach(button => {
+  button.addEventListener('click', function () {
+    const view = button.getAttribute("data-view");
+    if (view == "list") {
+      swProjectWrapper.classList.add("list");
+    } else {
+      swProjectWrapper.classList.remove("list");
+    }
+    $viewBtn.forEach((item, idx) => {
+      $viewBtn[idx].classList.remove('active');
+    })
+    button.classList.add('active')
+  })
+})
+
+
+// (끝) 프로젝트 보기 형식
 // (시작) 그래픽 swiper
 const swGraphicWrapper = document.querySelector(".swiper-wrapper");
 
