@@ -761,6 +761,8 @@ header {
       margin-top: 2rem;
 
       .project_item {
+        transition: all 0.3s ease;
+
         .img_wrap {
           display: block;
           position: relative;

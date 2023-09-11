@@ -10,7 +10,8 @@
       "review" : "https://www.notion.so/1d5613cba1784af2bfc868f91d7ed005",
       "github" : "https://github.com/CircleYoo/Louis-Poulsen",
       "original" : "",
-      "create" : "https://circleyoo.github.io/Louis-Poulsen/"
+      "create" : "https://circleyoo.github.io/Louis-Poulsen/",
+      "type": ["responsive", "team"]
     },
     {
       "img" : "../img/project_hogwarts.jpg",
@@ -22,7 +23,8 @@
       "review" : "https://www.notion.so/084bbc661ad0408ebce33be43c25b196",
       "github" : "https://github.com/CircleYoo/Hogwarts-School",
       "original" : "",
-      "create" : "https://bucolic-squirrel-37fca3.netlify.app/"
+      "create" : "https://bucolic-squirrel-37fca3.netlify.app/",
+      "type": ["responsive", "team"]
     },
     {
       "img" : "../img/project_dosiraktong.jpg",
@@ -34,7 +36,8 @@
       "review" : "",
       "github" : "https://github.com/CircleYoo/DosirakTong",
       "original" : "https://dosiraktong.com/Main/Index",
-      "create" : "https://circleyoo.github.io/DosirakTong/"
+      "create" : "https://circleyoo.github.io/DosirakTong/",
+      "type": ["responsive", "single", "scss"]
     },
     {
       "img" : "../img/project_weather_now.jpg",
@@ -46,7 +49,8 @@
       "review" : "",
       "github" : "https://github.com/CircleYoo/Weather-Now",
       "original" : "",
-      "create" : "https://weather-now-mu.vercel.app/"
+      "create" : "https://weather-now-mu.vercel.app/",
+      "type": ["single","api", "scss"]
     },
     {
       "img" : "../img/project_interpark.jpg",
@@ -58,7 +62,8 @@
       "review" : "",
       "github" : "https://github.com/CircleYoo/Interpark",
       "original" : "",
-      "create" : "https://beautiful-selkie-0c37f8.netlify.app/"
+      "create" : "https://beautiful-selkie-0c37f8.netlify.app/",
+      "type": ["responsive", "single"]
     },
     {
       "img" : "../img/project_todo_list.jpg",
@@ -70,7 +75,8 @@
       "review" : "https://y-circle.tistory.com/9",
       "github" : "https://github.com/CircleYoo/Todo-List",
       "original" : "",
-      "create" : "https://strong-douhua-85a247.netlify.app/"
+      "create" : "https://strong-douhua-85a247.netlify.app/",
+      "type": ["single"]
     }
   ],
   "graphics" :[

@@ -75,6 +75,7 @@ window.addEventListener("scroll", () => {
 
 // (시작) 프로젝트 리스트 가져오기
 const swProjectWrapper = document.querySelector(".project_area");
+const $projectList = document.querySelectorAll(".project_item");
 
 let projectList = null;
 function getProjectData() {
@@ -137,14 +138,58 @@ function makeProjectsItem(item) {
       <span class="keyword_area">${keyword}</span>
     </div>
   `;
-  //
+
   return div;
 }
 
 getProjectData();
 // (끝) 프로젝트 리스트 가져오기
 
-// (시작) 그래픽 swiper
+// (시작) 프로젝트 리스트 필터 
+const $filterBtn = document.querySelectorAll(".option_item");
+$filterBtn.forEach((button) => {
+  button.addEventListener("click", function () {
+    const filter = button.getAttribute("data-filter");
+
+    $filterBtn.forEach((item, idx) => {
+      $filterBtn[idx].classList.remove('active')
+    })
+    
+    button.classList.add('active');
+    filterProjects(filter);
+  });
+});
+
+function filterProjects(filter) {
+  if (!projectList) {
+    return;
+  }
+
+  // 모든 프로젝트 아이템
+  const projects = projectList.projects;
+
+  // 필터링된 프로젝트를 저장할 배열
+  const filteredProjects = [];
+
+  if (filter === 'all') {
+    filteredProjects.push(...projects);
+  } else {
+    filteredProjects.push(...projects.filter((project) => {
+      // project.type 배열에 filter가 포함되어 있는지 확인
+      return project.type.includes(filter);
+    }));
+  }
+
+  // 필터링된 프로젝트를 화면에 출력
+  makeProjectList(filteredProjects);
+}
+
+// 초기 필터링
+filterProjects('all');
+
+// (끝) 프로젝트 리스트 필터 
+
+
 // (시작) 그래픽 swiper
 const swGraphicWrapper = document.querySelector(".swiper-wrapper");
 

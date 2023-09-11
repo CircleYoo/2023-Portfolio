@@ -628,6 +628,9 @@ header .fullscreen_menu.on .desc {
   grid-row-gap: 3rem;
   margin-top: 2rem;
 }
+.projects .inner .project_area .project_item {
+  transition: all 0.3s ease;
+}
 .projects .inner .project_area .project_item .img_wrap {
   display: block;
   position: relative;
