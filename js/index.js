@@ -142,6 +142,9 @@ function makeProjectsItem(item) {
       <span class="contribution">기여도 ${item.contribution}%</span>
       <span class="keyword_area">${keyword}</span>
     </div>
+    <div class="mb_link">
+      <img src="./img/link_arrow.svg" alt="바로가기">
+    </div>
   `;
 
   return div;

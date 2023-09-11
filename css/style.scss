@@ -494,16 +494,16 @@ header {
       .deco {
         position: absolute;
         transition: transform 0.6s ease-out;
-        
+
         &-1 {
           top: -10%;
           left: 15%;
-          transform: translateY(0)
+          transform: translateY(0);
         }
         &-2 {
           bottom: -10%;
           right: 15%;
-          transform: translateY(0)
+          transform: translateY(0);
         }
       }
     }
@@ -763,6 +763,8 @@ header {
 
       .project_item {
         transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
 
         .img_wrap {
           display: block;
@@ -868,6 +870,44 @@ header {
 
           .keyword:not(:last-child) {
             margin-right: 1rem;
+          }
+        }
+        .mb_link {
+          display: none;
+          position: relative;
+          width: fit-content;
+          height: 2rem;
+          cursor: pointer;
+          overflow: hidden;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url("../img/link_arrow.svg") no-repeat;
+            transform: translateX(-110px);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+          }
+          
+          img {
+            transform: translateX(0);
+            transition: all 0.3s ease-in-out;
+          }
+          
+          &:hover {
+            &::after {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            img {
+              transform: translateX(100%);
+              opacity: 0;
+            }
           }
         }
       }
