@@ -712,18 +712,33 @@ header .fullscreen_menu.on .desc {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  overflow: hidden;
 }
-.projects .inner .project_area .project_item .img_wrap .img_hover .link img {
+.projects .inner .project_area .project_item .img_wrap .img_hover .link .arrow {
   transform: rotate(90deg);
   width: 1.5rem;
   height: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .link .arrow.arrow-1 {
+  opacity: 0;
+  width: 0;
 }
 .projects .inner .project_area .project_item .img_wrap .img_hover .link span {
   color: #faf7f0;
   font-size: 1.5rem;
   font-family: "SUIT", sans-serif;
   text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .link:hover .arrow.arrow-1 {
+  opacity: 1;
+  width: 1.5rem;
+}
+.projects .inner .project_area .project_item .img_wrap .img_hover .link:hover .arrow.arrow-2 {
+  opacity: 0;
+  width: 0;
 }
 .projects .inner .project_area .project_item .img_wrap:hover .item_img {
   transform: scale(1.1) rotate(1deg);
@@ -1014,6 +1029,7 @@ header .fullscreen_menu.on .desc {
   background: url(../img/goal_mine.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
+  mix-blend-mode: multiply;
 }
 .goal .img_area img {
   position: absolute;

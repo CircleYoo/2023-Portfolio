@@ -57,7 +57,7 @@ $line-height: 1.5;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
   @content;
 }
 
@@ -833,18 +833,39 @@ header {
               display: flex;
               align-items: center;
               gap: 0.75rem;
-              padding: 0.5rem 1rem;
+              margin: 0.5rem 1rem;
+              overflow: hidden;
 
-              img {
+              .arrow {
                 transform: rotate(90deg);
                 width: 1.5rem;
                 height: 1.5rem;
+                transition: all 0.3s ease-in-out;
+
+                &.arrow-1 {
+                  opacity: 0;
+                  width: 0;
+                }
               }
               span {
                 color: $background-color;
                 font-size: 1.5rem;
                 font-family: $body-font;
                 text-transform: uppercase;
+                transition: all 0.3s ease-in-out;
+              }
+
+              &:hover {
+                .arrow {
+                  &.arrow-1 {
+                    opacity: 1;
+                    width: 1.5rem;
+                  }
+                  &.arrow-2 {
+                    opacity: 0;
+                    width: 0;
+                  }
+                }
               }
             }
           }
@@ -1162,6 +1183,7 @@ header {
     background: url(../img/goal_mine.jpg) no-repeat center center;
     background-size: cover;
     position: relative;
+    mix-blend-mode: multiply;
 
     img {
       position: absolute;

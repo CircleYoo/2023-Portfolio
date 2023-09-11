@@ -134,8 +134,9 @@ function makeProjectsItem(item) {
           ${review} ${github} ${origin}
         </div>
         <a href="${item.create}" class="link" target="_blank">
-          <img src="./img/arrow_small.svg" alt="바로가기">
+          <img src="./img/arrow_small.svg" alt="바로가기" class="arrow arrow-1">
           <span>view</span>
+          <img src="./img/arrow_small.svg" alt="바로가기" class="arrow arrow-2">
         </a>
       </div>
     </div>
