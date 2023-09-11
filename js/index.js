@@ -6,10 +6,19 @@ const $hamSpan = document.querySelector(".hamburger_box");
 const $menu = document.querySelector(".fullscreen_menu");
 const $linkArea = document.querySelectorAll(".fullscreen_menu > .link_area a");
 
-$hamBtn.addEventListener("click", function () {
+$hamBtn.addEventListener("click", toggleMenu);
+
+$linkArea.forEach(item => {
+  item.addEventListener("click", function () {
+    toggleMenu()
+  });
+});
+
+function toggleMenu() {
   $hamSpan.classList.toggle("active");
   $menu.classList.toggle("on");
-});
+}
+
 // (끝) 햄버거 버튼 열림/닫힘
 
 // (시작) 스크롤 회전 효과
@@ -196,10 +205,10 @@ filterProjects("all");
 // (끝) 프로젝트 리스트 필터
 
 // (시작) 프로젝트 보기 형식
-const $viewBtn = document.querySelectorAll('.view button');
+const $viewBtn = document.querySelectorAll(".view button");
 console.log($viewBtn);
-$viewBtn.forEach(button => {
-  button.addEventListener('click', function () {
+$viewBtn.forEach((button) => {
+  button.addEventListener("click", function () {
     const view = button.getAttribute("data-view");
     if (view == "list") {
       swProjectWrapper.classList.add("list");
@@ -207,12 +216,11 @@ $viewBtn.forEach(button => {
       swProjectWrapper.classList.remove("list");
     }
     $viewBtn.forEach((item, idx) => {
-      $viewBtn[idx].classList.remove('active');
-    })
-    button.classList.add('active')
-  })
-})
-
+      $viewBtn[idx].classList.remove("active");
+    });
+    button.classList.add("active");
+  });
+});
 
 // (끝) 프로젝트 보기 형식
 // (시작) 그래픽 swiper

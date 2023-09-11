@@ -12,6 +12,10 @@
   color: #5186ee;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: #faf7f0;
   position: relative;
@@ -138,7 +142,7 @@ header .fullscreen_menu {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: 0.6s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 header .fullscreen_menu .link_area {
   display: flex;
@@ -146,7 +150,7 @@ header .fullscreen_menu .link_area {
   align-items: center;
   gap: 1.5rem;
   opacity: 0;
-  transition: 0.6s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 header .fullscreen_menu .link_area a {
   display: block;
@@ -500,6 +504,7 @@ header .fullscreen_menu.on .desc {
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
+  transition: background-color 0.3s ease;
   width: 100%;
   justify-content: space-between;
 }
@@ -568,8 +573,9 @@ header .fullscreen_menu.on .desc {
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
+  transition: background-color 0.3s ease;
 }
-.projects .inner .project_nav .filter button.active {
+.projects .inner .project_nav .filter button.active, .projects .inner .project_nav .filter button:hover {
   color: #faf7f0;
   background-color: #111111;
 }
@@ -591,6 +597,7 @@ header .fullscreen_menu.on .desc {
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
+  transition: background-color 0.3s ease;
   padding: 0.625rem 1.5rem;
 }
 .projects .inner .project_nav .view .album .circle_wrap {
@@ -607,10 +614,10 @@ header .fullscreen_menu.on .desc {
   height: 0.375rem;
   border-radius: 50%;
 }
-.projects .inner .project_nav .view .album.active {
+.projects .inner .project_nav .view .album.active, .projects .inner .project_nav .view .album:hover {
   background-color: #111111;
 }
-.projects .inner .project_nav .view .album.active .circle {
+.projects .inner .project_nav .view .album.active .circle, .projects .inner .project_nav .view .album:hover .circle {
   background-color: #faf7f0;
 }
 .projects .inner .project_nav .view .list .line_wrap {
@@ -625,10 +632,10 @@ header .fullscreen_menu.on .desc {
   width: 100%;
   height: 0.188rem;
 }
-.projects .inner .project_nav .view .list.active {
+.projects .inner .project_nav .view .list.active, .projects .inner .project_nav .view .list:hover {
   background-color: #111111;
 }
-.projects .inner .project_nav .view .list.active .line {
+.projects .inner .project_nav .view .list.active .line, .projects .inner .project_nav .view .list:hover .line {
   background-color: #faf7f0;
 }
 .projects .inner .project_area {
@@ -639,7 +646,6 @@ header .fullscreen_menu.on .desc {
   margin-top: 2rem;
 }
 .projects .inner .project_area .project_item {
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -698,6 +704,7 @@ header .fullscreen_menu.on .desc {
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
+  transition: background-color 0.3s ease;
   border: none;
   background-color: #faf7f0;
 }
@@ -769,6 +776,11 @@ header .fullscreen_menu.on .desc {
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
+  transition: background-color 0.3s ease;
+}
+.projects .inner .project_area .project_item .list_more_link a:hover {
+  background-color: #111111;
+  color: #faf7f0;
 }
 .projects .inner .project_area .project_item .list_link {
   display: none;
@@ -787,7 +799,8 @@ header .fullscreen_menu.on .desc {
   bottom: 0;
   left: 0;
   right: 0;
-  background: url("../img/link_arrow.svg") no-repeat;
+  background: url("../img/link_arrow.svg") no-repeat center;
+  background-size: contain;
   transform: translateX(-110%);
   opacity: 0;
   transition: all 0.5s ease-in-out;
@@ -834,7 +847,7 @@ header .fullscreen_menu.on .desc {
   display: flex;
 }
 .projects .inner .project_area.list .project_item .list_link {
-  display: block;
+  display: flex;
   justify-self: end;
   align-self: center;
 }

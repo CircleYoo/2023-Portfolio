@@ -57,6 +57,7 @@ $line-height: 1.5;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
   text-transform: capitalize;
+  transition: background-color .3s ease;
   @content;
 }
 
@@ -88,6 +89,10 @@ $line-height: 1.5;
 ::selection {
   background-color: $background-color;
   color: $primary-color;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -239,8 +244,8 @@ header {
     align-items: center;
     justify-content: center;
 
-    -webkit-transition: 0.6s ease-in-out;
-    transition: 0.6s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 
     .link_area {
       display: flex;
@@ -249,8 +254,8 @@ header {
       gap: 1.5rem;
 
       opacity: 0;
-      -webkit-transition: 0.6s ease-in-out;
-      transition: 0.6s ease-in-out;
+      -webkit-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out;
 
       a {
         display: block;
@@ -699,7 +704,8 @@ header {
         button {
           @include button-design;
 
-          &.active {
+          &.active,
+          &:hover {
             color: $background-color;
             background-color: $black-color;
           }
@@ -730,7 +736,8 @@ header {
             }
           }
 
-          &.active {
+          &.active,
+          &:hover {
             background-color: $black-color;
             .circle {
               background-color: $background-color;
@@ -752,7 +759,8 @@ header {
               height: 0.188rem;
             }
           }
-          &.active {
+          &.active,
+          &:hover {
             background-color: $black-color;
             .line {
               background-color: $background-color;
@@ -770,7 +778,6 @@ header {
       margin-top: 2rem;
 
       .project_item {
-        transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
 
@@ -885,6 +892,11 @@ header {
           gap: 0.625rem;
           a {
             @include button-design;
+
+            &:hover {
+              background-color: $black-color;
+              color: $background-color;
+            }
           }
         }
         .list_link {
@@ -903,7 +915,8 @@ header {
             bottom: 0;
             left: 0;
             right: 0;
-            background: url("../img/link_arrow.svg") no-repeat;
+            background: url("../img/link_arrow.svg") no-repeat center;
+            background-size: contain;
             transform: translateX(-110%);
             opacity: 0;
             transition: all 0.5s ease-in-out;
@@ -958,7 +971,7 @@ header {
             display: flex;
           }
           .list_link {
-            display: block;
+            display: flex;
             justify-self: end;
             align-self: center;
           }
