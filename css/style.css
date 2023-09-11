@@ -14,6 +14,7 @@
 
 body {
   background-color: #faf7f0;
+  position: relative;
 }
 
 .text_accent {
@@ -352,16 +353,17 @@ header .fullscreen_menu.on .desc {
 }
 .visual .para_wrap .para_group .deco {
   position: absolute;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.6s ease-out;
 }
 .visual .para_wrap .para_group .deco-1 {
-  top: 0;
+  top: -10%;
   left: 15%;
+  transform: translateY(0);
 }
 .visual .para_wrap .para_group .deco-2 {
-  transform: scale(0.8); /* 원근감을 주기 위해 작게 표현 */
-  bottom: 0;
+  bottom: -10%;
   right: 15%;
+  transform: translateY(0);
 }
 .visual .frame {
   border: 1px solid #5186ee;

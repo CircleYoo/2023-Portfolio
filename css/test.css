@@ -1,0 +1,81 @@
+/* if you do not have this, you will see a 
+vertical scrollbar on the .parallax div */
+body {
+  margin: 0;
+  position: relative;
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.para_wrap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+
+  perspective: 1px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layer1 {
+  transform: translateZ(0);
+}
+
+.layer2 {
+  transform: translateZ(-1px);
+}
+
+.layer3 {
+  transform: translateZ(-2px);
+}
+
+/* specific to this implementation */
+div {
+  font-size: 50px;
+  text-align: center;
+}
+
+.parallax-layer.layer1 {
+  width: 100%;
+  height: 100rem;
+
+  background-color: red;
+}
+
+.parallax-layer.layer2 {
+  top: 10rem;
+
+  width: 100%;
+  height: 50rem;
+
+  background-color: green;
+}
+
+.parallax-layer.layer3 {
+  top: 20rem;
+
+  width: 100%;
+  height: 50rem;
+
+  background-color: blue;
+}

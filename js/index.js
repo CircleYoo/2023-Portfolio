@@ -14,6 +14,7 @@ $hamBtn.addEventListener("click", function () {
 });
 // (끝) 햄버거 버튼 열림/닫힘
 
+// (시작) 스크롤 회전 효과
 const $rotateIcon = document.querySelector(".rounded_shape > img");
 function scrollRotate() {
   $rotateIcon.style.transform = "rotate(" + window.scrollY / 2 + "deg)";
@@ -22,6 +23,7 @@ window.addEventListener("scroll", function () {
   let pos = window.scrollY;
   scrollRotate();
 });
+// (끝) 스크롤 회전 효과
 
 // (시작) 모바일 필터 버튼 보이기
 const $label = document.querySelector(".label");
@@ -58,20 +60,23 @@ $options.forEach((option) => {
 $label.addEventListener("click", toggleOptions);
 // (끝) 모바일 필터 버튼 보이기
 
+
 // (시작) 배경 원근감 효과
-const paraGroup = document.querySelector(".para_group");
+const paraGroup = document.querySelector(".deco_wrap");
 const deco1 = document.querySelector(".deco-1");
 const deco2 = document.querySelector(".deco-2");
 
 window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  const speedFactor = 0.1; // 천천히 올라가는 이미지의 속도 조절
+  const pos = window.scrollY;
+  const speedFactor = 0.2;
+  // 천천히 올라가는 이미지의 속도 조절
 
   // 이미지가 천천히 올라가도록 설정
-  deco1.style.transform = `translateY(-${scrollPosition}px)`;
-  deco2.style.transform = `translateY-(${scrollPosition * speedFactor}px)`;
+  deco1.style.transform = `translateY(-${pos * speedFactor}px)`;
+  deco2.style.transform = `translateY(-${pos * speedFactor}px)`;
 });
 // (끝) 배경 원근감 효과
+
 
 // (시작) 프로젝트 리스트 가져오기
 const swProjectWrapper = document.querySelector(".project_area");
@@ -154,7 +159,7 @@ $filterBtn.forEach((button) => {
     $filterBtn.forEach((item, idx) => {
       $filterBtn[idx].classList.remove('active')
     })
-    
+
     button.classList.add('active');
     filterProjects(filter);
   });
@@ -186,9 +191,7 @@ function filterProjects(filter) {
 
 // 초기 필터링
 filterProjects('all');
-
 // (끝) 프로젝트 리스트 필터 
-
 
 // (시작) 그래픽 swiper
 const swGraphicWrapper = document.querySelector(".swiper-wrapper");
