@@ -171,11 +171,11 @@
 
     .project_area {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 1.25rem;
       grid-row-gap: 3rem;
       margin-top: 2rem;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.25s ease-in-out;
 
       .project_item {
         display: flex;
@@ -186,6 +186,7 @@
           position: relative;
           overflow: hidden;
           padding-bottom: 70%;
+          min-height: 200px;
 
           .item_img {
             width: 100%;
@@ -289,12 +290,14 @@
           font-family: $body-font;
           font-size: set-text-size(medium);
           line-height: $line-height;
+          word-break: break-all;
         }
         .projects_desc {
           color: $beige-500-color;
           display: flex;
           margin-top: 1rem;
           font-size: set-text-size(medium);
+          flex-wrap: wrap;
 
           .contribution {
             border-right: 1px solid $beige-500-color;

@@ -29,7 +29,7 @@ function changePrimaryColor() {
 
 const button = document.querySelector(".darkmode");
 button.addEventListener("click", function () {
-  changePrimaryColor()
+  changePrimaryColor();
 });
 // (끝) 버튼 클릭 시, 색상 변수 변경
 
@@ -120,7 +120,6 @@ window.addEventListener("scroll", () => {
 const swProjectWrapper = document.querySelector(".project_area");
 const $projectList = document.querySelectorAll(".project_item");
 
-
 let projectList = null;
 function getProjectData() {
   fetch("../data/data.json")
@@ -196,7 +195,6 @@ getProjectData();
 // (시작) 프로젝트 리스트 필터
 const $filterBtn = document.querySelectorAll(".option_item");
 
-
 $filterBtn.forEach((button) => {
   button.addEventListener("click", function () {
     const filter = button.getAttribute("data-filter");
@@ -206,13 +204,12 @@ $filterBtn.forEach((button) => {
     });
 
     button.classList.add("active");
-    swProjectWrapper.classList.add("fade-out")
-    
-    setTimeout(() => {
-      swProjectWrapper.classList.remove("fade-out")
-      filterProjects(filter);
-    }, 300);
+    swProjectWrapper.classList.add("fade-out");
 
+    setTimeout(() => {
+      swProjectWrapper.classList.remove("fade-out");
+      filterProjects(filter);
+    }, 250);
   });
 });
 
@@ -251,19 +248,24 @@ const $viewBtn = document.querySelectorAll(".view button");
 $viewBtn.forEach((button) => {
   button.addEventListener("click", function () {
     const view = button.getAttribute("data-view");
-    if (view == "list") {
-      swProjectWrapper.classList.add("list");
-    } else {
-      swProjectWrapper.classList.remove("list");
-    }
+
     $viewBtn.forEach((item, idx) => {
       $viewBtn[idx].classList.remove("active");
     });
     button.classList.add("active");
+    swProjectWrapper.classList.add("fade-out");
+
+    setTimeout(() => {
+      swProjectWrapper.classList.remove("fade-out");
+      if (view == "list") {
+        swProjectWrapper.classList.add("list");
+      } else {
+        swProjectWrapper.classList.remove("list");
+      }
+    }, 250);
   });
 });
 // (끝) 프로젝트 보기 형식
-
 
 // (시작) 그래픽 swiper
 const swGraphicWrapper = document.querySelector(".swiper-wrapper");
