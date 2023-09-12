@@ -15,8 +15,7 @@
 
     span {
       font-family: $title-font;
-      // font-size: clamp(7rem, $title-font-size, 11rem);
-      font-size: set-title-size(large);
+      font-size: clamp(7rem, 9vw, 11rem);
     }
     .garden_wrap {
       display: flex;
@@ -33,6 +32,7 @@
         bottom: 4%;
         right: 35%;
         width: 4rem;
+        transition: width 0.6s ease;
       }
     }
     .desc_wrap {
@@ -58,12 +58,14 @@
         align-items: center;
         justify-content: space-between;
         margin-left: 3rem;
+        transition: margin-left 0.6s ease;
 
         .desc_bracket {
           font-family: $body-font;
           font-size: clamp(5rem, 5vw, 6rem);
           color: $beige-700-color;
           font-weight: 200;
+          transition: font-size 0.6s ease;
         }
         .desc_text {
           font-family: $body-font;
@@ -80,12 +82,13 @@
       .name {
         color: $primary-color;
       }
-      img {
+      .rounded_arrow {
         position: absolute;
         transform: scaleY(-1);
         right: 10%;
         top: 18%;
         width: 4rem;
+        transition: width 0.6s ease;
       }
     }
   }
@@ -97,6 +100,7 @@
     display: inline-flex;
     align-items: flex-start;
     gap: 2rem;
+    transition: all 0.3s ease-in-out;
 
     span {
       font-family: $body-font;
@@ -196,6 +200,45 @@
       left: 0;
       right: 0;
       bottom: 0;
+    }
+  }
+}
+
+@include tablet {
+  .visual {
+    .visual_title {
+      span {
+        font-size: clamp(5.5rem, 10vw, 6.5rem);
+      }
+      .garden_wrap {
+        .rounded_arrow {
+          width: 2.5rem;
+        }
+      }
+      .desc_wrap {
+        .desc {
+          margin-left: 1.5rem;
+          .desc_bracket {
+            font-size: 3.5rem;
+          }
+          .desc_text {
+            font-size: set-text-size(small);
+          }
+        }
+      }
+      .name_wrap {
+        .rounded_arrow {
+          width: 2.5rem;
+        }
+      }
+    }
+    .tag {
+      bottom: set-margin-width(medium);
+      left: set-margin-width(medium);
+    }
+    .scroll {
+      bottom: set-margin-width(medium);
+      right: set-margin-width(medium);
     }
   }
 }

@@ -280,7 +280,7 @@ header .fullscreen_menu.on .desc {
 }
 .visual .visual_title span {
   font-family: "Seawave", serif;
-  font-size: 8rem;
+  font-size: clamp(7rem, 9vw, 11rem);
 }
 .visual .visual_title .garden_wrap {
   display: flex;
@@ -296,6 +296,7 @@ header .fullscreen_menu.on .desc {
   bottom: 4%;
   right: 35%;
   width: 4rem;
+  transition: width 0.6s ease;
 }
 .visual .visual_title .desc_wrap {
   display: flex;
@@ -318,12 +319,14 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   justify-content: space-between;
   margin-left: 3rem;
+  transition: margin-left 0.6s ease;
 }
 .visual .visual_title .desc_wrap .desc .desc_bracket {
   font-family: "SUIT", sans-serif;
   font-size: clamp(5rem, 5vw, 6rem);
   color: #797774;
   font-weight: 200;
+  transition: font-size 0.6s ease;
 }
 .visual .visual_title .desc_wrap .desc .desc_text {
   font-family: "SUIT", sans-serif;
@@ -339,12 +342,13 @@ header .fullscreen_menu.on .desc {
 .visual .visual_title .name_wrap .name {
   color: #5186ee;
 }
-.visual .visual_title .name_wrap img {
+.visual .visual_title .name_wrap .rounded_arrow {
   position: absolute;
   transform: scaleY(-1);
   right: 10%;
   top: 18%;
   width: 4rem;
+  transition: width 0.6s ease;
 }
 .visual .tag {
   position: absolute;
@@ -354,6 +358,7 @@ header .fullscreen_menu.on .desc {
   display: inline-flex;
   align-items: flex-start;
   gap: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 .visual .tag span {
   font-family: "SUIT", sans-serif;
@@ -446,6 +451,34 @@ header .fullscreen_menu.on .desc {
   bottom: 0;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .visual .visual_title span {
+    font-size: clamp(5.5rem, 10vw, 6.5rem);
+  }
+  .visual .visual_title .garden_wrap .rounded_arrow {
+    width: 2.5rem;
+  }
+  .visual .visual_title .desc_wrap .desc {
+    margin-left: 1.5rem;
+  }
+  .visual .visual_title .desc_wrap .desc .desc_bracket {
+    font-size: 3.5rem;
+  }
+  .visual .visual_title .desc_wrap .desc .desc_text {
+    font-size: 0.75rem;
+  }
+  .visual .visual_title .name_wrap .rounded_arrow {
+    width: 2.5rem;
+  }
+  .visual .tag {
+    bottom: 3.125rem;
+    left: 3.125rem;
+  }
+  .visual .scroll {
+    bottom: 3.125rem;
+    right: 3.125rem;
+  }
+}
 .intro {
   width: 100%;
   height: 100vh;
