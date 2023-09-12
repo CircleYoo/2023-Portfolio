@@ -175,6 +175,7 @@
       grid-column-gap: 1.25rem;
       grid-row-gap: 3rem;
       margin-top: 2rem;
+      transition: opacity 0.3s ease-in-out;
 
       .project_item {
         display: flex;
@@ -396,6 +397,10 @@
             align-self: center;
           }
         }
+      }
+
+      &.fade-out {
+        opacity: 0;
       }
     }
   }

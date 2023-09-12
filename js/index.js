@@ -1,20 +1,22 @@
 AOS.init();
 
-const rootStyles = window.getComputedStyle(document.documentElement);
+// (시작) 버튼 클릭 시, 색상 변수 변경
+// const rootStyles = window.getComputedStyle(document.documentElement);
 
-const primaryColorArr = ["#5186ee", "#faf7f0", "#111111"];
+const primaryColorArr = ["#5186ee", "#D73234", "#00934D", "#9A97DA"];
+const secondColorArr = ["#e0f3cd", "#F6BAC6", "#FFE699", "#D0DCFF"];
 let currentIndex = 0;
-
-const priElement = document.querySelector(".primary-color");
 
 function changePrimaryColor() {
   // currentIndex를 사용하여 새로운 색상을 가져옵니다.
-  const newColor = primaryColorArr[currentIndex];
+  const newPrimaryColor = primaryColorArr[currentIndex];
+  const newSecondColor = secondColorArr[currentIndex];
 
   // 모든 루트 요소의 "--primary-color" 값을 변경합니다.
   const rootElements = document.querySelectorAll(":root");
   rootElements.forEach((root) => {
-    root.style.setProperty("--primary-color", newColor);
+    root.style.setProperty("--primary-color", newPrimaryColor);
+    root.style.setProperty("--secondary-color", newSecondColor);
   });
 
   // currentIndex를 업데이트
@@ -29,10 +31,7 @@ const button = document.querySelector(".darkmode");
 button.addEventListener("click", function () {
   changePrimaryColor()
 });
-
-
-
-
+// (끝) 버튼 클릭 시, 색상 변수 변경
 
 // (시작) 햄버거 버튼 열림/닫힘
 const $hamBtn = document.querySelector(".hamburger");
@@ -121,6 +120,7 @@ window.addEventListener("scroll", () => {
 const swProjectWrapper = document.querySelector(".project_area");
 const $projectList = document.querySelectorAll(".project_item");
 
+
 let projectList = null;
 function getProjectData() {
   fetch("../data/data.json")
@@ -190,12 +190,13 @@ function makeProjectsItem(item) {
 
   return div;
 }
-
 getProjectData();
 // (끝) 프로젝트 리스트 가져오기
 
 // (시작) 프로젝트 리스트 필터
 const $filterBtn = document.querySelectorAll(".option_item");
+
+
 $filterBtn.forEach((button) => {
   button.addEventListener("click", function () {
     const filter = button.getAttribute("data-filter");
@@ -205,7 +206,13 @@ $filterBtn.forEach((button) => {
     });
 
     button.classList.add("active");
-    filterProjects(filter);
+    swProjectWrapper.classList.add("fade-out")
+    
+    setTimeout(() => {
+      swProjectWrapper.classList.remove("fade-out")
+      filterProjects(filter);
+    }, 300);
+
   });
 });
 
@@ -255,8 +262,9 @@ $viewBtn.forEach((button) => {
     button.classList.add("active");
   });
 });
-
 // (끝) 프로젝트 보기 형식
+
+
 // (시작) 그래픽 swiper
 const swGraphicWrapper = document.querySelector(".swiper-wrapper");
 
