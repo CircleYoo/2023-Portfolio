@@ -1,5 +1,38 @@
 AOS.init();
 
+const rootStyles = window.getComputedStyle(document.documentElement);
+
+const primaryColorArr = ["#5186ee", "#faf7f0", "#111111"];
+let currentIndex = 0;
+
+const priElement = document.querySelector(".primary-color");
+
+function changePrimaryColor() {
+  // currentIndex를 사용하여 새로운 색상을 가져옵니다.
+  const newColor = primaryColorArr[currentIndex];
+
+  // 모든 루트 요소의 "--primary-color" 값을 변경합니다.
+  const rootElements = document.querySelectorAll(":root");
+  rootElements.forEach((root) => {
+    root.style.setProperty("--primary-color", newColor);
+  });
+
+  // currentIndex를 업데이트
+  if (currentIndex < primaryColorArr.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // 배열의 끝에 도달하면 처음으로 돌아감
+  }
+}
+
+const button = document.querySelector(".darkmode");
+button.addEventListener("click", function () {
+  changePrimaryColor()
+});
+
+
+
+
 
 // (시작) 햄버거 버튼 열림/닫힘
 const $hamBtn = document.querySelector(".hamburger");
@@ -90,7 +123,7 @@ const $projectList = document.querySelectorAll(".project_item");
 
 let projectList = null;
 function getProjectData() {
-  fetch("data/data.json")
+  fetch("../data/data.json")
     .then((res) => res.json())
     .then((result) => {
       projectList = result;
@@ -135,9 +168,9 @@ function makeProjectsItem(item) {
           ${review} ${github} ${origin}
         </div>
         <a href="${item.create}" class="link" target="_blank">
-          <img src="./img/arrow_small.svg" alt="바로가기" class="arrow arrow-1">
+          <img src="../img/arrow_small.svg" alt="바로가기" class="arrow arrow-1">
           <span>view</span>
-          <img src="./img/arrow_small.svg" alt="바로가기" class="arrow arrow-2">
+          <img src="../img/arrow_small.svg" alt="바로가기" class="arrow arrow-2">
         </a>
       </div>
     </div>
@@ -151,7 +184,7 @@ function makeProjectsItem(item) {
       ${review} ${github} ${origin}
     </div>
     <div class="list_link">
-      <img src="./img/link_arrow.svg" alt="바로가기">
+      <img src="../img/link_arrow.svg" alt="바로가기">
     </div>
   `;
 
@@ -229,7 +262,7 @@ const swGraphicWrapper = document.querySelector(".swiper-wrapper");
 
 let graphicList = null;
 function getGraphicData() {
-  fetch("data/data.json")
+  fetch("../data/data.json")
     .then((res) => res.json())
     .then((result) => {
       graphicList = result;

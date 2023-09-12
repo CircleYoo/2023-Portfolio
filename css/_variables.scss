@@ -24,10 +24,6 @@ $sub-color: #d0dcff;
 $colors: (#5186ee, #d73234, #00934d);
 $color-index: 1;
 
-:export {
-  primaryColor: $primary-color;
-}
-
 // 폰트 스타일
 $title-font: "Seawave", serif;
 $title-accent-font: "NewYork", serif;
