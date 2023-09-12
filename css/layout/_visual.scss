@@ -15,7 +15,8 @@
 
     span {
       font-family: $title-font;
-      font-size: clamp(7rem, $title-font-size, 11rem);
+      // font-size: clamp(7rem, $title-font-size, 11rem);
+      font-size: set-title-size(large);
     }
     .garden_wrap {
       display: flex;
@@ -66,7 +67,7 @@
         }
         .desc_text {
           font-family: $body-font;
-          font-size: $small-body-font-size;
+          font-size: set-text-size(medium);
           line-height: $line-height;
           text-align: center;
           margin: 0 1rem;
@@ -90,8 +91,8 @@
   }
   .tag {
     position: absolute;
-    bottom: $margin-width-large;
-    left: $margin-width-large;
+    bottom: set-margin-width(large);
+    left: set-margin-width(large);
     color: $primary-color;
     display: inline-flex;
     align-items: flex-start;
@@ -99,15 +100,15 @@
 
     span {
       font-family: $body-font;
-      font-size: $tag-font-size;
+      font-size: set-text-size(small);
       text-transform: capitalize;
     }
   }
 
   .scroll {
     position: absolute;
-    bottom: $margin-width-large;
-    right: $margin-width-large;
+    bottom: set-margin-width(large);
+    right: set-margin-width(large);
     width: 4rem;
     display: flex;
     flex-direction: column;

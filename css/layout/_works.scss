@@ -13,9 +13,9 @@
   }
 
   .inner {
-    padding: $margin-height-large 0;
+    padding: set-margin-height(large) 0;
     .title {
-      font-size: $title-font-size;
+      font-size: set-title-size(large);
       font-family: $title-accent-font;
       margin-bottom: 6rem;
     }
@@ -39,7 +39,7 @@
           justify-content: space-between;
 
           h3 {
-            font-size: $body-font-size;
+            font-size: set-text-size(large);
             font-family: $body-font;
           }
 
@@ -286,14 +286,14 @@
         }
         span {
           font-family: $body-font;
-          font-size: $small-body-font-size;
+          font-size: set-text-size(medium);
           line-height: $line-height;
         }
         .projects_desc {
           color: $beige-500-color;
           display: flex;
           margin-top: 1rem;
-          font-size: $small-body-font-size;
+          font-size: set-text-size(medium);
 
           .contribution {
             border-right: 1px solid $beige-500-color;

@@ -150,11 +150,11 @@ header {
 
       a {
         display: block;
-        height: $title-font-size;
+        height: set-title-size(large);
         position: relative;
 
         span {
-          font-size: $title-font-size;
+          font-size: set-title-size(large);
           color: $black-color;
           text-transform: uppercase;
 
@@ -196,7 +196,7 @@ header {
 
     .desc {
       font-family: $body-font;
-      font-size: $body-font-size;
+      font-size: set-text-size(large);
       font-weight: 400;
       letter-spacing: 0.5rem;
       text-transform: uppercase;
@@ -223,5 +223,4 @@ header {
 }
 
 @include tablet {
-  $margin-width-large: 3.125rem;
 }

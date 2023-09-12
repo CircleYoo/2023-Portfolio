@@ -19,7 +19,7 @@
     gap: 6vh;
 
     h3 {
-      font-size: $small-title-font-size;
+      font-size: set-title-size(small);
       color: $background-color;
     }
 
@@ -48,7 +48,7 @@
 
     .desc_area {
       color: $background-color;
-      font-size: $body-font-size;
+      font-size: set-text-size(large);
       font-family: $body-font;
 
       p {

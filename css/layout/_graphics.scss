@@ -1,11 +1,11 @@
 .graphics {
-  padding-bottom: $margin-height-large;
+  padding-bottom: set-margin-height(large);
 
   .sw_graphic {
     height: 100%;
 
     .graphic_top {
-      margin: 0 $margin-width-large;
+      margin: 0 set-margin-width(large);
       display: flex;
       flex-direction: row;
       align-items: end;
@@ -13,7 +13,7 @@
       margin-bottom: 6rem;
 
       .title {
-        font-size: $title-font-size;
+        font-size: set-title-size(large);
         font-family: $title-accent-font;
       }
 
@@ -110,7 +110,7 @@
             }
 
             span {
-              font-size: $body-font-size;
+              font-size: set-text-size(large);
               font-family: $body-font;
               color: $background-color;
             }

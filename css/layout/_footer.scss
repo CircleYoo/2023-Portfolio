@@ -19,8 +19,8 @@ footer {
     // z-index: -1;
   }
   .footer_top {
-    // margin: auto $margin-width-large $margin-height-large;
-    margin: auto ($margin-width-large - 0.625rem) 15vh;
+    // margin: auto set-margin-width(large) $margin-height-large;
+    margin: auto 3.75rem 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -122,12 +122,12 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: $margin-width-small ($margin-width-large - 0.625rem);
+    padding: $margin-width-small 3.75rem;
     border-top: 1px solid $background-color;
 
     span {
       font-family: $body-font;
-      font-size: $small-body-font-size;
+      font-size: set-text-size(medium);
       color: $background-color;
     }
   }

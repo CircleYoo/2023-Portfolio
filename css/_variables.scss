@@ -21,23 +21,71 @@ $primary-color: #5186ee;
 $secondary-color: #e0f3cd;
 $sub-color: #d0dcff;
 
-// font
+// 폰트 스타일
 $title-font: "Seawave", serif;
 $title-accent-font: "NewYork", serif;
 $body-font: "SUIT", sans-serif;
 
-$title-font-size: 8rem;
-$small-title-font-size: 5rem;
-$body-font-size: 1.125rem;
-$small-body-font-size: 1rem;
-$tag-font-size: 0.75rem;
+// 타이틀
+$title-size-large: 8rem;
+$title-size-small: 5rem;
+
+// 본문
+$text-size-large: 1.125rem;
+$text-size-medium: 1rem;
+$text-size-small: 0.75rem;
+// set-text-size(large)
+// set-text-size(medium)
+// set-text-size(small)
 
 $line-height: 1.5;
 
-
-@media (min-width: ($breakpoint-mobile + 1)) and (max-width: $breakpoint-tablet) {
-  
+// margin width
+@function set-margin-width($width) {
+  @if $width == small {
+    @return $margin-width-small;
+  } @else if $width == medium {
+    @return $margin-width-medium;
+  } @else if $width == large {
+    @return $margin-width-large;
+  } @else {
+    @error "Invalid margin width: #{$width}";
+  }
 }
-@media (max-width: $breakpoint-mobile) {
-  
+// set-margin-width(large)
+
+// margin height
+@function set-margin-height($height) {
+  @if $height == small {
+    @return $margin-height-small;
+  } @else if $height == large {
+    @return $margin-height-large;
+  } @else {
+    @error "Invalid margin height: #{$height}";
+  }
+}
+// set-margin-height(large)
+
+// title font size
+@function set-title-size($size) {
+  @if $size == small {
+    @return $title-size-small;
+  } @else if $size == large {
+    @return $title-size-large;
+  } @else {
+    @error "Invalid title size: #{$size}";
+  }
+}
+
+// body font size
+@function set-text-size($size) {
+  @if $size == small {
+    @return $text-size-small;
+  } @else if $size == medium {
+    @return $text-size-medium;
+  } @else if $size == large {
+    @return $text-size-large;
+  } @else {
+    @error "Invalid text size: #{$size}";
+  }
 }

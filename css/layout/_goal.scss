@@ -8,8 +8,8 @@
   grid-template-columns: 50% 1fr;
   grid-gap: clamp(2rem, 8vw, 10rem);
   align-items: center;
-  padding: ($margin-height-large + 4rem) $margin-height-large
-    $margin-height-large 0;
+  padding: (set-margin-height(large) + 4rem) set-margin-height(large)
+    set-margin-height(large) 0;
 
   &::before {
     content: "";
@@ -67,7 +67,7 @@
   }
 
   .text_area {
-    // margin: 0 $margin-height-large;
+    // margin: 0 set-margin-height(large);
     width: clamp(29rem, 31vw, 38rem);
     justify-self: center;
     height: -webkit-fill-available;
@@ -85,8 +85,8 @@
       }
 
       p {
-        font-size: clamp(6rem, $title-font-size, 8rem);
-        // font-size: 8rem;
+        // font-size: clamp(6rem, $title-font-size, 8rem);
+        font-size: set-title-size(large);
         font-family: $title-accent-font;
       }
       .what {
@@ -139,7 +139,7 @@
 
       span {
         font-family: $body-font;
-        font-size: $body-font-size;
+        font-size: set-text-size(large);
         line-height: $line-height;
         letter-spacing: -0.02rem;
       }
