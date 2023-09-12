@@ -1,12 +1,8 @@
-@charset "UTF-8";
-/*반응형 화면 크기*/
-/*반응형, 브라우저 크기가 767px 이하일때*/
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
-/*반응형, 브라우저 크기가 1024px 이상일때*/
 ::-moz-selection {
   background-color: #faf7f0;
   color: #5186ee;
 }
+
 ::selection {
   background-color: #faf7f0;
   color: #5186ee;
@@ -27,6 +23,17 @@ body {
 
 .inner {
   margin: 0 4.375rem;
+  transition: margin 0.3s ease-in-out;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .inner {
+    margin: 0 3.125rem;
+  }
+}
+@media (max-width: 767px) {
+  .inner {
+    margin: 0 1.875rem;
+  }
 }
 
 header .inner {
@@ -154,11 +161,11 @@ header .fullscreen_menu .link_area {
 }
 header .fullscreen_menu .link_area a {
   display: block;
-  height: 9vw;
+  height: 8rem;
   position: relative;
 }
 header .fullscreen_menu .link_area a span {
-  font-size: 9vw;
+  font-size: 8rem;
   color: #111111;
   text-transform: uppercase;
 }
@@ -223,7 +230,7 @@ header .fullscreen_menu.on .desc {
 }
 .visual .visual_title span {
   font-family: "Seawave", serif;
-  font-size: clamp(7rem, 9vw, 11rem);
+  font-size: 8rem;
 }
 .visual .visual_title .garden_wrap {
   display: flex;
@@ -473,7 +480,7 @@ header .fullscreen_menu.on .desc {
   padding: 10rem 0;
 }
 .projects .inner .title {
-  font-size: 5rem;
+  font-size: 8rem;
   font-family: "NewYork", serif;
   margin-bottom: 6rem;
 }
@@ -882,7 +889,7 @@ header .fullscreen_menu.on .desc {
   margin-bottom: 6rem;
 }
 .graphics .sw_graphic .graphic_top .title {
-  font-size: 5rem;
+  font-size: 8rem;
   font-family: "NewYork", serif;
 }
 .graphics .sw_graphic .graphic_top .swiper_buttons {
@@ -1049,7 +1056,7 @@ header .fullscreen_menu.on .desc {
   opacity: 1;
 }
 .goal .text_area {
-  width: 38rem;
+  width: clamp(29rem, 31vw, 38rem);
   justify-self: center;
   height: -webkit-fill-available;
   display: flex;
@@ -1065,7 +1072,7 @@ header .fullscreen_menu.on .desc {
   margin-top: -2rem;
 }
 .goal .text_area .goal_title p {
-  font-size: clamp(6rem, 9vw, 8rem);
+  font-size: 8rem;
   font-family: "NewYork", serif;
 }
 .goal .text_area .goal_title .what {
@@ -1089,6 +1096,7 @@ header .fullscreen_menu.on .desc {
 }
 .goal .text_area .goal_title .next_wrap img {
   margin-top: 1.75rem;
+  width: clamp(10rem, 12vw, 12.5rem);
 }
 .goal .text_area .goal_title .next_wrap p {
   white-space: nowrap;
@@ -1214,11 +1222,11 @@ footer .bottom_area {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 3.75rem;
+  padding: 1.875rem 3.75rem;
   border-top: 1px solid #faf7f0;
 }
 footer .bottom_area span {
   font-family: "SUIT", sans-serif;
   font-size: 1rem;
   color: #faf7f0;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,43 @@
+//
+// $breakpoint-desktop: 1024px;
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;
+
+// margin
+$margin-width-large: 4.375rem;
+$margin-width-medium: 3.125rem;
+$margin-width-small: 1.875rem;
+
+$margin-height-large: 10rem;
+$margin-height-small: 9rem;
+
+// color
+$black-color: #111111;
+$background-color: #faf7f0;
+$beige-200-color: #e3dacd;
+$beige-500-color: #b5aea4;
+$beige-700-color: #797774;
+$primary-color: #5186ee;
+$secondary-color: #e0f3cd;
+$sub-color: #d0dcff;
+
+// font
+$title-font: "Seawave", serif;
+$title-accent-font: "NewYork", serif;
+$body-font: "SUIT", sans-serif;
+
+$title-font-size: 8rem;
+$small-title-font-size: 5rem;
+$body-font-size: 1.125rem;
+$small-body-font-size: 1rem;
+$tag-font-size: 0.75rem;
+
+$line-height: 1.5;
+
+
+@media (min-width: ($breakpoint-mobile + 1)) and (max-width: $breakpoint-tablet) {
+  
+}
+@media (max-width: $breakpoint-mobile) {
+  
+}

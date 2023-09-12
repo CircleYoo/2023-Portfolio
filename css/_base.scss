@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import 'variables';
+@import 'mixins';
+
+::selection {
+  background-color: $background-color;
+  color: $primary-color;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: $background-color;
+  position: relative;
+}
+
+.text_accent {
+  font-family: $title-accent-font !important;
+}
+
+// 2번 이상 반복되는 레이아웃
+.inner {
+  margin: 0 $margin-width-large;
+  transition: margin 0.3s ease-in-out;
+  
+  @include tablet {
+    $margin-width-large: 3.125rem;
+    margin: 0 $margin-width-large;
+  }
+  
+  @include mobile {
+    $margin-width-large: 1.875rem;
+    margin: 0 $margin-width-large;
+  }
+}
+
+// header 시작
+
+// header 끝
+
+// main 시작
+// visual 시작
+
+// visual 끝
+// intro 시작
+
+// intro 끝
+// projects 시작
+
+// projects 끝
+// graphics 시작
+
+
+// graphics 끝
+// goal 시작
+
+// goal 끝
+// main 끝
+
+// footer 시작
+
+// footer 끝

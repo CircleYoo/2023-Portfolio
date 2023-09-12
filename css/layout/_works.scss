@@ -1,0 +1,402 @@
+.projects {
+  position: relative;
+  margin-top: 4rem;
+  border-top: 1px solid $primary-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-top: 1px solid $primary-color;
+    top: -1rem;
+    left: 0;
+    right: 0;
+  }
+
+  .inner {
+    padding: $margin-height-large 0;
+    .title {
+      font-size: $title-font-size;
+      font-family: $title-accent-font;
+      margin-bottom: 6rem;
+    }
+    .project_nav {
+      width: 100%;
+      display: inline-flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      // 모바일 필터 버튼 시작
+      .mb_filter {
+        display: none;
+        width: 60%;
+        height: 100%;
+
+        .label {
+          @include button-design;
+          width: 100%;
+          justify-content: space-between;
+
+          h3 {
+            font-size: $body-font-size;
+            font-family: $body-font;
+          }
+
+          .more_btn {
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            span {
+              display: block;
+              background-color: $black-color;
+              width: 100%;
+              height: 0.125rem;
+              position: relative;
+
+              &:first-child {
+                position: absolute;
+                transform: rotate(90deg);
+                transition: all 0.4s ease-in-out;
+                // opacity: 1;
+              }
+
+              &.on:first-child {
+                transform: rotate(0);
+                opacity: 0;
+              }
+            }
+          }
+        }
+        .option_list {
+          display: none;
+          background-color: $background-color;
+          border: 1px solid $black-color;
+          border-radius: 0.25rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+          margin-top: 1rem;
+
+          .option_item {
+            padding: 0.5rem 1.5rem;
+            &:hover {
+              background-color: $beige-200-color;
+            }
+          }
+
+          &.on {
+            display: block;
+          }
+        }
+      }
+      // 모바일 필터 버튼 끝
+
+      .filter {
+        // display: none;
+        display: flex;
+        gap: 0.625rem;
+        button {
+          @include button-design;
+
+          &.active,
+          &:hover {
+            color: $background-color;
+            background-color: $black-color;
+          }
+        }
+      }
+
+      .view {
+        display: flex;
+        gap: 0.625rem;
+        button {
+          @include button-design;
+          padding: 0.625rem 1.5rem;
+        }
+        .album {
+          .circle_wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+
+            .circle {
+              background-color: $black-color;
+              width: 0.375rem;
+              height: 0.375rem;
+              border-radius: 50%;
+            }
+          }
+
+          &.active,
+          &:hover {
+            background-color: $black-color;
+            .circle {
+              background-color: $background-color;
+            }
+          }
+        }
+
+        .list {
+          .line_wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 1rem;
+            height: 1rem;
+
+            .line {
+              background-color: $black-color;
+              width: 100%;
+              height: 0.188rem;
+            }
+          }
+          &.active,
+          &:hover {
+            background-color: $black-color;
+            .line {
+              background-color: $background-color;
+            }
+          }
+        }
+      }
+    }
+
+    .project_area {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1.25rem;
+      grid-row-gap: 3rem;
+      margin-top: 2rem;
+
+      .project_item {
+        display: flex;
+        flex-direction: column;
+
+        .img_wrap {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          padding-bottom: 70%;
+
+          .item_img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            vertical-align: top;
+            transition: transform 0.6s ease-in-out;
+
+            &.on {
+              filter: blur(0.125rem);
+            }
+          }
+
+          .img_hover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba($color: $black-color, $alpha: 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+
+            .more_link {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              gap: 0.625rem;
+              top: 1.25rem;
+              left: 1.25rem;
+
+              a {
+                @include button-design;
+                border: none;
+                background-color: $background-color;
+              }
+            }
+            .link {
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              margin: 0.5rem 1rem;
+              overflow: hidden;
+
+              .arrow {
+                transform: rotate(90deg);
+                width: 1.5rem;
+                height: 1.5rem;
+                transition: all 0.3s ease-in-out;
+
+                &.arrow-1 {
+                  opacity: 0;
+                  width: 0;
+                }
+              }
+              span {
+                color: $background-color;
+                font-size: 1.5rem;
+                font-family: $body-font;
+                text-transform: uppercase;
+                transition: all 0.3s ease-in-out;
+              }
+
+              &:hover {
+                .arrow {
+                  &.arrow-1 {
+                    opacity: 1;
+                    width: 1.5rem;
+                  }
+                  &.arrow-2 {
+                    opacity: 0;
+                    width: 0;
+                  }
+                }
+              }
+            }
+          }
+
+          &:hover {
+            .item_img {
+              transform: scale(1.1) rotate(1deg);
+            }
+            .img_hover {
+              opacity: 1;
+            }
+          }
+        }
+        .projects_title {
+          font-family: "Hatton";
+          font-size: 2rem;
+          margin: 1.5rem 0 1rem 0;
+          text-transform: capitalize;
+        }
+        span {
+          font-family: $body-font;
+          font-size: $small-body-font-size;
+          line-height: $line-height;
+        }
+        .projects_desc {
+          color: $beige-500-color;
+          display: flex;
+          margin-top: 1rem;
+          font-size: $small-body-font-size;
+
+          .contribution {
+            border-right: 1px solid $beige-500-color;
+            margin-right: 1rem;
+            padding-right: 1rem;
+            white-space: nowrap;
+          }
+
+          .keyword:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+        .list_more_link {
+          display: none;
+          align-items: center;
+          gap: 0.625rem;
+          a {
+            @include button-design;
+
+            &:hover {
+              background-color: $black-color;
+              color: $background-color;
+            }
+          }
+        }
+        .list_link {
+          display: none;
+          position: relative;
+          width: fit-content;
+          height: 2rem;
+          cursor: pointer;
+          overflow: hidden;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url("../img/link_arrow.svg") no-repeat center;
+            background-size: contain;
+            transform: translateX(-110%);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+          }
+
+          img {
+            transform: translateX(0);
+            transition: all 0.3s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            img {
+              transform: translateX(110%);
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      &.list {
+        grid-template-columns: auto;
+        grid-row-gap: 0;
+
+        .project_item {
+          display: grid;
+          grid-template-columns: 16% 50% 15% 5%;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2.25rem 0;
+          border-bottom: 1px solid $black-color;
+          grid-row-gap: 0;
+          // grid-gap: 8rem;
+
+          .img_wrap {
+            display: none;
+          }
+          .projects_title {
+            flex-grow: 1;
+            margin: 0;
+          }
+          span {
+            flex-grow: 2;
+          }
+          .projects_desc {
+            display: none;
+          }
+          .list_more_link {
+            display: flex;
+          }
+          .list_link {
+            display: flex;
+            justify-self: end;
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
