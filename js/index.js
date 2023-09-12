@@ -1,5 +1,6 @@
 AOS.init();
 
+
 // (시작) 햄버거 버튼 열림/닫힘
 const $hamBtn = document.querySelector(".hamburger");
 const $hamSpan = document.querySelector(".hamburger_box");
@@ -8,9 +9,9 @@ const $linkArea = document.querySelectorAll(".fullscreen_menu > .link_area a");
 
 $hamBtn.addEventListener("click", toggleMenu);
 
-$linkArea.forEach(item => {
+$linkArea.forEach((item) => {
   item.addEventListener("click", function () {
-    toggleMenu()
+    toggleMenu();
   });
 });
 
@@ -207,7 +208,6 @@ filterProjects("all");
 
 // (시작) 프로젝트 보기 형식
 const $viewBtn = document.querySelectorAll(".view button");
-console.log($viewBtn);
 $viewBtn.forEach((button) => {
   button.addEventListener("click", function () {
     const view = button.getAttribute("data-view");

@@ -3,6 +3,7 @@
 @import 'mixins';
 
 ::selection {
+  // background-color: $background-color;
   background-color: $background-color;
   color: $primary-color;
 }
@@ -16,6 +17,9 @@ body {
   position: relative;
 }
 
+.primary-color {
+  background-color: $primary-color;
+}
 .text_accent {
   font-family: $title-accent-font !important;
 }

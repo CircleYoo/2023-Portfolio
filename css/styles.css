@@ -1,3 +1,19 @@
+:export {
+  primaryColor: #5186ee;
+}
+
+:export {
+  primaryColor: #5186ee;
+}
+
+:export {
+  primaryColor: #5186ee;
+}
+
+:export {
+  primaryColor: #5186ee;
+}
+
 ::-moz-selection {
   background-color: #faf7f0;
   color: #5186ee;
@@ -17,6 +33,10 @@ body {
   position: relative;
 }
 
+.primary-color {
+  background-color: #5186ee;
+}
+
 .text_accent {
   font-family: "NewYork", serif !important;
 }
@@ -34,6 +54,10 @@ body {
   .inner {
     margin: 0 1.875rem;
   }
+}
+
+:export {
+  primaryColor: #5186ee;
 }
 
 header .inner {
