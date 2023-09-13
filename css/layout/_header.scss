@@ -16,15 +16,15 @@ header {
     transition: all 0.3s ease-in-out;
 
     .logo {
-      flex: 1 1 0;
-      min-width: 8rem;
+      flex-grow: 1;
       height: 2rem;
       background: url(../img/logo.svg) no-repeat left;
       background-size: contain;
+      transition: height 0.3s ease-in-out;
     }
 
     .hamburger {
-      flex: 1 2 0;
+      flex-grow: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -78,45 +78,39 @@ header {
       }
     }
 
-    .darkmode {
-      flex: 1 1 0;
-      width: 4rem;
-      height: 4rem;
+    .color_change_btn {
+      flex-grow: 1;
       display: flex;
       align-items: center;
       justify-content: flex-end;
 
-      .checkbox {
-        opacity: 0;
-        position: absolute;
-      }
-
-      .checkbox_label {
-        background-color: $background-color;
-        border: 1px solid $black-color;
-        border-radius: 1.5rem;
-        cursor: pointer;
-        position: relative;
+      .color_change {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 3rem;
-        height: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border: 1px dashed $black-color;
+        border-radius: 50%;
+        cursor: pointer;
+        @include rotate-to-right;
 
         .ball {
-          position: absolute;
           background-color: $black-color;
-          width: 1rem;
-          height: 1rem;
-          left: 0.2rem;
-          top: 0.2rem;
+          width: 0.75rem;
+          height: 0.75rem;
           border-radius: 50%;
+          transition: all 0.25s cubic-bezier(.4,.2,.5,1.6);
         }
-      }
 
-      .checkbox:checked + .checkbox_label {
-        .ball {
-          transform: translateX(1.5rem);
+        &:hover {
+          @include rotate-to-left;
+        }
+        &.click {
+          .ball {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
@@ -268,7 +262,7 @@ header {
       top: 2rem;
 
       .logo {
-        min-width: none;
+        height: 1.5rem;
       }
       .hamburger {
         .hamburger_box {

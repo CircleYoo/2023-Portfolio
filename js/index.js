@@ -27,10 +27,16 @@ function changePrimaryColor() {
   }
 }
 
-const button = document.querySelector(".darkmode");
-console.log(button)
-button.addEventListener("click", function () {
-  changePrimaryColor();
+const $colorBtn = document.querySelector(".color_change");
+
+$colorBtn.addEventListener("click", function () {
+  $colorBtn.classList.add("click");
+  
+  setTimeout(() => {
+    changePrimaryColor();
+    $colorBtn.classList.remove("click");
+    
+  }, 300);
 });
 // (끝) 버튼 클릭 시, 색상 변수 변경
 

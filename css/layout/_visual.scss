@@ -129,14 +129,7 @@
       height: 4rem;
 
       .rounded_text {
-        animation: infinite_rotate 10s linear infinite;
-        transform-origin: 50% 50%;
-
-        @keyframes infinite_rotate {
-          100% {
-            transform: rotate(360deg);
-          }
-        }
+        @include rotate-to-right;
       }
       .scroll_flower {
         position: absolute;

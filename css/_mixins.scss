@@ -66,3 +66,27 @@
     }
   }
 }
+
+// rotate_infinite
+@mixin rotate-to-right {
+  animation: infinite_rotate 10s linear infinite;
+  transform-origin: 50% 50%;
+  
+  @keyframes infinite_rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin rotate-to-left {
+  animation: infinite_rotate-to-left 10s linear infinite;
+  transform-origin: 50% 50%;
+
+  @keyframes infinite_rotate-to-left {
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}
+
