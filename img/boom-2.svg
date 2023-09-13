@@ -1,7 +1,18 @@
-<svg width="1180" height="352" viewBox="0 0 1180 352" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="images">
+<svg class="boom-2"
+                  width="1180"
+                  height="352"
+                  viewBox="0 0 1180 352"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice">
+<g id="images" clip-path="url(#clip0_795_1107)">
 <g id="Group 13">
-<path id="Vector" d="M802.636 254.981L791.043 285.005L812.948 265.228L816.199 294L822.758 265.978L847.786 289.597L833.573 260.979L863 258.836L835.585 247.984L863 229.486L830.702 234.238L827.021 198L817.727 234.238L796.894 206.408L804.9 237.237L780 227.33L801.63 245.235L780 253.847L802.636 254.981Z" fill="#E0F3CD"/>
+<path id="Vector" d="M745.636 256.981L734.043 287.005L755.948 267.228L759.199 296L765.758 267.978L790.786 291.597L776.573 262.979L806 260.836L778.585 249.984L806 231.486L773.702 236.238L770.021 200L760.727 236.238L739.894 208.408L747.9 239.237L723 229.33L744.63 247.235L723 255.847L745.636 256.981Z" fill="#E0F3CD"/>
 </g>
 </g>
+<defs>
+<clipPath id="clip0_795_1107">
+<rect width="1180" height="352" fill="white"/>
+</clipPath>
+</defs>
 </svg>

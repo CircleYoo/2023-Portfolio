@@ -7,10 +7,6 @@
   align-items: center;
   justify-content: center;
 
-  .cation_wrapper {
-    @include caption-design;
-  }
-
   .intro_area {
     display: flex;
     flex-direction: column;
@@ -27,9 +23,9 @@
       position: relative;
       width: -webkit-fill-available;
       height: 22rem;
-      // padding-bottom: 30%;
       background: url(../img/intro_glasses.jpg) no-repeat center center;
       overflow: hidden;
+      transition: height 0.3s ease;
 
       img {
         position: absolute;
@@ -44,6 +40,31 @@
         // transform: translate(-50%, -50%);
         // transition: opacity 0.3s ease-in-out;
       }
+      picture {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        svg {
+          position: absolute;
+          width: max(80px, 100%);
+          height: max(80px, 100%);
+          left: 0; 
+
+          path {
+            fill: $secondary-color;
+          }
+
+          &.boom-1 {
+            left: 0.5rem;
+          }
+          &.boom-2 {
+
+          }
+        }
+      }
     }
 
     .desc_area {
@@ -54,6 +75,52 @@
       p {
         &:first-child {
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .intro {
+    .intro_area {
+      h3 {
+        font-size: set-title-size(small);
+      }
+
+      .img_area {
+        height: 14.625rem;
+      }
+    }
+    .desc_area {
+      p {
+        font-size: set-text-size(medium);
+      }
+    }
+  }
+}
+@include mobile {
+  .intro {
+    .intro_area {
+      gap: 5vh;
+
+      h3 {
+        font-size: clamp(2.5rem, 6.25vw, set-title-size(small));
+      }
+      .img_area {
+        height: 12.5rem;
+        background-size: cover;
+        
+      }
+    }
+    .desc_area {
+      p {
+        font-size: set-text-size(medium);
+
+        br {
+          @media (max-width: 400px) {
+            display: none;
+          }
         }
       }
     }

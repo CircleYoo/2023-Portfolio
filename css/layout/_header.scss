@@ -16,15 +16,16 @@ header {
     transition: all 0.3s ease-in-out;
 
     .logo {
-      flex-grow: 1;
+      flex: 1;
       height: 2rem;
+      min-width: 4rem;
       background: url(../img/logo.svg) no-repeat left;
       background-size: contain;
       transition: height 0.3s ease-in-out;
     }
 
     .hamburger {
-      flex-grow: 1;
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -79,7 +80,7 @@ header {
     }
 
     .color_change_btn {
-      flex-grow: 1;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -155,6 +156,7 @@ header {
           font-size: set-title-size(medium);
           color: $black-color;
           text-transform: uppercase;
+          text-align: center;
 
           &.link_text {
             font-family: $body-font;
@@ -177,7 +179,7 @@ header {
         &:nth-child(1),
         &:nth-child(2) {
           .arc {
-            left: 0.5rem;
+            left: 0.25rem;
           }
         }
         &:hover {

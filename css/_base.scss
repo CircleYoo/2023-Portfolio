@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 ::selection {
   // background-color: $background-color;
@@ -28,39 +28,27 @@ body {
 .inner {
   margin: 0 set-margin-width(large);
   transition: margin 0.3s ease-in-out;
-  
+
   @include tablet {
     margin: 0 set-margin-width(medium);
   }
-  
+
   @include mobile {
     margin: 0 set-margin-width(small);
   }
 }
 
-// header 시작
-
-// header 끝
-
-// main 시작
-// visual 시작
-
-// visual 끝
-// intro 시작
-
-// intro 끝
-// projects 시작
-
-// projects 끝
-// graphics 시작
-
-
-// graphics 끝
-// goal 시작
-
-// goal 끝
-// main 끝
-
-// footer 시작
-
-// footer 끝
+.cation_wrapper {
+  @include caption-design;
+  @include tablet {
+    .caption_inner {
+      width: 50%;
+    }
+  } 
+  @include mobile {
+    .caption_inner {
+      padding: 1.5rem 0;
+      width: 80%;
+    }
+  }
+}
