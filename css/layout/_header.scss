@@ -230,6 +230,7 @@ header {
 @include tablet {
   header {
     .inner {
+      top: 2.5rem;
       .hamburger {
         .hamburger_box {
           width: 3rem;

@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+/*
+ * :root {
+ *   --primary-color: #5186ee;
+ *   --secondary-color: #e0f3cd;
+ *   --sub-color: #d0dcff;
+ * }
+ */
+
 @import "./variables";
 @import "./mixins";
 
@@ -13,5 +21,3 @@
 @import "./layout/goal";
 @import "./layout/footer";
 
-
-// @import "./mobile";

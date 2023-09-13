@@ -28,6 +28,7 @@ function changePrimaryColor() {
 }
 
 const button = document.querySelector(".darkmode");
+console.log(button)
 button.addEventListener("click", function () {
   changePrimaryColor();
 });
