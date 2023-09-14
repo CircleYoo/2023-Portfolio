@@ -31,11 +31,10 @@ const $colorBtn = document.querySelector(".color_change");
 
 $colorBtn.addEventListener("click", function () {
   $colorBtn.classList.add("click");
-  
+
   setTimeout(() => {
     changePrimaryColor();
     $colorBtn.classList.remove("click");
-    
   }, 300);
 });
 // (끝) 버튼 클릭 시, 색상 변수 변경
@@ -334,48 +333,29 @@ function makeGraphicItem(item) {
 }
 const mySwiper = new Swiper(".swiper", {
   slidesPerView: "auto",
-  spaceBetween: 20,
-  height: 430,
+  spaceBetween: 12,
+  height: 506,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
     clickable: true,
   },
-  slidesOffsetBefore: 70,
-  slidesOffsetAfter: 70,
-  // grid: {
-  //   rows: 2,
-  //   column: 2,
-  //   fill: "row",
-  // },
-  // breakpoints: {
-  //   768: {
-  //     spaceBetween: 10,
-  //     slidesPerView: 5,
-  //     slidesPerGroup: 5,
-  //     grid: {
-  //       rows: 2,
-  //     },
-  //   },
-  //   1024: {
-  //     spaceBetween: 32,
-  //     slidesPerView: 3,
-  //     // 화면당 3개씩 슬라이드 이동
-  //     slidesPerGroup: 3,
-  //     grid: {
-  //       rows: 1,
-  //     },
-  //   },
-  //   1280: {
-  //     spaceBetween: 26,
-  //     slidesPerView: 4,
-  //     // 화면당 4개씩 슬라이드 이동
-  //     slidesPerGroup: 4,
-  //     grid: {
-  //       rows: 1,
-  //     },
-  //   },
-  // },
+  slidesOffsetBefore: 30,
+  slidesOffsetAfter: 30,
+  breakpoints: {
+    768: {
+      spaceBetween: 16,
+      height: 334,
+      slidesOffsetBefore: 50,
+      slidesOffsetAfter: 50,
+    },
+    1024: {
+      spaceBetween: 20,
+      height: 430,
+      slidesOffsetBefore: 70,
+      slidesOffsetAfter: 70,
+    },
+  },
 });
 
 getGraphicData();

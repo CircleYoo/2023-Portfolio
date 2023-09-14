@@ -1299,12 +1299,13 @@ header .fullscreen_menu.on .desc {
   height: 100%;
 }
 .graphics .sw_graphic .graphic_top {
-  margin: 0 4.375rem;
+  padding: 0 4.375rem;
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: space-between;
   margin-bottom: 6rem;
+  transition: padding 0.3s ease-in-out;
 }
 .graphics .sw_graphic .graphic_top .title {
   font-size: 8rem;
@@ -1314,11 +1315,10 @@ header .fullscreen_menu.on .desc {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 5rem;
 }
 .graphics .sw_graphic .graphic_top .swiper_buttons .button {
   width: 5rem;
-  height: 100%;
+  height: 5rem;
   border-radius: 50%;
   border: 1px solid #111111;
   position: static;
@@ -1397,6 +1397,45 @@ header .fullscreen_menu.on .desc {
   grid-column: 1/3;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .graphics .sw_graphic .graphic_top {
+    padding: 0 3.125rem;
+    margin-bottom: 5rem;
+  }
+  .graphics .sw_graphic .graphic_top .title {
+    font-size: 5rem;
+  }
+  .graphics .sw_graphic .graphic_top .swiper_buttons .button {
+    height: 4rem;
+    width: 4rem;
+  }
+  .graphics .sw_graphic .graphic_top .swiper_buttons .button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .graphics .sw_graphic .graphic_top {
+    padding: 0 1.875rem;
+    margin-bottom: 4rem;
+  }
+  .graphics .sw_graphic .graphic_top .title {
+    font-size: clamp(3.5rem, 10.5vw, 5rem);
+  }
+  .graphics .sw_graphic .graphic_top .swiper_buttons .button {
+    height: 4rem;
+    width: 4rem;
+  }
+  .graphics .sw_graphic .graphic_top .swiper_buttons .button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@media (max-width: 767px) and (max-width: 500px) {
+  .graphics .sw_graphic .graphic_top .swiper_buttons {
+    display: none;
+  }
+}
 .goal {
   position: relative;
   background-color: #e0f3cd;

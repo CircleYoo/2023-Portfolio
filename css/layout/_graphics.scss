@@ -5,12 +5,13 @@
     height: 100%;
 
     .graphic_top {
-      margin: 0 set-margin-width(large);
+      padding: 0 set-margin-width(large);
       display: flex;
       flex-direction: row;
       align-items: end;
       justify-content: space-between;
       margin-bottom: 6rem;
+      transition: padding 0.3s ease-in-out;
 
       .title {
         font-size: set-title-size(large);
@@ -21,11 +22,10 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 5rem;
 
         .button {
           width: 5rem;
-          height: 100%;
+          height: 5rem;
           border-radius: 50%;
           border: 1px solid $black-color;
           position: static;
@@ -131,3 +131,60 @@
     }
   }
 }
+
+@include tablet {
+  .graphics {
+    .sw_graphic {
+      .graphic_top {
+        padding: 0 set-margin-width(medium);
+        margin-bottom: 5rem;
+
+        .title {
+          font-size: set-title-size(medium);
+        }
+        .swiper_buttons {
+          .button {
+            height: 4rem;
+            width: 4rem;
+
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .graphics {
+    .sw_graphic {
+      .graphic_top {
+        padding: 0 set-margin-width(small);
+        margin-bottom: 4rem;
+        
+        .title {
+          font-size: clamp(3.5rem, 10.5vw, set-title-size(medium));
+        }
+        .swiper_buttons {
+          .button {
+            height: 4rem;
+            width: 4rem;
+
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+          @media (max-width: 500px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
