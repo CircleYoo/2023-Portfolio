@@ -12,13 +12,15 @@
     left: 0;
     right: 0;
   }
-
   .inner {
     padding: set-margin-height(large) 0;
+    transition: padding 0.3s ease-in-out;
+
     .title {
       font-size: set-title-size(large);
       font-family: $title-accent-font;
       margin-bottom: 6rem;
+      transition: all 0.3s;
     }
     .project_nav {
       width: 100%;
@@ -506,6 +508,7 @@
     }
     .inner {
       padding: set-margin-height(small) 0;
+
       .title {
         font-size: clamp(3.5rem, 10.5vw, set-title-size(medium));
         margin-bottom: 4rem;

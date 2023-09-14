@@ -712,11 +712,13 @@ header .fullscreen_menu.on .desc {
 }
 .projects .inner {
   padding: 10rem 0;
+  transition: padding 0.3s ease-in-out;
 }
 .projects .inner .title {
   font-size: 8rem;
   font-family: "NewYork", serif;
   margin-bottom: 6rem;
+  transition: all 0.3s;
 }
 .projects .inner .project_nav {
   width: 100%;
@@ -1221,7 +1223,7 @@ header .fullscreen_menu.on .desc {
     top: 0.5rem;
   }
   .projects .inner {
-    padding: 9rem 0;
+    padding: 7rem 0;
   }
   .projects .inner .title {
     font-size: clamp(3.5rem, 10.5vw, 5rem);
