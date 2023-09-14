@@ -76,12 +76,13 @@ a {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .cation_wrapper .caption_inner {
+    padding: 1.5rem 0;
     width: 50%;
   }
 }
 @media (max-width: 767px) {
   .cation_wrapper .caption_inner {
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
     width: 80%;
   }
 }
@@ -1440,7 +1441,7 @@ header .fullscreen_menu.on .desc {
   position: relative;
   background-color: #e0f3cd;
   width: 100%;
-  height: 67.5rem;
+  height: auto;
   display: grid;
   grid-template-columns: 50% 1fr;
   grid-gap: clamp(2rem, 8vw, 10rem);
@@ -1485,12 +1486,13 @@ header .fullscreen_menu.on .desc {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .goal .cation_wrapper .caption_inner {
+    padding: 1.5rem 0;
     width: 50%;
   }
 }
 @media (max-width: 767px) {
   .goal .cation_wrapper .caption_inner {
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
     width: 80%;
   }
 }
@@ -1501,14 +1503,13 @@ header .fullscreen_menu.on .desc {
   color: #111111;
 }
 .goal .img_area {
-  width: 100%;
+  width: -webkit-fill-available;
   height: -webkit-fill-available;
-  background: url(../img/goal_mine.jpg) no-repeat center center;
-  background-size: cover;
   position: relative;
-  mix-blend-mode: multiply;
+  background-color: #e0f3cd;
 }
-.goal .img_area img {
+.goal .img_area div,
+.goal .img_area svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1519,10 +1520,23 @@ header .fullscreen_menu.on .desc {
   min-height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease;
+}
+.goal .img_area div.goal_mine,
+.goal .img_area svg.goal_mine {
+  background: url(../img/goal_mine.jpg) no-repeat center center;
+  background-size: cover;
+  mix-blend-mode: multiply;
+}
+.goal .img_area div.goal_frame,
+.goal .img_area svg.goal_frame {
   opacity: 0;
 }
-.goal .img_area img:hover {
+.goal .img_area div.goal_frame path,
+.goal .img_area svg.goal_frame path {
+  fill: #d0dcff;
+}
+.goal .img_area:hover .goal_frame {
   opacity: 1;
 }
 .goal .text_area {
@@ -1540,41 +1554,55 @@ header .fullscreen_menu.on .desc {
 }
 .goal .text_area .goal_title > * {
   margin-top: -2rem;
+  width: 100%;
 }
 .goal .text_area .goal_title p {
-  font-size: 8rem;
+  font-size: clamp(6.5rem, 6.6vw, 8rem);
   font-family: "NewYork", serif;
+  transition: 0.3s ease-in-out;
 }
 .goal .text_area .goal_title .what {
   align-self: baseline;
   padding-left: 3rem;
 }
 .goal .text_area .goal_title .can {
+  text-align: right;
   align-self: flex-end;
   padding-right: 5.3rem;
 }
 .goal .text_area .goal_title .bloom_wrap {
   align-self: baseline;
 }
-.goal .text_area .goal_title .bloom_wrap img {
-  margin: -0.5rem -2rem;
+.goal .text_area .goal_title .bloom_wrap svg {
+  margin: -1rem -1.25rem;
+  width: 5rem;
+}
+.goal .text_area .goal_title .bloom_wrap svg path {
+  fill: #5186ee;
 }
 .goal .text_area .goal_title .next_wrap {
-  align-self: stretch;
+  align-self: center;
   justify-content: space-between;
   display: flex;
+  gap: 10%;
 }
-.goal .text_area .goal_title .next_wrap img {
+.goal .text_area .goal_title .next_wrap svg {
+  align-self: center;
   margin-top: 1.75rem;
   width: clamp(10rem, 12vw, 12.5rem);
+}
+.goal .text_area .goal_title .next_wrap svg path {
+  color: #5186ee;
 }
 .goal .text_area .goal_title .next_wrap p {
   white-space: nowrap;
 }
 .goal .text_area .desc_area {
   position: relative;
-  margin-top: 2rem;
+  display: inherit;
+  margin-top: 8rem;
   padding-top: 2rem;
+  transition: margin-top 0.3s ease-in-out;
 }
 .goal .text_area .desc_area::before {
   content: "";
@@ -1590,8 +1618,85 @@ header .fullscreen_menu.on .desc {
   font-size: 1.125rem;
   line-height: 1.5;
   letter-spacing: -0.02rem;
+  text-align: justify;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .goal {
+    grid-gap: clamp(2rem, 8vw, 5rem);
+    padding: 14rem 10rem 10rem 0;
+  }
+  .goal .text_area {
+    width: clamp(22.75rem, 40vw, 27rem);
+  }
+  .goal .text_area .goal_title > * {
+    margin-top: -1.75rem;
+  }
+  .goal .text_area .goal_title p {
+    font-size: clamp(4.5rem, 8vw, 5rem);
+  }
+  .goal .text_area .goal_title .what {
+    padding-left: 2.25rem;
+  }
+  .goal .text_area .goal_title .can {
+    padding-right: 3rem;
+  }
+  .goal .text_area .goal_title .bloom_wrap svg {
+    margin: -1.5rem -1.25rem;
+    width: 4rem;
+  }
+  .goal .text_area .goal_title .next_wrap svg {
+    width: 8.25rem;
+    margin-top: 1.25rem;
+  }
+  .goal .text_area .desc_area {
+    margin-top: 4rem;
+  }
+}
+@media (max-width: 767px) {
+  .goal {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+    padding: 7rem 1.875rem;
+    grid-gap: 4rem;
+  }
+  .goal .img_area svg.goal_frame {
+    opacity: 1;
+  }
+  .goal .text_area {
+    order: -1;
+    justify-self: auto;
+    width: 100%;
+  }
+  .goal .text_area .goal_title {
+    width: clamp(60%, 68.75vw, 25rem);
+  }
+  .goal .text_area .goal_title > * {
+    margin-top: -1rem;
+  }
+  .goal .text_area .goal_title p {
+    font-size: clamp(4rem, 14vw, 5rem);
+  }
+  .goal .text_area .goal_title .what {
+    padding-left: 10%;
+  }
+  .goal .text_area .goal_title .can {
+    padding-right: 23%;
+  }
+  .goal .text_area .goal_title .bloom_wrap svg {
+    margin: -1.5rem -1rem;
+    width: clamp(3rem, 20%, 4.5rem);
+  }
+  .goal .text_area .goal_title .next_wrap svg {
+    margin-top: 1.125rem;
+  }
+  .goal .text_area .desc_area {
+    margin-top: 4rem;
+  }
+  .goal .text_area .desc_area span {
+    font-size: 1rem;
+  }
+}
 footer {
   width: 100%;
   height: 100vh;

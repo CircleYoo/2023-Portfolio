@@ -2,8 +2,8 @@
   position: relative;
   background-color: $secondary-color;
   width: 100%;
-  // height: 100vh;
-  height: 67.5rem;
+  // height: 67.5rem;
+  height: auto;
   display: grid;
   grid-template-columns: 50% 1fr;
   grid-gap: clamp(2rem, 8vw, 10rem);
@@ -37,14 +37,13 @@
   }
 
   .img_area {
-    width: 100%;
+    width: -webkit-fill-available;
     height: -webkit-fill-available;
-    background: url(../img/goal_mine.jpg) no-repeat center center;
-    background-size: cover;
     position: relative;
-    mix-blend-mode: multiply;
+    background-color: $secondary-color;
 
-    img {
+    div,
+    svg {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -56,18 +55,29 @@
       min-height: 100%;
       -o-object-fit: cover;
       object-fit: cover;
-      -webkit-transition: opacity 0.3s ease-in-out;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
+      -webkit-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease;
 
-      &:hover {
+      &.goal_mine {
+        background: url(../img/goal_mine.jpg) no-repeat center center;
+        background-size: cover;
+        mix-blend-mode: multiply;
+      }
+      &.goal_frame {
+        opacity: 0;
+        path {
+          fill: $sub-color;
+        }
+      }
+    }
+    &:hover {
+      .goal_frame {
         opacity: 1;
       }
     }
   }
 
   .text_area {
-    // margin: 0 set-margin-height(large);
     width: clamp(29rem, 31vw, 38rem);
     justify-self: center;
     height: -webkit-fill-available;
@@ -82,12 +92,13 @@
 
       > * {
         margin-top: -2rem;
+        width: 100%;
       }
 
       p {
-        // font-size: clamp(6rem, $title-font-size, 8rem);
-        font-size: set-title-size(large);
+        font-size: clamp(6.5rem, 6.6vw, set-title-size(large));
         font-family: $title-accent-font;
+        transition: 0.3s ease-in-out;
       }
       .what {
         align-self: baseline;
@@ -95,25 +106,35 @@
       }
 
       .can {
+        text-align: right;
         align-self: flex-end;
         padding-right: 5.3rem;
       }
       .bloom_wrap {
         align-self: baseline;
 
-        img {
-          margin: -0.5rem -2rem;
+        svg {
+          margin: -1rem -1.25rem;
+          width: 5rem;
+          path {
+            fill: $primary-color;
+          }
         }
       }
 
       .next_wrap {
-        align-self: stretch;
+        align-self: center;
         justify-content: space-between;
         display: flex;
+        gap: 10%;
 
-        img {
+        svg {
+          align-self: center;
           margin-top: 1.75rem;
           width: clamp(10rem, 12vw, 12.5rem);
+          path {
+            color: $primary-color;
+          }
         }
 
         p {
@@ -124,8 +145,10 @@
 
     .desc_area {
       position: relative;
-      margin-top: 2rem;
+      display: inherit;
+      margin-top: 8rem;
       padding-top: 2rem;
+      transition: margin-top 0.3s ease-in-out;
 
       &::before {
         content: "";
@@ -142,6 +165,105 @@
         font-size: set-text-size(large);
         line-height: $line-height;
         letter-spacing: -0.02rem;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .goal {
+    grid-gap: clamp(2rem, 8vw, 5rem);
+    padding: (set-margin-height(large) + 4rem) set-margin-height(large)
+      set-margin-height(large) 0;
+
+    .text_area {
+      width: clamp(22.75rem, 40vw, 27rem);
+
+      .goal_title {
+        > * {
+          margin-top: -1.75rem;
+        }
+        p {
+          font-size: clamp(4.5rem, 8vw, set-title-size(medium));
+        }
+        .what {
+          padding-left: 2.25rem;
+        }
+        .can {
+          padding-right: 3rem;
+        }
+        .bloom_wrap {
+          svg {
+            margin: -1.5rem -1.25rem;
+            width: 4rem;
+          }
+        }
+        .next_wrap {
+          svg {
+            width: 8.25rem;
+            margin-top: 1.25rem;
+          }
+        }
+      }
+      .desc_area {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .goal {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+    padding: set-margin-height(small) set-margin-width(small);
+    grid-gap: 4rem;
+
+    .img_area {
+      svg {
+        &.goal_frame {
+          opacity: 1;
+        }
+      }
+    }
+    .text_area {
+      order: -1;
+      justify-self: auto;
+      width: 100%;
+
+      .goal_title {
+        width: clamp(60%, 68.75vw, 25rem);
+        > * {
+          margin-top: -1rem;
+        }
+        p {
+          font-size: clamp(4rem, 14vw, set-title-size(medium));
+        }
+        .what {
+          padding-left: 10%;
+        }
+        .can {
+          padding-right: 23%;
+        }
+        .bloom_wrap {
+          svg {
+            margin: -1.5rem -1rem;
+            width: clamp(3rem, 20%, 4.5rem);
+          }
+        }
+        .next_wrap {
+          svg {
+            margin-top: 1.125rem;
+          }
+        }
+      }
+      .desc_area {
+        margin-top: 4rem;
+
+        span {
+          font-size: set-text-size(medium);
+        }
       }
     }
   }
