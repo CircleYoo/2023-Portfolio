@@ -51,7 +51,7 @@
           position: absolute;
           width: max(80px, 100%);
           height: max(80px, 100%);
-          left: 0; 
+          left: 0;
 
           path {
             fill: $secondary-color;
@@ -59,9 +59,6 @@
 
           &.boom-1 {
             left: 0.5rem;
-          }
-          &.boom-2 {
-
           }
         }
       }
@@ -110,7 +107,6 @@
       .img_area {
         height: 12.5rem;
         background-size: cover;
-        
       }
     }
     .desc_area {

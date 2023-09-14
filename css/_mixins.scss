@@ -1,9 +1,10 @@
 @import "./variables";
 
 // breakpoint
-@mixin desktop {
-  // min-width: 1024px
-  @media (min-width: #{$breakpoint-tablet}) {
+@mixin laptop {
+  // min-width: 1280px
+  // 1440px - 1025px
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: 1440px) {
     @content;
   }
 }
@@ -40,6 +41,11 @@
   text-transform: capitalize;
   transition: background-color 0.3s ease;
   @content;
+
+  @include tablet {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
 }
 
 // caption
@@ -50,7 +56,7 @@
   right: 0;
   display: flex;
   justify-content: center;
-
+  @content;
   .caption_inner {
     background-color: $primary-color;
     width: 35%;
@@ -67,13 +73,25 @@
       line-height: 0;
     }
   }
+
+  @include tablet {
+    .caption_inner {
+      width: 50%;
+    }
+  }
+  @include mobile {
+    .caption_inner {
+      padding: 1.5rem 0;
+      width: 80%;
+    }
+  }
 }
 
 // rotate_infinite
 @mixin rotate-to-right {
   animation: infinite_rotate 10s linear infinite;
   transform-origin: 50% 50%;
-  
+
   @keyframes infinite_rotate {
     100% {
       transform: rotate(360deg);
@@ -91,4 +109,3 @@
     }
   }
 }
-

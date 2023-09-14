@@ -17,6 +17,9 @@ body {
   position: relative;
 }
 
+a {
+  text-decoration: none;
+}
 .primary-color {
   background-color: $primary-color;
 }

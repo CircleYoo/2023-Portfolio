@@ -180,18 +180,18 @@ function makeProjectsItem(item) {
         </a>
       </div>
     </div>
-    <h3 class="projects_title">${item.title}</h3>
+    <a href="${item.create}" target="_blank" class="projects_title">${item.title}</a>
     <span>${item.text}</span>
     <div class="projects_desc">
-      <span class="contribution">기여도 ${item.contribution}%</span>
+      <span class="contribution">기여도 ${item.contribution}%  &nbsp; &nbsp; |</span>
       <span class="keyword_area">${keyword}</span>
     </div>
     <div class="list_more_link">
       ${review} ${github} ${origin}
     </div>
-    <div class="list_link">
+    <a href="${item.create}" target="_blank"  class="list_link">
       <img src="../img/link_arrow.svg" alt="바로가기">
-    </div>
+    </a>
   `;
 
   return div;
