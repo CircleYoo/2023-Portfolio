@@ -1704,7 +1704,7 @@ footer {
   display: grid;
   grid-template-rows: 8fr 3fr 1fr;
   background-color: #5186ee;
-  padding: 1rem;
+  padding: 0.65rem;
 }
 footer::after {
   content: "";
@@ -1721,6 +1721,7 @@ footer .footer_top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: margin 0.3s ease-in-out;
 }
 footer .footer_top p {
   font-family: "Seawave", serif;
@@ -1759,10 +1760,12 @@ footer .footer_link div {
   position: relative;
   overflow: hidden;
 }
-footer .footer_link div a,
-footer .footer_link div path {
+footer .footer_link div a {
   z-index: 2;
+}
+footer .footer_link div a .link_item path {
   transition: all 0.4s;
+  fill: white;
 }
 footer .footer_link div::after {
   content: "";
@@ -1787,7 +1790,7 @@ footer .footer_link div:hover .link_item path, footer .footer_link div:active .l
 footer .footer_link div:not(:last-child) {
   border-right: 1px solid #faf7f0;
 }
-footer .footer_link .text_box a {
+footer .footer_link div.text_box a {
   font-family: "Hatton";
   color: #faf7f0;
   font-size: 3vw;
@@ -1804,4 +1807,76 @@ footer .bottom_area span {
   font-family: "SUIT", sans-serif;
   font-size: 1rem;
   color: #faf7f0;
+}
+footer .bottom_area span:last-child {
+  text-align: right;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  footer .footer_top {
+    margin: auto 3.125rem 10vh;
+  }
+  footer .footer_top .go_top {
+    width: 4rem;
+    height: 4rem;
+  }
+  footer .footer_link div {
+    padding: 3.125rem;
+  }
+  footer .footer_link div svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  footer .bottom_area {
+    padding: 1.5rem 2.125rem;
+  }
+  footer .bottom_area span {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 767px) {
+  footer {
+    grid-template-rows: 10fr 4fr 1fr;
+  }
+  footer .footer_top {
+    margin: auto;
+    flex-direction: column;
+  }
+  footer .footer_top p {
+    font-size: 18vw;
+  }
+  footer .footer_top .go_top {
+    width: 3rem;
+    height: 3rem;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+  footer .footer_top .go_top img {
+    width: 1rem;
+  }
+  footer::after {
+    margin: 0.65rem;
+  }
+  footer .footer_link {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  footer .footer_link div svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  footer .footer_link div.text_box {
+    grid-column: 1/4;
+    border-bottom: 1px solid #faf7f0;
+  }
+  footer .footer_link div.text_box a {
+    font-size: 4vw;
+  }
+  footer .bottom_area {
+    padding: 1.5rem 1.125rem;
+  }
+  footer .bottom_area span {
+    font-size: 0.75rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
