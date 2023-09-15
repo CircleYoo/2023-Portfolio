@@ -10,6 +10,7 @@
   align-items: center;
   padding: (set-margin-height(large) + 4rem) set-margin-height(large)
     set-margin-height(large) 0;
+  transition: all 0.3s ease-in-out;
 
   &::before {
     content: "";
@@ -19,6 +20,7 @@
     right: 0;
     left: 0;
     background: url(../img/tree.svg) no-repeat right center;
+    opacity: 0.5;
   }
 
   > * {
@@ -66,6 +68,7 @@
       &.goal_frame {
         opacity: 0;
         path {
+          transition: fill 0.3s ease-in-out;
           fill: $sub-color;
         }
       }
@@ -133,7 +136,8 @@
           margin-top: 1.75rem;
           width: clamp(10rem, 12vw, 12.5rem);
           path {
-            color: $primary-color;
+            transition: fill 0.3s ease-in-out;
+            fill: $primary-color;
           }
         }
 
@@ -157,6 +161,7 @@
         top: 0;
         height: 1px;
         border-top: 1px solid $primary-color;
+        transition: border-top 0.3s ease-in-out;
         width: 40%;
       }
 

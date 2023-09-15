@@ -23,10 +23,16 @@
       display: flex;
       margin-top: -4%;
       position: relative;
+      align-items: center;
 
       .flower {
         width: clamp(4rem, 8vw, 5.5rem);
         margin-top: 5%;
+        
+        path {
+          fill: $primary-color;
+          transition: fill 0.3s ease-in-out;
+        }
       }
 
       .rounded_arrow {
@@ -164,18 +170,27 @@
 
       .deco {
         position: absolute;
-        transition: transform 0.6s ease-out;
+        transition: all 0.6s ease-out;
         width: 25rem;
 
         &-1 {
           top: -10%;
           left: 15%;
           transform: translateY(0);
+          path {
+            fill: $sub-color;
+            transition: fill 0.3s ease-in-out;
+          }
         }
         &-2 {
           bottom: -15%;
           right: 15%;
           transform: translateY(0);
+          
+          path {
+            fill: $secondary-color;
+            transition: fill 0.3s ease-in-out;
+          }
         }
       }
     }

@@ -6,6 +6,7 @@ footer {
   grid-template-rows: 8fr 3fr 1fr;
   background-color: $primary-color;
   padding: 1rem;
+  transition: all 0.3s ease-in-out;
 
   &::after {
     content: "";
@@ -32,6 +33,7 @@ footer {
       font-size: 14vw;
 
       .text_accent {
+        transition: color 0.3s ease-in-out;
         color: $secondary-color;
       }
     }

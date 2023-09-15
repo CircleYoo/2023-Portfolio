@@ -1,18 +1,23 @@
 @charset "UTF-8";
 /*
- * :root {
- *   --primary-color: #5186ee;
- *   --secondary-color: #e0f3cd;
- *   --sub-color: #d0dcff;
- * }
- */
+  :root {
+  --primary-color: #5186ee;
+  --secondary-color: #e0f3cd;
+  --sub-color: #d0dcff;
+  }
+  */
+:root {
+  --primary-color: #5186ee;
+  --secondary-color: #e0f3cd;
+  --sub-color: #d0dcff;
+}
 ::-moz-selection {
   background-color: #faf7f0;
-  color: #5186ee;
+  color: var(--primary-color);
 }
 ::selection {
   background-color: #faf7f0;
-  color: #5186ee;
+  color: var(--primary-color);
 }
 
 ::-webkit-scrollbar {
@@ -30,7 +35,7 @@ a {
 }
 
 .primary-color {
-  background-color: #5186ee;
+  background-color: var(--primary-color);
 }
 
 .text_accent {
@@ -61,7 +66,7 @@ a {
   justify-content: center;
 }
 .cation_wrapper .caption_inner {
-  background-color: #5186ee;
+  background-color: var(--primary-color);
   width: 35%;
   border-radius: 5rem;
   transform: translateY(-50%);
@@ -72,7 +77,8 @@ a {
   text-align: center;
   transform: translateY(-50%);
   color: #faf7f0;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   line-height: 0;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -216,11 +222,23 @@ header .fullscreen_menu {
   visibility: hidden;
   height: 100vh;
   z-index: 10;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.6s ease-in-out;
+}
+header .fullscreen_menu::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--primary-color);
+  margin: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
 }
 header .fullscreen_menu .link_area {
   display: flex;
@@ -243,7 +261,8 @@ header .fullscreen_menu .link_area a span {
   text-align: center;
 }
 header .fullscreen_menu .link_area a span.link_text {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-weight: 200;
   letter-spacing: -0.1rem;
   transition: opacity 0.3s ease-in-out;
@@ -256,7 +275,8 @@ header .fullscreen_menu .link_area a span.arc {
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
-header .fullscreen_menu .link_area a:nth-child(1) .arc, header .fullscreen_menu .link_area a:nth-child(2) .arc {
+header .fullscreen_menu .link_area a:nth-child(1) .arc,
+header .fullscreen_menu .link_area a:nth-child(2) .arc {
   left: 0.25rem;
 }
 header .fullscreen_menu .link_area a:hover span.link_text {
@@ -266,7 +286,8 @@ header .fullscreen_menu .link_area a:hover span.arc {
   opacity: 1;
 }
 header .fullscreen_menu .desc {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0.5rem;
@@ -299,7 +320,8 @@ header .fullscreen_menu.on .desc {
   header .fullscreen_menu .link_area a span {
     font-size: 3rem;
   }
-  header .fullscreen_menu .link_area a:nth-child(1) .arc, header .fullscreen_menu .link_area a:nth-child(2) .arc {
+  header .fullscreen_menu .link_area a:nth-child(1) .arc,
+  header .fullscreen_menu .link_area a:nth-child(2) .arc {
     left: 0;
   }
   header .fullscreen_menu .desc {
@@ -317,6 +339,9 @@ header .fullscreen_menu.on .desc {
   header .inner .hamburger .hamburger_box {
     width: 2rem;
   }
+  header .fullscreen_menu::before {
+    margin: 0.65rem;
+  }
   header .fullscreen_menu .link_area {
     gap: 2rem;
   }
@@ -326,7 +351,8 @@ header .fullscreen_menu.on .desc {
   header .fullscreen_menu .link_area a span {
     font-size: 3rem;
   }
-  header .fullscreen_menu .link_area a:nth-child(1) .arc, header .fullscreen_menu .link_area a:nth-child(2) .arc {
+  header .fullscreen_menu .link_area a:nth-child(1) .arc,
+  header .fullscreen_menu .link_area a:nth-child(2) .arc {
     left: 0;
   }
   header .fullscreen_menu .desc {
@@ -359,10 +385,15 @@ header .fullscreen_menu.on .desc {
   display: flex;
   margin-top: -4%;
   position: relative;
+  align-items: center;
 }
 .visual .visual_title .garden_wrap .flower {
   width: clamp(4rem, 8vw, 5.5rem);
   margin-top: 5%;
+}
+.visual .visual_title .garden_wrap .flower path {
+  fill: var(--primary-color);
+  transition: fill 0.3s ease-in-out;
 }
 .visual .visual_title .garden_wrap .rounded_arrow {
   position: absolute;
@@ -395,14 +426,16 @@ header .fullscreen_menu.on .desc {
   transition: margin-left 0.6s ease;
 }
 .visual .visual_title .desc_wrap .desc .desc_bracket {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: clamp(5rem, 5vw, 6rem);
   color: #797774;
   font-weight: 200;
   transition: font-size 0.6s ease;
 }
 .visual .visual_title .desc_wrap .desc .desc_text {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   text-align: center;
@@ -413,7 +446,7 @@ header .fullscreen_menu.on .desc {
   position: relative;
 }
 .visual .visual_title .name_wrap .name {
-  color: #5186ee;
+  color: var(--primary-color);
 }
 .visual .visual_title .name_wrap .rounded_arrow {
   position: absolute;
@@ -427,14 +460,15 @@ header .fullscreen_menu.on .desc {
   position: absolute;
   bottom: 4.375rem;
   left: 4.375rem;
-  color: #5186ee;
+  color: var(--primary-color);
   display: inline-flex;
   align-items: flex-start;
   gap: 2rem;
   transition: all 0.3s ease-in-out;
 }
 .visual .tag span {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: 0.75rem;
   text-transform: capitalize;
   transition: font-size 0.3s ease-in-out;
@@ -494,7 +528,7 @@ header .fullscreen_menu.on .desc {
 }
 .visual .para_wrap .para_group .deco {
   position: absolute;
-  transition: transform 0.6s ease-out;
+  transition: all 0.6s ease-out;
   width: 25rem;
 }
 .visual .para_wrap .para_group .deco-1 {
@@ -502,13 +536,21 @@ header .fullscreen_menu.on .desc {
   left: 15%;
   transform: translateY(0);
 }
+.visual .para_wrap .para_group .deco-1 path {
+  fill: var(--sub-color);
+  transition: fill 0.3s ease-in-out;
+}
 .visual .para_wrap .para_group .deco-2 {
   bottom: -15%;
   right: 15%;
   transform: translateY(0);
 }
+.visual .para_wrap .para_group .deco-2 path {
+  fill: var(--secondary-color);
+  transition: fill 0.3s ease-in-out;
+}
 .visual .frame {
-  border: 1px solid #5186ee;
+  border: 1px solid var(--primary-color);
   position: absolute;
   top: 1rem;
   bottom: 1rem;
@@ -520,7 +562,7 @@ header .fullscreen_menu.on .desc {
 .visual .frame::before {
   content: "";
   position: absolute;
-  border: 1px solid #5186ee;
+  border: 1px solid var(--primary-color);
   margin: 0.5rem;
   top: 0;
   left: 0;
@@ -604,11 +646,12 @@ header .fullscreen_menu.on .desc {
 .intro {
   width: 100%;
   height: 100vh;
-  background-color: #5186ee;
+  background-color: var(--primary-color);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease-in-out;
 }
 .intro .intro_area {
   display: flex;
@@ -654,7 +697,8 @@ header .fullscreen_menu.on .desc {
   left: 0;
 }
 .intro .intro_area .img_area picture svg path {
-  fill: #e0f3cd;
+  fill: var(--secondary-color);
+  transition: fill 0.3s ease-in-out;
 }
 .intro .intro_area .img_area picture svg.boom-1 {
   left: 0.5rem;
@@ -662,7 +706,8 @@ header .fullscreen_menu.on .desc {
 .intro .intro_area .desc_area {
   color: #faf7f0;
   font-size: 1.125rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   line-height: 1.6;
 }
 .intro .intro_area .desc_area p:first-child {
@@ -703,13 +748,13 @@ header .fullscreen_menu.on .desc {
 .projects {
   position: relative;
   margin-top: 4rem;
-  border-top: 1px solid #5186ee;
+  border-top: 1px solid var(--primary-color);
   transition: all 0.3s ease-in-out;
 }
 .projects::before {
   content: "";
   position: absolute;
-  border-top: 1px solid #5186ee;
+  border-top: 1px solid var(--primary-color);
   top: -1rem;
   left: 0;
   right: 0;
@@ -748,7 +793,8 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-weight: 500;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
@@ -770,7 +816,8 @@ header .fullscreen_menu.on .desc {
 }
 .projects .inner .project_nav .mb_filter .label h3 {
   font-size: 1.125rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
 }
 .projects .inner .project_nav .mb_filter .label .more_btn {
   width: 1rem;
@@ -811,7 +858,8 @@ header .fullscreen_menu.on .desc {
 .projects .inner .project_nav .mb_filter .option_list .option_item {
   transition: background-color 0.15s ease-in-out;
   padding: 0.5rem 1.5rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
 }
 .projects .inner .project_nav .mb_filter .option_list .option_item:hover {
   background-color: #e3dacd;
@@ -832,7 +880,8 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-weight: 500;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
@@ -850,7 +899,8 @@ header .fullscreen_menu.on .desc {
     font-size: 0.875rem;
   }
 }
-.projects .inner .project_nav .filter button.active, .projects .inner .project_nav .filter button:hover {
+.projects .inner .project_nav .filter button.active,
+.projects .inner .project_nav .filter button:hover {
   color: #faf7f0;
   background-color: #111111;
 }
@@ -867,7 +917,8 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-weight: 500;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
@@ -900,10 +951,12 @@ header .fullscreen_menu.on .desc {
   height: 0.375rem;
   border-radius: 50%;
 }
-.projects .inner .project_nav .view .album.active, .projects .inner .project_nav .view .album:hover {
+.projects .inner .project_nav .view .album.active,
+.projects .inner .project_nav .view .album:hover {
   background-color: #111111;
 }
-.projects .inner .project_nav .view .album.active .circle, .projects .inner .project_nav .view .album:hover .circle {
+.projects .inner .project_nav .view .album.active .circle,
+.projects .inner .project_nav .view .album:hover .circle {
   background-color: #faf7f0;
 }
 .projects .inner .project_nav .view .list .line_wrap {
@@ -918,10 +971,12 @@ header .fullscreen_menu.on .desc {
   width: 100%;
   height: 0.188rem;
 }
-.projects .inner .project_nav .view .list.active, .projects .inner .project_nav .view .list:hover {
+.projects .inner .project_nav .view .list.active,
+.projects .inner .project_nav .view .list:hover {
   background-color: #111111;
 }
-.projects .inner .project_nav .view .list.active .line, .projects .inner .project_nav .view .list:hover .line {
+.projects .inner .project_nav .view .list.active .line,
+.projects .inner .project_nav .view .list:hover .line {
   background-color: #faf7f0;
 }
 .projects .inner .project_area {
@@ -952,7 +1007,7 @@ header .fullscreen_menu.on .desc {
   top: 0;
   left: 0;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: top;
   transition: transform 0.6s ease-in-out;
 }
@@ -989,7 +1044,8 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-weight: 500;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
@@ -1000,17 +1056,38 @@ header .fullscreen_menu.on .desc {
   transition: opacity 0.3s ease-in-out;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .projects .inner .project_area .project_item .img_wrap .img_hover .more_link a {
+  .projects
+    .inner
+    .project_area
+    .project_item
+    .img_wrap
+    .img_hover
+    .more_link
+    a {
     padding: 0.5rem 1.25rem;
     font-size: 0.875rem;
   }
 }
 @media (max-width: 767px) {
-  .projects .inner .project_area .project_item .img_wrap .img_hover .more_link a {
+  .projects
+    .inner
+    .project_area
+    .project_item
+    .img_wrap
+    .img_hover
+    .more_link
+    a {
     font-size: 0.875rem;
   }
 }
-.projects .inner .project_area .project_item .img_wrap .img_hover .more_link a:hover {
+.projects
+  .inner
+  .project_area
+  .project_item
+  .img_wrap
+  .img_hover
+  .more_link
+  a:hover {
   opacity: 0.9;
 }
 .projects .inner .project_area .project_item .img_wrap .img_hover .link {
@@ -1023,7 +1100,8 @@ header .fullscreen_menu.on .desc {
 .projects .inner .project_area .project_item .img_wrap .img_hover .link span {
   color: #faf7f0;
   font-size: 1.5rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 }
@@ -1033,15 +1111,36 @@ header .fullscreen_menu.on .desc {
   height: 1.5rem;
   transition: all 0.3s ease-in-out;
 }
-.projects .inner .project_area .project_item .img_wrap .img_hover .link .arrow.arrow-1 {
+.projects
+  .inner
+  .project_area
+  .project_item
+  .img_wrap
+  .img_hover
+  .link
+  .arrow.arrow-1 {
   opacity: 0;
   width: 0;
 }
-.projects .inner .project_area .project_item .img_wrap .img_hover .link:hover .arrow.arrow-1 {
+.projects
+  .inner
+  .project_area
+  .project_item
+  .img_wrap
+  .img_hover
+  .link:hover
+  .arrow.arrow-1 {
   opacity: 1;
   width: 1.5rem;
 }
-.projects .inner .project_area .project_item .img_wrap .img_hover .link:hover .arrow.arrow-2 {
+.projects
+  .inner
+  .project_area
+  .project_item
+  .img_wrap
+  .img_hover
+  .link:hover
+  .arrow.arrow-2 {
   opacity: 0;
   width: 0;
 }
@@ -1060,7 +1159,8 @@ header .fullscreen_menu.on .desc {
   word-break: break-word;
 }
 .projects .inner .project_area .project_item span {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   word-break: break-all;
@@ -1079,7 +1179,12 @@ header .fullscreen_menu.on .desc {
   padding-right: 1rem;
   white-space: nowrap;
 }
-.projects .inner .project_area .project_item .projects_desc .keyword:not(:last-child) {
+.projects
+  .inner
+  .project_area
+  .project_item
+  .projects_desc
+  .keyword:not(:last-child) {
   margin-right: 1rem;
 }
 .projects .inner .project_area .project_item .list_more_link {
@@ -1097,7 +1202,8 @@ header .fullscreen_menu.on .desc {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-weight: 500;
   letter-spacing: -0.01rem;
   padding: 0.5rem 1.5rem;
@@ -1218,7 +1324,14 @@ header .fullscreen_menu.on .desc {
   .projects .inner .project_area .project_item .img_wrap .img_hover .link span {
     font-size: 1.125rem;
   }
-  .projects .inner .project_area .project_item .img_wrap .img_hover .link .arrow {
+  .projects
+    .inner
+    .project_area
+    .project_item
+    .img_wrap
+    .img_hover
+    .link
+    .arrow {
     width: 1.25rem;
     height: 1.25rem;
   }
@@ -1307,7 +1420,14 @@ header .fullscreen_menu.on .desc {
   .projects .inner .project_area .project_item .img_wrap .img_hover .link span {
     font-size: 1rem;
   }
-  .projects .inner .project_area .project_item .img_wrap .img_hover .link .arrow {
+  .projects
+    .inner
+    .project_area
+    .project_item
+    .img_wrap
+    .img_hover
+    .link
+    .arrow {
     display: none;
   }
   .projects .inner .project_area .project_item .projects_title {
@@ -1398,13 +1518,17 @@ header .fullscreen_menu.on .desc {
   position: relative;
   height: auto;
 }
-.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="1 / 7"], .graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="6 / 7"], .graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="7 / 7"] {
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="1 / 7"],
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="6 / 7"],
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="7 / 7"] {
   width: 280px !important;
 }
-.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="2 / 7"], .graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="4 / 7"] {
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="2 / 7"],
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="4 / 7"] {
   width: 430px !important;
 }
-.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="3 / 7"], .graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="5 / 7"] {
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="3 / 7"],
+.graphics .sw_graphic .swiper-wrapper .swiper-slide[aria-label="5 / 7"] {
   width: 580px !important;
 }
 .graphics .sw_graphic .swiper-wrapper .swiper-slide img {
@@ -1434,7 +1558,8 @@ header .fullscreen_menu.on .desc {
 }
 .graphics .sw_graphic .swiper-wrapper .swiper-slide .graphic .desc_area span {
   font-size: 1.125rem;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   color: #faf7f0;
 }
 .graphics .sw_graphic .swiper-wrapper .swiper-slide .img_group {
@@ -1443,7 +1568,12 @@ header .fullscreen_menu.on .desc {
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 20px;
 }
-.graphics .sw_graphic .swiper-wrapper .swiper-slide .img_group .graphic:nth-child(1) {
+.graphics
+  .sw_graphic
+  .swiper-wrapper
+  .swiper-slide
+  .img_group
+  .graphic:nth-child(1) {
   grid-column: 1/3;
 }
 
@@ -1488,7 +1618,7 @@ header .fullscreen_menu.on .desc {
 }
 .goal {
   position: relative;
-  background-color: #e0f3cd;
+  background-color: var(--secondary-color);
   width: 100%;
   height: auto;
   display: grid;
@@ -1496,6 +1626,7 @@ header .fullscreen_menu.on .desc {
   grid-gap: clamp(2rem, 8vw, 10rem);
   align-items: center;
   padding: 14rem 10rem 10rem 0;
+  transition: all 0.3s ease-in-out;
 }
 .goal::before {
   content: "";
@@ -1505,6 +1636,7 @@ header .fullscreen_menu.on .desc {
   right: 0;
   left: 0;
   background: url(../img/tree.svg) no-repeat right center;
+  opacity: 0.5;
 }
 .goal > * {
   z-index: 1;
@@ -1519,7 +1651,7 @@ header .fullscreen_menu.on .desc {
   background-color: #e3dacd;
 }
 .goal .cation_wrapper .caption_inner {
-  background-color: #5186ee;
+  background-color: var(--primary-color);
   width: 35%;
   border-radius: 5rem;
   transform: translateY(-50%);
@@ -1530,7 +1662,8 @@ header .fullscreen_menu.on .desc {
   text-align: center;
   transform: translateY(-50%);
   color: #faf7f0;
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   line-height: 0;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1555,7 +1688,7 @@ header .fullscreen_menu.on .desc {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   position: relative;
-  background-color: #e0f3cd;
+  background-color: var(--secondary-color);
 }
 .goal .img_area div,
 .goal .img_area svg {
@@ -1583,7 +1716,8 @@ header .fullscreen_menu.on .desc {
 }
 .goal .img_area div.goal_frame path,
 .goal .img_area svg.goal_frame path {
-  fill: #d0dcff;
+  transition: fill 0.3s ease-in-out;
+  fill: var(--sub-color);
 }
 .goal .img_area:hover .goal_frame {
   opacity: 1;
@@ -1627,7 +1761,7 @@ header .fullscreen_menu.on .desc {
   width: 5rem;
 }
 .goal .text_area .goal_title .bloom_wrap svg path {
-  fill: #5186ee;
+  fill: var(--primary-color);
 }
 .goal .text_area .goal_title .next_wrap {
   align-self: center;
@@ -1641,7 +1775,8 @@ header .fullscreen_menu.on .desc {
   width: clamp(10rem, 12vw, 12.5rem);
 }
 .goal .text_area .goal_title .next_wrap svg path {
-  color: #5186ee;
+  transition: fill 0.3s ease-in-out;
+  fill: var(--primary-color);
 }
 .goal .text_area .goal_title .next_wrap p {
   white-space: nowrap;
@@ -1659,11 +1794,13 @@ header .fullscreen_menu.on .desc {
   left: 0;
   top: 0;
   height: 1px;
-  border-top: 1px solid #5186ee;
+  border-top: 1px solid var(--primary-color);
+  transition: border-top 0.3s ease-in-out;
   width: 40%;
 }
 .goal .text_area .desc_area span {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: 1.125rem;
   line-height: 1.6;
   letter-spacing: -0.02rem;
@@ -1754,8 +1891,9 @@ footer {
   position: relative;
   display: grid;
   grid-template-rows: 8fr 3fr 1fr;
-  background-color: #5186ee;
+  background-color: var(--primary-color);
   padding: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 footer::after {
   content: "";
@@ -1780,7 +1918,8 @@ footer .footer_top p {
   font-size: 14vw;
 }
 footer .footer_top p .text_accent {
-  color: #e0f3cd;
+  transition: color 0.3s ease-in-out;
+  color: var(--secondary-color);
 }
 footer .footer_top .go_top {
   width: 5rem;
@@ -1827,16 +1966,19 @@ footer .footer_link div::after {
   top: 0;
   left: 0;
   right: 0;
-  background: #e0f3cd;
+  background: var(--secondary-color);
 }
-footer .footer_link div:hover::after, footer .footer_link div:active::after {
+footer .footer_link div:hover::after,
+footer .footer_link div:active::after {
   height: 100%;
 }
-footer .footer_link div:hover .link_item, footer .footer_link div:active .link_item {
-  color: #5186ee;
+footer .footer_link div:hover .link_item,
+footer .footer_link div:active .link_item {
+  color: var(--primary-color);
 }
-footer .footer_link div:hover .link_item path, footer .footer_link div:active .link_item path {
-  fill: #5186ee;
+footer .footer_link div:hover .link_item path,
+footer .footer_link div:active .link_item path {
+  fill: var(--primary-color);
 }
 footer .footer_link div:not(:last-child) {
   border-right: 1px solid #faf7f0;
@@ -1855,7 +1997,8 @@ footer .bottom_area {
   border-top: 1px solid #faf7f0;
 }
 footer .bottom_area span {
-  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕,
+    Malgun Gothic, sans-serif;
   font-size: 1rem;
   color: #faf7f0;
 }
@@ -1940,4 +2083,4 @@ footer .bottom_area span:last-child {
   footer .bottom_area span {
     text-align: center;
   }
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */

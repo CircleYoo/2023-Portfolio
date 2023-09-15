@@ -1,22 +1,24 @@
 AOS.init();
 
 // (시작) 버튼 클릭 시, 색상 변수 변경
-// const rootStyles = window.getComputedStyle(document.documentElement);
-
 const primaryColorArr = ["#5186ee", "#D73234", "#00934D", "#9A97DA"];
 const secondColorArr = ["#e0f3cd", "#F6BAC6", "#FFE699", "#D0DCFF"];
+const subColorArr = ["#D0DCFF", "##D0DCFF", "##F6BAC6", "#FFE699"];
 let currentIndex = 0;
 
 function changePrimaryColor() {
-  // currentIndex를 사용하여 새로운 색상을 가져옵니다.
+
+  // currentIndex를 사용하여 새로운 색상을 가져오기
   const newPrimaryColor = primaryColorArr[currentIndex];
   const newSecondColor = secondColorArr[currentIndex];
+  const newSubColor = subColorArr[currentIndex];
 
-  // 모든 루트 요소의 "--primary-color" 값을 변경합니다.
+  // 모든 루트 요소의 "--primary-color" 값을 변경
   const rootElements = document.querySelectorAll(":root");
   rootElements.forEach((root) => {
     root.style.setProperty("--primary-color", newPrimaryColor);
     root.style.setProperty("--secondary-color", newSecondColor);
+    root.style.setProperty("--sub-color", newSubColor);
   });
 
   // currentIndex를 업데이트
@@ -33,9 +35,12 @@ $colorBtn.addEventListener("click", function () {
   $colorBtn.classList.add("click");
 
   setTimeout(() => {
-    changePrimaryColor();
     $colorBtn.classList.remove("click");
   }, 300);
+  
+  setTimeout(() => {
+    changePrimaryColor();
+  }, 1000);
 });
 // (끝) 버튼 클릭 시, 색상 변수 변경
 
