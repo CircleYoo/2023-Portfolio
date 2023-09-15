@@ -252,7 +252,7 @@ header {
       }
 
       .desc {
-        font-size: set-text-size(small);
+        font-size: set-text-size(tiny);
         letter-spacing: 0.375rem;
       }
     }
@@ -261,7 +261,7 @@ header {
 @include mobile {
   header {
     .inner {
-      top: 2rem;
+      top: 1rem;
 
       .logo {
         height: 1.5rem;
@@ -290,7 +290,7 @@ header {
         }
       }
       .desc {
-        font-size: set-text-size(small);
+        font-size: 0.625rem;
         letter-spacing: 0.375rem;
       }
     }

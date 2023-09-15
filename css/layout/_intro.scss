@@ -68,6 +68,7 @@
       color: $background-color;
       font-size: set-text-size(large);
       font-family: $body-font;
+      line-height: $line-height;
 
       p {
         &:first-child {

@@ -46,6 +46,10 @@
     padding: 0.5rem 1.25rem;
     font-size: 0.875rem;
   }
+
+  @include mobile {
+    font-size: set-text-size(small);
+  }
 }
 
 // caption

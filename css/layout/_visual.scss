@@ -106,7 +106,7 @@
 
     span {
       font-family: $body-font;
-      font-size: set-text-size(small);
+      font-size: set-text-size(tiny);
       text-transform: capitalize;
       transition: font-size 0.3s ease-in-out;
     }
@@ -221,7 +221,7 @@
             font-size: 3.5rem;
           }
           .desc_text {
-            font-size: set-text-size(small);
+            font-size: set-text-size(tiny);
           }
         }
       }

@@ -231,6 +231,9 @@
       order: -1;
       justify-self: auto;
       width: 100%;
+      max-width: 708px;
+      min-width: 100%;
+      // width: clamp(100%, 100%, 708px);
 
       .goal_title {
         width: clamp(60%, 68.75vw, 25rem);

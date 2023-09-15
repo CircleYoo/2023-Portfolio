@@ -317,8 +317,6 @@
             font-size: set-text-size(medium);
           }
           .contribution {
-            // border-right: 1px solid $beige-500-color;
-            // margin-right: 1rem;
             padding-right: 1rem;
             white-space: nowrap;
           }
@@ -478,7 +476,7 @@
         &.list {
           .project_item {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: auto repeat(2, 1fr);
             grid-row-gap: 1rem;
 
             &:first-child {
@@ -549,8 +547,14 @@
               }
             }
           }
+          .projects_title {
+            font-size: 1.5rem;
+          }
           .projects_desc {
             margin: 1rem 0;
+            span {
+              font-size: 14px;
+            }
           }
           .list_more_link {
             display: flex;
