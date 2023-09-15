@@ -165,6 +165,7 @@
       .deco {
         position: absolute;
         transition: transform 0.6s ease-out;
+        width: 25rem;
 
         &-1 {
           top: -10%;
@@ -172,7 +173,7 @@
           transform: translateY(0);
         }
         &-2 {
-          bottom: -10%;
+          bottom: -15%;
           right: 15%;
           transform: translateY(0);
         }

@@ -5,7 +5,7 @@ footer {
   display: grid;
   grid-template-rows: 8fr 3fr 1fr;
   background-color: $primary-color;
-  padding: 0.65rem;
+  padding: 1rem;
 
   &::after {
     content: "";
@@ -173,6 +173,7 @@ footer {
 
 @include mobile {
   footer {
+    padding: 0.625rem;
     grid-template-rows: 10fr 4fr 1fr;
     .footer_top {
       margin: auto;
@@ -214,7 +215,8 @@ footer {
           border-bottom: 1px solid #faf7f0;
 
           a {
-            font-size: 4vw;
+            font-size: clamp(1rem, 4vw, 2rem);
+            text-align: center;
           }
         }
       }
@@ -224,6 +226,14 @@ footer {
 
       span {
         font-size: set-text-size(tiny);
+      }
+
+      @media (max-width: 550px) {
+        flex-direction: column;
+
+        span {
+          text-align: center;
+        }
       }
     }
   }

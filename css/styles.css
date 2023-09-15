@@ -191,7 +191,7 @@ header .inner .color_change_btn .color_change .ball {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  transition: all 0.25s cubic-bezier(0.4, 0.2, 0.5, 1.6);
+  transition: all 0.15s cubic-bezier(0.25, 0.08, 0.55, 1.2);
 }
 header .inner .color_change_btn .color_change:hover {
   animation: infinite_rotate-to-left 10s linear infinite;
@@ -203,8 +203,8 @@ header .inner .color_change_btn .color_change:hover {
   }
 }
 header .inner .color_change_btn .color_change.click .ball {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 header .fullscreen_menu {
   width: 100%;
@@ -495,6 +495,7 @@ header .fullscreen_menu.on .desc {
 .visual .para_wrap .para_group .deco {
   position: absolute;
   transition: transform 0.6s ease-out;
+  width: 25rem;
 }
 .visual .para_wrap .para_group .deco-1 {
   top: -10%;
@@ -502,7 +503,7 @@ header .fullscreen_menu.on .desc {
   transform: translateY(0);
 }
 .visual .para_wrap .para_group .deco-2 {
-  bottom: -10%;
+  bottom: -15%;
   right: 15%;
   transform: translateY(0);
 }
@@ -1334,6 +1335,7 @@ header .fullscreen_menu.on .desc {
     grid-column: 1/4;
   }
   .projects .inner .project_area.list .project_item .list_more_link {
+    grid-column: 1/4;
     flex-wrap: nowrap;
   }
   .projects .inner .project_area.list .project_item .list_link {
@@ -1753,7 +1755,7 @@ footer {
   display: grid;
   grid-template-rows: 8fr 3fr 1fr;
   background-color: #5186ee;
-  padding: 0.65rem;
+  padding: 1rem;
 }
 footer::after {
   content: "";
@@ -1885,6 +1887,7 @@ footer .bottom_area span:last-child {
 }
 @media (max-width: 767px) {
   footer {
+    padding: 0.625rem;
     grid-template-rows: 10fr 4fr 1fr;
   }
   footer .footer_top {
@@ -1920,12 +1923,21 @@ footer .bottom_area span:last-child {
     border-bottom: 1px solid #faf7f0;
   }
   footer .footer_link div.text_box a {
-    font-size: 4vw;
+    font-size: clamp(1rem, 4vw, 2rem);
+    text-align: center;
   }
   footer .bottom_area {
     padding: 1.5rem 1.125rem;
   }
   footer .bottom_area span {
     font-size: 0.75rem;
+  }
+}
+@media (max-width: 767px) and (max-width: 550px) {
+  footer .bottom_area {
+    flex-direction: column;
+  }
+  footer .bottom_area span {
+    text-align: center;
   }
 }/*# sourceMappingURL=styles.css.map */
