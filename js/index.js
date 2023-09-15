@@ -4,7 +4,8 @@ AOS.init();
 const primaryColorArr = ["#5186ee", "#D73234", "#00934D", "#9A97DA"];
 const secondColorArr = ["#e0f3cd", "#F6BAC6", "#FFE699", "#D0DCFF"];
 const subColorArr = ["#D0DCFF", "##D0DCFF", "##F6BAC6", "#FFE699"];
-let currentIndex = 0;
+let currentIndex = 1
+  // 0은 기본색, 1~은 이후 변경되는 색;
 
 function changePrimaryColor() {
 
