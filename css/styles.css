@@ -1322,7 +1322,7 @@ header .fullscreen_menu.on .desc {
     display: flex;
   }
   .projects .inner .project_area.list .project_item {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 1fr auto;
     grid-row-gap: 1rem;
   }
@@ -1332,6 +1332,9 @@ header .fullscreen_menu.on .desc {
   .projects .inner .project_area.list .project_item .projects_title,
   .projects .inner .project_area.list .project_item span {
     grid-column: 1/4;
+  }
+  .projects .inner .project_area.list .project_item .list_more_link {
+    flex-wrap: nowrap;
   }
   .projects .inner .project_area.list .project_item .list_link {
     display: none;

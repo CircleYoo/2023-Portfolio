@@ -578,7 +578,7 @@
         /* 리스트형 */
         &.list {
           .project_item {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto 1fr auto;
             grid-row-gap: 1rem;
 
@@ -588,6 +588,9 @@
             .projects_title,
             span {
               grid-column: 1 / 4;
+            }
+            .list_more_link {
+              flex-wrap: nowrap;
             }
             .list_link {
               display: none;
