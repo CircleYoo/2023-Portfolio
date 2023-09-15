@@ -810,6 +810,7 @@ header .fullscreen_menu.on .desc {
 .projects .inner .project_nav .mb_filter .option_list .option_item {
   transition: background-color 0.15s ease-in-out;
   padding: 0.5rem 1.5rem;
+  font-family: "SUIT", -apple-system, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
 }
 .projects .inner .project_nav .mb_filter .option_list .option_item:hover {
   background-color: #e3dacd;
@@ -1227,7 +1228,7 @@ header .fullscreen_menu.on .desc {
     font-size: 0.875rem;
   }
   .projects .inner .project_area.list .project_item {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto repeat(2, 1fr);
     grid-row-gap: 1rem;
   }
@@ -1236,11 +1237,12 @@ header .fullscreen_menu.on .desc {
   }
   .projects .inner .project_area.list .project_item .projects_title,
   .projects .inner .project_area.list .project_item span {
-    grid-column: 1/3;
+    grid-column: 1/4;
   }
   .projects .inner .project_area.list .project_item .list_link {
     width: 4.5rem;
     height: 1.5rem;
+    grid-column: 2/4;
   }
 }
 @media (max-width: 767px) {
@@ -1270,6 +1272,9 @@ header .fullscreen_menu.on .desc {
   }
 }
 @media (max-width: 767px) {
+  .projects .inner .project_nav .mb_filter .option_list {
+    margin-top: 0.625rem;
+  }
   .projects .inner .project_nav .filter {
     display: none;
   }
@@ -1317,7 +1322,7 @@ header .fullscreen_menu.on .desc {
     display: flex;
   }
   .projects .inner .project_area.list .project_item {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr auto;
     grid-row-gap: 1rem;
   }
@@ -1326,7 +1331,7 @@ header .fullscreen_menu.on .desc {
   }
   .projects .inner .project_area.list .project_item .projects_title,
   .projects .inner .project_area.list .project_item span {
-    grid-column: 1/3;
+    grid-column: 1/4;
   }
   .projects .inner .project_area.list .project_item .list_link {
     display: none;

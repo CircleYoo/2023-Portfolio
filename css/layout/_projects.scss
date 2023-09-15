@@ -92,6 +92,7 @@
           .option_item {
             transition: background-color 0.15s ease-in-out;
             padding: 0.5rem 1.5rem;
+            font-family: $body-font;
             &:hover {
               background-color: $beige-200-color;
             }
@@ -475,7 +476,7 @@
         /* 리스트형 */
         &.list {
           .project_item {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto repeat(2, 1fr);
             grid-row-gap: 1rem;
 
@@ -484,11 +485,12 @@
             }
             .projects_title,
             span {
-              grid-column: 1 / 3;
+              grid-column: 1 / 4;
             }
             .list_link {
               width: 4.5rem;
               height: 1.5rem;
+              grid-column: 2 / 4;
             }
           }
         }
@@ -518,6 +520,10 @@
 
           @media (max-width: 440px) {
             width: 100%;
+          }
+
+          .option_list {
+            margin-top: 0.625rem;
           }
         }
         .filter {
@@ -572,7 +578,7 @@
         /* 리스트형 */
         &.list {
           .project_item {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto 1fr auto;
             grid-row-gap: 1rem;
 
@@ -581,7 +587,7 @@
             }
             .projects_title,
             span {
-              grid-column: 1 / 3;
+              grid-column: 1 / 4;
             }
             .list_link {
               display: none;
