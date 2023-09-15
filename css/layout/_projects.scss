@@ -512,10 +512,11 @@
         margin-bottom: 4rem;
       }
       .project_nav {
+        row-gap: 0.625rem;
         .mb_filter {
           display: block;
 
-          @media (max-width: 500px) {
+          @media (max-width: 440px) {
             width: 100%;
           }
         }
@@ -526,8 +527,8 @@
           button {
             height: 41px;
           }
-          @media (max-width: 500px) {
-            width: 100%;
+          @media (max-width: 440px) {
+            // width: 100%;
             button {
               width: inherit;
             }
@@ -544,6 +545,14 @@
             .img_hover {
               .more_link {
                 display: none;
+              }
+              .link {
+                span {
+                  font-size: set-text-size(medium);
+                }
+                .arrow {
+                  display: none;
+                }
               }
             }
           }
@@ -564,7 +573,7 @@
         &.list {
           .project_item {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: auto 1fr auto;
             grid-row-gap: 1rem;
 
             &:first-child {
