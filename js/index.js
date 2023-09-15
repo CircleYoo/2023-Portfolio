@@ -1,9 +1,9 @@
 AOS.init();
 
 // (시작) 버튼 클릭 시, 색상 변수 변경
-const primaryColorArr = ["#5186ee", "#D73234", "#00934D", "#9A97DA"];
-const secondColorArr = ["#e0f3cd", "#F6BAC6", "#FFE699", "#D0DCFF"];
-const subColorArr = ["#D0DCFF", "##D0DCFF", "##F6BAC6", "#FFE699"];
+const primaryColorArr = ["#5186ee", "#878231", "#FF4539", "#766AF0", "#FF734D"];
+const secondColorArr = ["#e0f3cd", "#DAD8FD", "#CFECF4", "#F0E98E", "#FDE4E5"];
+const subColorArr = ["#D0DCFF", "#CFE0D8", "#F6EEE3", "#CDE2E7", "#FFEBAE"];
 let currentIndex = 1
   // 0은 기본색, 1~은 이후 변경되는 색;
 

@@ -1953,6 +1953,10 @@ footer .footer_link div {
 footer .footer_link div a {
   z-index: 2;
 }
+footer .footer_link div a .link_item {
+  width: 3rem;
+  height: 3rem;
+}
 footer .footer_link div a .link_item path {
   transition: all 0.4s;
   fill: white;

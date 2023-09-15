@@ -74,6 +74,8 @@ footer {
       a {
         z-index: 2;
         .link_item {
+          width: 3rem;
+          height: 3rem;
           path {
             -webkit-transition: all 0.4s;
             -moz-transition: all 0.4s;
