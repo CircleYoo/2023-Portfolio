@@ -159,8 +159,10 @@ footer {
       div {
         padding: set-margin-width(medium);
 
-        svg {
-          width: 2rem;
+        a {
+          .link_item {
+            width: 2rem;
+          }
         }
       }
     }
@@ -207,8 +209,11 @@ footer {
       grid-template-rows: repeat(2, 1fr);
 
       div {
-        svg {
-          width: 1.5rem;
+        a {
+          .link_item {
+            width: 1.5rem;
+
+          }
         }
 
         &.text_box {
@@ -234,9 +239,7 @@ footer {
         row-gap: 0.5rem;
 
         span {
-          > * {
-            text-align: center;
-          }
+          text-align: center;
         }
       }
     }
