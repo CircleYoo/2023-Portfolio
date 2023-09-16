@@ -10,16 +10,16 @@
 }
 
 @mixin tablet {
-  // min-width: 768px
-  // max-width: 1023px
-  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+  // min-width: 769px
+  // max-width: 1024px
+  @media (min-width: #{$breakpoint-mobile + 1px}) and (max-width: #{$breakpoint-tablet}) {
     @content;
   }
 }
 
 @mixin mobile {
-  // max-width: 767px
-  @media (max-width: #{$breakpoint-mobile - 1px}) {
+  // max-width: 768px
+  @media (max-width: #{$breakpoint-mobile}) {
     @content;
   }
 }

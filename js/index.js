@@ -165,7 +165,7 @@ function makeProjectsItem(item) {
     ? `<a href="${item.review}" target="_blank">Review</a>`
     : "";
   let github = item.github
-    ? `<a href="${item.github}" target="_blank">Gihub</a>`
+    ? `<a href="${item.github}" target="_blank">Github</a>`
     : "";
   let origin = item.original
     ? `<a href="${item.original}" target="_blank">Original</a>`

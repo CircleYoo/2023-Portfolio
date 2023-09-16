@@ -316,9 +316,11 @@
           flex-wrap: wrap;
           span {
             font-size: set-text-size(medium);
+            word-break: normal;
+            text-align: left;
           }
           .contribution {
-            padding-right: 1rem;
+            padding-right: 0.75rem;
             white-space: nowrap;
           }
 

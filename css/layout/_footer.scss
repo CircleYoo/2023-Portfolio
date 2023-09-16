@@ -74,8 +74,7 @@ footer {
       a {
         z-index: 2;
         .link_item {
-          width: 3rem;
-          height: 3rem;
+          width: 2.5rem;
           path {
             -webkit-transition: all 0.4s;
             -moz-transition: all 0.4s;
@@ -161,8 +160,7 @@ footer {
         padding: set-margin-width(medium);
 
         svg {
-          width: 3rem;
-          height: 3rem;
+          width: 2rem;
         }
       }
     }
@@ -210,8 +208,7 @@ footer {
 
       div {
         svg {
-          width: 2rem;
-          height: 2rem;
+          width: 1.5rem;
         }
 
         &.text_box {
@@ -219,7 +216,7 @@ footer {
           border-bottom: 1px solid #faf7f0;
 
           a {
-            font-size: clamp(1rem, 4vw, 2rem);
+            font-size: clamp(1.25rem, 5vw, 2rem);
             text-align: center;
           }
         }
@@ -234,9 +231,12 @@ footer {
 
       @media (max-width: 550px) {
         flex-direction: column;
+        row-gap: 0.5rem;
 
         span {
-          text-align: center;
+          > * {
+            text-align: center;
+          }
         }
       }
     }
