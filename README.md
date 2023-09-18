@@ -2,7 +2,7 @@
 
 2023 포트폴리오 - 반응형 웹사이트<br/>
 **배포주소** : <https://jeongwon.site/> <br/> <br/>
-<img src="https://github.com/CircleYoo/2023-Portfolio/assets/87813501/73b099ae-5493-4f53-be6c-5fa46430bde6" width="100%"/>
+<img src="https://github.com/CircleYoo/2023-Portfolio/blob/master/assets/poster.jpg" width="100%"/>
 
 
 ### 💼 작업기간
@@ -33,9 +33,9 @@
 
 * **필터 버튼 클릭 시, 투명도 조절**
   * **scss** <br/>
-  <img src="https://github.com/CircleYoo/2023-Portfolio/assets/87813501/08672423-3367-45a9-b8f2-2de611ba2573" width="80%"/> <br/>
+<img src="https://github.com/CircleYoo/2023-Portfolio/assets/87813501/08672423-3367-45a9-b8f2-2de611ba2573" width="80%"/> <br/>
   * **js** <br/>
-  <img src="https://github.com/CircleYoo/2023-Portfolio/assets/87813501/3c857bb7-05f2-4704-a97d-52f641aa5327" width="80%"/> <br/>
+<img src="https://github.com/CircleYoo/2023-Portfolio/assets/87813501/3c857bb7-05f2-4704-a97d-52f641aa5327" width="80%"/> <br/>
   * 버튼 클릭 시, .project_area에 fade-out 클래스 추가
   * `setTimeout`을 이용해 250ms 뒤에 fade-out 클래스 삭제
        
