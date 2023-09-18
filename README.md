@@ -2,6 +2,8 @@
 
 2023 포트폴리오 - 반응형 웹사이트<br/>
 **배포주소** : <https://jeongwon.site/> <br/> <br/>
+<img src="https://github.com/CircleYoo/2023-Portfolio/assets/87813501/73b099ae-5493-4f53-be6c-5fa46430bde6" width="100%"/>
+
 
 ### 💼 작업기간
 > 1인 제작 <br/>
