@@ -4,7 +4,7 @@ AOS.init();
 const primaryColorArr = ["#5186ee", "#878231", "#FF4539", "#766AF0", "#FF734D"];
 const secondColorArr = ["#e0f3cd", "#DAD8FD", "#CFECF4", "#F0E98E", "#FDE4E5"];
 const subColorArr = ["#D0DCFF", "#CFE0D8", "#F6EEE3", "#CDE2E7", "#FFEBAE"];
-let currentIndex = 1
+let currentIndex = 1;
   // 0은 기본색, 1~은 이후 변경되는 색;
 
 function changePrimaryColor() {
@@ -113,9 +113,8 @@ $label.addEventListener("click", toggleOptions);
 // (끝) 모바일 필터 버튼 보이기
 
 // (시작) 배경 원근감 효과
-const paraGroup = document.querySelector(".deco_wrap");
-const deco1 = document.querySelector(".deco-1");
-const deco2 = document.querySelector(".deco-2");
+const $deco1 = document.querySelector(".deco-1");
+const $deco2 = document.querySelector(".deco-2");
 
 window.addEventListener("scroll", () => {
   const pos = window.scrollY;
@@ -123,8 +122,8 @@ window.addEventListener("scroll", () => {
   // 천천히 올라가는 이미지의 속도 조절
 
   // 이미지가 천천히 올라가도록 설정
-  deco1.style.transform = `translateY(-${pos * speedFactor}px)`;
-  deco2.style.transform = `translateY(-${pos * speedFactor}px)`;
+  $deco1.style.transform = `translateY(-${pos * speedFactor}px)`;
+  $deco2.style.transform = `translateY(-${pos * speedFactor}px)`;
 });
 // (끝) 배경 원근감 효과
 
@@ -340,7 +339,6 @@ function makeGraphicItem(item) {
 const mySwiper = new Swiper(".swiper", {
   slidesPerView: "auto",
   spaceBetween: 12,
-  height: 506,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -351,13 +349,11 @@ const mySwiper = new Swiper(".swiper", {
   breakpoints: {
     768: {
       spaceBetween: 16,
-      height: 334,
       slidesOffsetBefore: 50,
       slidesOffsetAfter: 50,
     },
     1024: {
       spaceBetween: 20,
-      height: 430,
       slidesOffsetBefore: 70,
       slidesOffsetAfter: 70,
     },

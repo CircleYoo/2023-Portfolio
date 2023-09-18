@@ -1,14 +1,6 @@
 @import "./variables";
 
 // breakpoint
-@mixin laptop {
-  // min-width: 1280px
-  // 1440px - 1025px
-  @media (min-width: #{$breakpoint-mobile}) and (max-width: 1440px) {
-    @content;
-  }
-}
-
 @mixin tablet {
   // min-width: 769px
   // max-width: 1024px
