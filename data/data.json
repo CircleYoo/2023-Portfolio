@@ -1,19 +1,6 @@
 {
   "projects": [
     {
-      "img" : "../img/project_louis_poulsen.jpg",
-      "alt" : "루이스폴센",
-      "title" : "louis poulsen",
-      "text" : "루이스폴센 리디자인 및 반응형 코딩을 통한 코딩 적응, 효율적인 작업과 편리한 CSS 코드, 시맨틱 마크업을 중점으로 진행한 사이트 개선 프로젝트",
-      "contribution" : 33,
-      "keyword" : ["시맨틱 마크업", "JSON", "WayPoint"],
-      "review" : "https://www.notion.so/1d5613cba1784af2bfc868f91d7ed005",
-      "github" : "https://github.com/CircleYoo/Louis-Poulsen",
-      "original" : "",
-      "create" : "https://circleyoo.github.io/Louis-Poulsen/",
-      "type": ["responsive", "team"]
-    },
-    {
       "img" : "../img/project_hogwarts.jpg",
       "alt" : "호그와트",
       "title" : "Hogwarts school",
@@ -24,6 +11,19 @@
       "github" : "https://github.com/CircleYoo/Hogwarts-School",
       "original" : "",
       "create" : "https://bucolic-squirrel-37fca3.netlify.app/",
+      "type": ["responsive", "team"]
+    },
+    {
+      "img" : "../img/project_louis_poulsen.jpg",
+      "alt" : "루이스폴센",
+      "title" : "louis poulsen",
+      "text" : "루이스폴센 리디자인 및 반응형 코딩을 통한 코딩 적응, 효율적인 작업과 편리한 CSS 코드, 시맨틱 마크업을 중점으로 진행한 사이트 개선 프로젝트",
+      "contribution" : 33,
+      "keyword" : ["시맨틱 마크업", "JSON", "WayPoint"],
+      "review" : "https://www.notion.so/1d5613cba1784af2bfc868f91d7ed005",
+      "github" : "https://github.com/CircleYoo/Louis-Poulsen",
+      "original" : "",
+      "create" : "https://circleyoo.github.io/Louis-Poulsen/",
       "type": ["responsive", "team"]
     },
     {

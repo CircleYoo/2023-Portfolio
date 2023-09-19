@@ -1,19 +1,11 @@
 /* suit */
-@font-face {
-  font-family: "SUIT";
-  font-weight: 100;
-  src: url("./SUIT-Thin.woff2") format("woff2");
-}
+
 @font-face {
   font-family: "SUIT";
   font-weight: 200;
   src: url("./SUIT-ExtraLight.woff2") format("woff2");
 }
-@font-face {
-  font-family: "SUIT";
-  font-weight: 300;
-  src: url("./SUIT-Light.woff2") format("woff2");
-}
+
 @font-face {
   font-family: "SUIT";
   font-weight: 400;
@@ -24,26 +16,7 @@
   font-weight: 500;
   src: url("./SUIT-Medium.woff2") format("woff2");
 }
-@font-face {
-  font-family: "SUIT";
-  font-weight: 600;
-  src: url("./SUIT-SemiBold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "SUIT";
-  font-weight: 700;
-  src: url("./SUIT-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "SUIT";
-  font-weight: 800;
-  src: url("./SUIT-ExtraBold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "SUIT";
-  font-weight: 900;
-  src: url("./SUIT-Heavy.woff2") format("woff2");
-}
+
 
 /* seawave (logo / only eng) */
 @font-face {
@@ -57,13 +30,7 @@
   src: url(../fonts/NewYork-PERSONAL-USE.woff) format("woff");
 }
 
-/* fabulous (body-1 / only eng) */
-@font-face {
-  font-family: "Fabulous";
-  src: url(../fonts/NT-FABULOUS.woff) format("woff");
-}
-
-/* hatton (body-2 /only eng) */
+/* hatton (body /only eng) */
 @font-face {
   font-family: "Hatton";
   src: url(../fonts/PP-Hatton-Medium-500.woff) format("woff");
