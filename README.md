@@ -15,7 +15,7 @@
   `SCSS`
 
 ## 📌 주요기능
-### 비주얼
+### ✔ 비주얼
 * **타이틀** : AOS, vivus 라이브러리를 이용해 모션 추가
   <img src="https://github.com/CircleYoo/2023-Portfolio/blob/master/assets/visual-animation.gif" width="80%"/>
   
@@ -25,7 +25,7 @@
 
 
 ### ✔ 프로젝트 <br/>
-   <img src="https://github.com/CircleYoo/2023-Portfolio/blob/master/assets/projects-filter.gif" width="80%"/>
+  <img src="https://github.com/CircleYoo/2023-Portfolio/blob/master/assets/projects-filter.gif" width="80%"/>
 
 * **아이템 필터링**
   * `getAttribute`를 사용해 클릭된 버튼의 `data-filter`속성을 읽은 후, 해당 필터 값을 저장
